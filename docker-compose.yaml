@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+    web:
+        build: .
+        command: npm run dev
+        restart: always
+        volumes:
+          - .:/usr/app/
+          - /usr/app/node_modules
+        ports:
+          - "3000:3000"
+        depends_on:
+          - db
+        environment:
+          DATABASE_URL: postgres://todoapp@postgres/todos
+    db:
+        container_name: db
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: root
+        volumes:
+            - /var/postgresql/data:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        networks:
+            - postgresql
+
+    pgadmin4:
+        image: dpage/pgadmin4
+        restart: always
+        environment:
+            PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
+            PGADMIN_DEFAULT_PASSWORD: 'admin'
+        ports:
+            - '80:80'
+        depends_on:
+            - db
+        networks:
+            - postgresql
+
+networks:
+    postgresql:
+        driver: bridge

@@ -7,7 +7,7 @@ import baseRouter from '../modules/baseRouter';
 class Server implements ServerInterface {
 	// eslint-disable-line
 	constructor() {
-		// connectToDatabase();
+		connectToDatabase();
 	}
 
 	async server(): Promise<Application> {

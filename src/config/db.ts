@@ -15,6 +15,9 @@ export async function connectToDatabase() {
 			synchronize: true,
 			logging: config.TYPEORM_DEBUG_MODE,
 		});
+		console.log(
+			`Connected. Type: ${config.TYPEORM_CONNECTION}, host: ${config.DB_HOST}, port: ${config.DB_PORT}`,
+		);
 		return connections;
 	} catch (err) {
 		console.log(err);
