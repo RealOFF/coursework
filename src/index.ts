@@ -1,6 +1,7 @@
 import { Environment } from './config/environment';
-import server from './server/app';
+import { Server } from './server/app';
 import { logger } from './helpers/logger';
+import { connectToDatabase } from './config/db';
 /**
  * Setuping environment variables
  */
@@ -12,6 +13,8 @@ import { Application } from 'express';
 import { config } from './config/config';
 
 async function startServer() {
+	await connectToDatabase();
+	const server = new Server();
 	const app: Application = await server.server();
 	app.listen(config.SERVER_PORT, () => {
 		console.log(

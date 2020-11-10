@@ -1,3 +1,41 @@
 {"message":"Listening on port 3000 in development mode","level":"info"}
 {"message":"connect ECONNREFUSED 127.0.0.1:5432","level":"error"}
 {"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"password authentication failed for user \"admin\"","level":"error"}
+{"message":"password authentication failed for user \"admin\"","level":"error"}
+{"message":"password authentication failed for user \"admin\"","level":"error"}
+{"message":"database \"coursework\" does not exist","level":"error"}
+{"message":"Column startTime of Entity SubjectSession does not support length property.","level":"error"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"success","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"success","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}
+{"message":"Listening on port 3000 in development mode","level":"info"}

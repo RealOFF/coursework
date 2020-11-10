@@ -8,10 +8,10 @@ import { Group } from './Group';
 
 @Entity()
 export class SubjectSession extends Base {
-    @Column({ length: 250, name: 'start_time', nullable: false })
+    @Column({ nullable: false })
 	startTime!: Date;
 
-	@Column({ length: 250, name: 'end_time', nullable: false })
+	@Column({ nullable: false })
     endTime!: Date;
     
     @ManyToOne(() => Audience)
