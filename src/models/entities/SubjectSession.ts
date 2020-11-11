@@ -15,11 +15,9 @@ export class SubjectSession extends Base {
 	endTime!: Date;
 
 	@ManyToOne(() => Audience)
-	@JoinColumn()
 	audience!: Audience;
 
 	@ManyToOne(() => Subject)
-	@JoinColumn()
 	subject!: Subject;
 
 	@ManyToMany(() => Teacher)

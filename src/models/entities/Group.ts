@@ -14,6 +14,5 @@ export class Group extends Base {
 	students!: Student[];
 
 	@ManyToOne(() => GroupType, (groupType) => groupType.groups)
-	@JoinColumn()
 	type!: GroupType;
 }

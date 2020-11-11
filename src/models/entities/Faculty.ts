@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 
 import { Base } from '../Base';
 import { Department } from './Department';
@@ -9,6 +9,5 @@ export class Faculty extends Base {
 	name!: string;
 
 	@OneToMany(() => Department, (department) => department.faculty)
-	@JoinColumn()
 	departments!: Department[];
 }

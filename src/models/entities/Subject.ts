@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 
 import { Base } from '../Base';
 import { AudienceType } from './AudienceType';
@@ -9,6 +9,5 @@ export class Subject extends Base {
 	name!: string;
 
 	@OneToMany(() => AudienceType, (audienceType) => audienceType.subject)
-	@JoinColumn()
 	audienceTypes!: AudienceType[];
 }

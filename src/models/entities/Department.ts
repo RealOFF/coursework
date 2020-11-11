@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
 
 import { Base } from '../Base';
 import { Faculty } from './Faculty';
@@ -9,6 +9,5 @@ export class Department extends Base {
 	name!: string;
 
 	@ManyToOne(() => Faculty, (faculty) => faculty.departments)
-	@JoinColumn()
 	faculty!: Faculty;
 }

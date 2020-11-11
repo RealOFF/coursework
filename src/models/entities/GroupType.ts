@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 
 import { Base } from '../Base';
 import { Group } from './Group';
@@ -9,6 +9,5 @@ export class GroupType extends Base {
 	name!: string;
 
 	@OneToMany(() => Group, (group) => group.type)
-	@JoinColumn()
 	groups!: Group[];
 }
