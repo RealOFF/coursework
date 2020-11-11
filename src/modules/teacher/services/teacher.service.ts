@@ -3,7 +3,7 @@
 import {
 	ICreateArguments,
 	IUpdateArguments,
-} from './group.service.interface';
+} from './teacher.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -12,10 +12,10 @@ import {
 	IDeleteById,
 } from '../../base.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { Teacher } from '../../../models/entities';
 import { EntityManager, getManager } from 'typeorm';
 
-export class GroupService
+export class TeacherService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
@@ -30,16 +30,19 @@ export class GroupService
 	}
 
 	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+		firstName,
+		lastName,
+		patronymic,
+	}: ICreateArguments): Promise<Teacher> {
 		try {
-			const group = new Group();
-			group.name = name;
-			group.type = type;
-			group.students = [];
-			this.manager.save(group);
+			const teacher = new Teacher();
+			teacher.firstName = firstName;
+			teacher.lastName = lastName;
+			teacher.patronymic = patronymic;
+			teacher.deparments = [];
+			this.manager.save(teacher);
 			logger.info('success');
-			return group;
+			return teacher;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -48,7 +51,7 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return this.manager.findOne(Teacher, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -57,7 +60,7 @@ export class GroupService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Group, {
+			return this.manager.find(Teacher, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -69,7 +72,7 @@ export class GroupService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Group, { id: Number(id) });
+			return this.manager.delete(Teacher, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -78,18 +81,21 @@ export class GroupService
 
 	async update({
 		id,
-		name,
-		type,
-		students
-	}: IUpdateArguments): Promise<Group> {
+		firstName,
+		lastName,
+		patronymic,
+		deparments,
+	}: IUpdateArguments): Promise<Teacher> {
 		try {
-			const group = new Group();
-			group.id = Number(id);
-			group.name = name;
-			group.type = type;
-			group.students = students;
+			const teacher = new Teacher();
+			teacher.id = Number(id);
+			teacher.firstName = firstName;
+			teacher.lastName = lastName;
+			teacher.patronymic = patronymic;
+			teacher.deparments = deparments;
+			this.manager.save(teacher);
 			logger.info('success');
-			return group;
+			return teacher;
 		} catch (error) {
 			logger.error(error);
 			return error;

@@ -14,7 +14,7 @@ export class Student extends Base {
 	@Column({ length: 250, nullable: true })
 	patronymic!: string;
 
-	@ManyToMany(() => Group)
+	@ManyToMany(() => Group, (group) => group.students)
 	@JoinColumn()
 	groups!: Group[];
 }

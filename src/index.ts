@@ -1,39 +1,21 @@
-import { Environment } from './config/environment';
-import { Server } from './server/app';
-import { logger } from './helpers/logger';
-import { connectToDatabase } from './config/db';
-/**
- * Setuping environment variables
- */
-Environment.setup();
-import 'reflect-metadata';
+import "reflect-metadata";
+import {createConnection} from "typeorm";
+import {User} from "./entity/User";
 
-import { Application } from 'express';
+createConnection().then(async connection => {
 
-import { config } from './config/config';
+    console.log("Inserting a new user into the database...");
+    const user = new User();
+    user.firstName = "Timber";
+    user.lastName = "Saw";
+    user.age = 25;
+    await connection.manager.save(user);
+    console.log("Saved a new user with id: " + user.id);
 
-async function startServer() {
-	await connectToDatabase();
-	const server = new Server();
-	const app: Application = await server.server();
-	app.listen(config.SERVER_PORT, () => {
-		console.log(
-			`Listening on port ${config.SERVER_PORT} in ${config.NODE_ENV} mode`,
-		);
-		logger.info(
-			`Listening on port ${config.SERVER_PORT} in ${config.NODE_ENV} mode`,
-		);
-	});
-}
+    console.log("Loading users from the database...");
+    const users = await connection.manager.find(User);
+    console.log("Loaded users: ", users);
 
-startServer();
+    console.log("Here you can setup and run express/koa/any other framework.");
 
-process.on('uncaughtException', (e) => {
-	console.log(e);
-	process.exit(1);
-});
-
-process.on('unhandledRejection', (e) => {
-	console.log(e);
-	process.exit(1);
-});
+}).catch(error => console.log(error));

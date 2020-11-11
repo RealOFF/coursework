@@ -40,7 +40,7 @@ export class StudentService
 			student.lastName = lastName;
 			student.patronymic = patronymic;
 			student.groups = [];
-			this.manager.save(student);
+			await this.manager.save(student);
 			logger.info('success');
 			return student;
 		} catch (error) {
@@ -51,7 +51,10 @@ export class StudentService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Student, { id: Number(id) });
+            console.log(await this.manager.createQueryBuilder(Student, "student")
+            .leftJoinAndSelect("student.groups", "group")
+            .getMany());
+			return await this.manager.findOne(Student, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -60,7 +63,7 @@ export class StudentService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Student, {
+			return await this.manager.find(Student, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -72,7 +75,7 @@ export class StudentService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Student, { id: Number(id) });
+			return await this.manager.delete(Student, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -87,16 +90,14 @@ export class StudentService
 		groups,
 	}: IUpdateArguments): Promise<Student> {
 		try {
-			const student = new Student();
-			student.firstName = firstName;
-			student.lastName = lastName;
-			student.patronymic = patronymic;
-			student.groups = groups;
-			this.manager.update(
-				Student,
-				{ id },
-				{ firstName, lastName, patronymic },
-			);
+            const student = new Student();
+            student.id = Number(id);
+            student.firstName = firstName;
+            student.lastName = lastName;
+            student.patronymic = patronymic;
+            student.groups = groups;
+            this.manager.update(Student, {id: Number(id)}, {firstName, lastName, patronymic, groups})
+            // await this.manager.save(student);
 			logger.info('success');
 			return student;
 		} catch (error) {

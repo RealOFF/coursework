@@ -1,15 +1,15 @@
 import { Request, Response, Router } from 'express';
 import { param, validationResult } from 'express-validator';
 import { IRouter } from '../router.interface';
-import { GroupService } from './services/group.service';
+import { TeacherService } from './services/teacher.service';
 
 const router = Router();
 
-export class GroupRouter implements IRouter {
-	private groupService: GroupService;
+export class TeacherRouter implements IRouter {
+	private teacherService: TeacherService;
 
 	constructor() {
-		this.groupService = new GroupService();
+		this.teacherService = new TeacherService();
 	}
 	// eslint-disable-line
 	get routes() {
@@ -24,7 +24,7 @@ export class GroupRouter implements IRouter {
 				}
 				// eslint-disable-next-line no-useless-catch
 				try {
-					const quote = await this.groupService.getSkipTake(
+					const quote = await this.teacherService.getSkipTake(
 						req.params.skip,
 						req.params.take,
 					);
@@ -46,7 +46,7 @@ export class GroupRouter implements IRouter {
 				}
 				// eslint-disable-next-line no-useless-catch
 				try {
-					const quote = await this.groupService.getById(
+					const quote = await this.teacherService.getById(
 						req.params.id,
 					);
 					return res.send(quote);
@@ -67,7 +67,7 @@ export class GroupRouter implements IRouter {
 				}
 				// eslint-disable-next-line no-useless-catch
 				try {
-					const quote = await this.groupService.deleteById(
+					const quote = await this.teacherService.deleteById(
 						req.params.id,
 					);
 					return res.send(quote);
@@ -80,7 +80,7 @@ export class GroupRouter implements IRouter {
 		router.post('/', async (req: Request, res: Response) => {
 			// eslint-disable-next-line no-useless-catch
 			try {
-				const quote = await this.groupService.create(req.body);
+				const quote = await this.teacherService.create(req.body);
 				return res.send(quote);
 			} catch (err) {
 				throw err;
@@ -90,7 +90,7 @@ export class GroupRouter implements IRouter {
 		router.put('/', async (req: Request, res: Response) => {
 			// eslint-disable-next-line no-useless-catch
 			try {
-				const quote = await this.groupService.update(req.body);
+				const quote = await this.teacherService.update(req.body);
 				return res.send(quote);
 			} catch (err) {
 				throw err;

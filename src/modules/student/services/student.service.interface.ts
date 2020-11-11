@@ -5,6 +5,6 @@ export interface ICreateArguments {
 }
 
 export interface IUpdateArguments extends ICreateArguments {
-	id: number;
-	groups: Array<any>;
+	id: string;
+	groups: any[];
 }
