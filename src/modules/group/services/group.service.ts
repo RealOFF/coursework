@@ -2,21 +2,21 @@
 
 import { IGroupService } from './group.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group, GroupType } from "../../../models/entities";
-import { EntityManager, getManager } from "typeorm";
+import { Group, GroupType } from '../../../models/entities';
+import { EntityManager, getManager } from 'typeorm';
 
 class UserService implements IGroupService {
 	// eslint-disable-line
 
 	private manager: EntityManager;
 	constructor() {
-	    this.manager = getManager();
+		this.manager = getManager();
 	}
 
 	async create(): Promise<any> {
 		try {
-            // const group = new Group();
-            // group.name = name;
+			// const group = new Group();
+			// group.name = name;
 			// group.students = [];
 
 			// const type = await this.manager.findOne(GroupType, {name: typeName});

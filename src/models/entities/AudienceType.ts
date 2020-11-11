@@ -6,14 +6,14 @@ import { Subject } from './Subject';
 
 @Entity()
 export class AudienceType extends Base {
-    @Column({ length: 250, nullable: false })
-    name!: string;
+	@Column({ length: 250, nullable: false })
+	name!: string;
 
-    @ManyToMany(() => Audience)
-    @JoinColumn()
-    audiences!: Audience[];
+	@ManyToMany(() => Audience)
+	@JoinColumn()
+	audiences!: Audience[];
 
-    @ManyToOne(() => Subject, subject => subject.audienceTypes)
-    @JoinColumn()
-    subject!: Subject[];
+	@ManyToOne(() => Subject, (subject) => subject.audienceTypes)
+	@JoinColumn()
+	subject!: Subject[];
 }

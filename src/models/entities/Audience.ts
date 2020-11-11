@@ -6,14 +6,14 @@ import { Department } from './Department';
 
 @Entity()
 export class Audience extends Base {
-    @Column({ length: 250, nullable: false })
-    name!: string;
-    
-    @ManyToMany(() => AudienceType)
-    @JoinColumn()
-    types!: AudienceType[];
+	@Column({ length: 250, nullable: false })
+	name!: string;
 
-    @ManyToMany(() => Department)
-    @JoinColumn()
+	@ManyToMany(() => AudienceType)
+	@JoinColumn()
+	types!: AudienceType[];
+
+	@ManyToMany(() => Department)
+	@JoinColumn()
 	deparments!: Department[];
 }

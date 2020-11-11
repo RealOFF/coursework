@@ -6,14 +6,14 @@ services:
         command: npm run dev
         restart: always
         volumes:
-          - .:/usr/app/
-          - /usr/app/node_modules
+            - .:/usr/app/
+            - /usr/app/node_modules
         ports:
-          - "3000:3000"
+            - '3000:3000'
         depends_on:
-          - db
+            - db
         environment:
-          DATABASE_URL: postgres://todoapp@postgres/todos
+            DATABASE_URL: postgres://todoapp@postgres/todos
     db:
         container_name: db
         image: postgres
@@ -24,7 +24,7 @@ services:
         volumes:
             - /var/postgresql/data:/var/lib/postgresql/data
         ports:
-            - "5432:5432"
+            - '5432:5432'
         networks:
             - postgresql
 

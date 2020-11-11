@@ -9,7 +9,7 @@
 		"watch": "nodemon src/index.ts",
 		"dev": "node ./dist/src/index.js",
 		"typecheck": "tsc --noEmit",
-		"prettify": "npm prettier --write ."
+		"prettify": "npx prettier --write ."
 	},
 	"dependencies": {
 		"@types/swagger-ui-express": "^4.1.2",

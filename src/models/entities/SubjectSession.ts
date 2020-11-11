@@ -8,25 +8,25 @@ import { Group } from './Group';
 
 @Entity()
 export class SubjectSession extends Base {
-    @Column({ nullable: false })
+	@Column({ nullable: false })
 	startTime!: Date;
 
 	@Column({ nullable: false })
-    endTime!: Date;
-    
-    @ManyToOne(() => Audience)
-    @JoinColumn()
-    audience!: Audience;
+	endTime!: Date;
 
-    @ManyToOne(() => Subject)
-    @JoinColumn()
-    subject!: Subject;
+	@ManyToOne(() => Audience)
+	@JoinColumn()
+	audience!: Audience;
+
+	@ManyToOne(() => Subject)
+	@JoinColumn()
+	subject!: Subject;
 
 	@ManyToMany(() => Teacher)
-    @JoinColumn()
-    teachers!: Teacher[];
-    
-    @ManyToMany(() => Group)
-    @JoinColumn()
-    groups!: Group[];
+	@JoinColumn()
+	teachers!: Teacher[];
+
+	@ManyToMany(() => Group)
+	@JoinColumn()
+	groups!: Group[];
 }

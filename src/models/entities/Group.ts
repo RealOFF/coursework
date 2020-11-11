@@ -10,10 +10,10 @@ export class Group extends Base {
 	name!: string;
 
 	@ManyToMany(() => Student)
-    @JoinColumn()
-    students!: Student[];
-    
-    @ManyToOne(() => GroupType, groupType => groupType.groups)
-    @JoinColumn()
-    type!: GroupType;
+	@JoinColumn()
+	students!: Student[];
+
+	@ManyToOne(() => GroupType, (groupType) => groupType.groups)
+	@JoinColumn()
+	type!: GroupType;
 }
