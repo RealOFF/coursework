@@ -14,5 +14,5 @@ export class AudienceType extends Base {
 	audiences!: Audience[];
 
 	@ManyToOne(() => Subject, (subject) => subject.audienceTypes)
-	subject!: Subject[];
+	subjects!: Subject[];
 }

@@ -1,7 +1,7 @@
 import {
 	ICreateArguments,
 	IUpdateArguments,
-} from './group.service.interface';
+} from './subject.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -10,10 +10,10 @@ import {
 	IDeleteById,
 } from '../../base.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { Subject } from '../../../models/entities/Subject';
 import { EntityManager, getManager } from 'typeorm';
 
-export class GroupService
+export class SubjectService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
@@ -28,16 +28,16 @@ export class GroupService
 	}
 
 	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+		name,
+	}: ICreateArguments): Promise<Subject> {
 		try {
-			const group = new Group();
-			group.name = name;
-			group.type = type;
-			group.students = [];
-			this.manager.save(group);
+			const subject = new Subject();
+			subject.name = name;
+			// TODO
+			//subject.audienceTypes = ;
+			await this.manager.save(subject);
 			logger.info('success');
-			return group;
+			return subject;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -46,7 +46,7 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return await this.manager.findOne(Subject, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -55,7 +55,7 @@ export class GroupService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Group, {
+			return await this.manager.find(Subject, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -67,7 +67,7 @@ export class GroupService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Group, { id: Number(id) });
+			return await this.manager.delete(Subject, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -77,17 +77,17 @@ export class GroupService
 	async update({
 		id,
 		name,
-		type,
-		students
-	}: IUpdateArguments): Promise<Group> {
+	}: IUpdateArguments): Promise<Subject> {
 		try {
-			const group = new Group();
-			group.id = Number(id);
-			group.name = name;
-			group.type = type;
-			group.students = students;
+            const subject= new Subject();
+            subject.id = Number(id);
+            subject.name = name;
+            // TODO
+			//subject.audienceTypes = ;
+            this.manager.update(Subject, {id: Number(id)}, {name})
+            // await this.manager.save(student);
 			logger.info('success');
-			return group;
+			return subject;
 		} catch (error) {
 			logger.error(error);
 			return error;

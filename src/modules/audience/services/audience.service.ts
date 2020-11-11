@@ -1,7 +1,7 @@
 import {
 	ICreateArguments,
 	IUpdateArguments,
-} from './group.service.interface';
+} from './audience.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -10,10 +10,10 @@ import {
 	IDeleteById,
 } from '../../base.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { Audience } from '../../../models/entities/Audience';
 import { EntityManager, getManager } from 'typeorm';
 
-export class GroupService
+export class AudienceService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
@@ -28,16 +28,16 @@ export class GroupService
 	}
 
 	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+		name
+	}: ICreateArguments): Promise<Audience> {
 		try {
-			const group = new Group();
-			group.name = name;
-			group.type = type;
-			group.students = [];
-			this.manager.save(group);
+			const audience = new Audience();
+			audience.name = name;
+			audience.types = [];
+			audience.deparments = [];
+			this.manager.save(audience);
 			logger.info('success');
-			return group;
+			return audience;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -46,7 +46,7 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return this.manager.findOne(Audience, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -55,7 +55,7 @@ export class GroupService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Group, {
+			return this.manager.find(Audience, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -67,7 +67,7 @@ export class GroupService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Group, { id: Number(id) });
+			return this.manager.delete(Audience, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -77,17 +77,17 @@ export class GroupService
 	async update({
 		id,
 		name,
-		type,
-		students
-	}: IUpdateArguments): Promise<Group> {
+		types,
+		deparments
+	}: IUpdateArguments): Promise<Audience> {
 		try {
-			const group = new Group();
-			group.id = Number(id);
-			group.name = name;
-			group.type = type;
-			group.students = students;
+			const audience = new Audience();
+			audience.id = Number(id);
+			audience.name = name;
+			audience.types = types;
+			audience.deparments = deparments;
 			logger.info('success');
-			return group;
+			return audience;
 		} catch (error) {
 			logger.error(error);
 			return error;

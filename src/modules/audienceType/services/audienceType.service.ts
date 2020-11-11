@@ -1,7 +1,7 @@
 import {
 	ICreateArguments,
 	IUpdateArguments,
-} from './group.service.interface';
+} from './audienceType.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -10,10 +10,10 @@ import {
 	IDeleteById,
 } from '../../base.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { AudienceType } from '../../../models/entities/AudienceType';
 import { EntityManager, getManager } from 'typeorm';
 
-export class GroupService
+export class AudienceTypeService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
@@ -28,16 +28,16 @@ export class GroupService
 	}
 
 	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+		name
+	}: ICreateArguments): Promise<AudienceType> {
 		try {
-			const group = new Group();
-			group.name = name;
-			group.type = type;
-			group.students = [];
-			this.manager.save(group);
+			const audienceType = new AudienceType();
+			audienceType.name = name;
+			audienceType.audiences = [];
+			audienceType.subjects = [];
+			this.manager.save(audienceType);
 			logger.info('success');
-			return group;
+			return audienceType;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -46,7 +46,7 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return this.manager.findOne(AudienceType, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -55,7 +55,7 @@ export class GroupService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Group, {
+			return this.manager.find(AudienceType, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -67,7 +67,7 @@ export class GroupService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Group, { id: Number(id) });
+			return this.manager.delete(AudienceType, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -77,17 +77,17 @@ export class GroupService
 	async update({
 		id,
 		name,
-		type,
-		students
-	}: IUpdateArguments): Promise<Group> {
+		audiences,
+		subjects
+	}: IUpdateArguments): Promise<AudienceType> {
 		try {
-			const group = new Group();
-			group.id = Number(id);
-			group.name = name;
-			group.type = type;
-			group.students = students;
+			const audienceType = new AudienceType();
+			audienceType.id = Number(id);
+			audienceType.name = name;
+			audienceType.audiences = audiences;
+			audienceType.subjects = subjects;
 			logger.info('success');
-			return group;
+			return audienceType;
 		} catch (error) {
 			logger.error(error);
 			return error;

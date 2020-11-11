@@ -1,7 +1,7 @@
 import {
 	ICreateArguments,
 	IUpdateArguments,
-} from './group.service.interface';
+} from './department.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -10,10 +10,10 @@ import {
 	IDeleteById,
 } from '../../base.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { Department } from '../../../models/entities/Department';
 import { EntityManager, getManager } from 'typeorm';
 
-export class GroupService
+export class DepartmentService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
@@ -28,16 +28,17 @@ export class GroupService
 	}
 
 	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+		name,
+		// facultyId
+	}: ICreateArguments): Promise<Department> {
 		try {
-			const group = new Group();
-			group.name = name;
-			group.type = type;
-			group.students = [];
-			this.manager.save(group);
+			const department = new Department();
+			department.name = name;
+			// TODO
+			// department.faculty = ;
+			this.manager.save(department);
 			logger.info('success');
-			return group;
+			return department;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -46,7 +47,7 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return this.manager.findOne(Department, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -55,7 +56,7 @@ export class GroupService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Group, {
+			return this.manager.find(Department, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -67,7 +68,7 @@ export class GroupService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Group, { id: Number(id) });
+			return this.manager.delete(Department, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -77,17 +78,16 @@ export class GroupService
 	async update({
 		id,
 		name,
-		type,
-		students
-	}: IUpdateArguments): Promise<Group> {
+		// facultyId,
+	}: IUpdateArguments): Promise<Department> {
 		try {
-			const group = new Group();
-			group.id = Number(id);
-			group.name = name;
-			group.type = type;
-			group.students = students;
+			const department = new Department();
+			department.id = Number(id);
+			department.name = name;
+			// TODO
+			// department.faculty = ;
 			logger.info('success');
-			return group;
+			return department;
 		} catch (error) {
 			logger.error(error);
 			return error;

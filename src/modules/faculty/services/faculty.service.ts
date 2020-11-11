@@ -1,7 +1,7 @@
 import {
 	ICreateArguments,
 	IUpdateArguments,
-} from './group.service.interface';
+} from './faculty.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -10,10 +10,10 @@ import {
 	IDeleteById,
 } from '../../base.service.interface';
 import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { Faculty } from '../../../models/entities/Faculty';
 import { EntityManager, getManager } from 'typeorm';
 
-export class GroupService
+export class FacultyService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
@@ -28,16 +28,16 @@ export class GroupService
 	}
 
 	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+		name,
+		// facultyId
+	}: ICreateArguments): Promise<Faculty> {
 		try {
-			const group = new Group();
-			group.name = name;
-			group.type = type;
-			group.students = [];
-			this.manager.save(group);
+			const faculty = new Faculty();
+			faculty.name = name;
+			faculty.departments = [];
+			this.manager.save(faculty);
 			logger.info('success');
-			return group;
+			return faculty;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -46,7 +46,7 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return this.manager.findOne(Faculty, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -55,7 +55,7 @@ export class GroupService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Group, {
+			return this.manager.find(Faculty, {
 				skip: Number(skip),
 				take: Number(take),
 			});
@@ -67,7 +67,7 @@ export class GroupService
 
 	async deleteById(id: string) {
 		try {
-			return this.manager.delete(Group, { id: Number(id) });
+			return this.manager.delete(Faculty, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -77,17 +77,16 @@ export class GroupService
 	async update({
 		id,
 		name,
-		type,
-		students
-	}: IUpdateArguments): Promise<Group> {
+		// departments,
+	}: IUpdateArguments): Promise<Faculty> {
 		try {
-			const group = new Group();
-			group.id = Number(id);
-			group.name = name;
-			group.type = type;
-			group.students = students;
+			const faculty = new Faculty();
+			faculty.id = Number(id);
+			faculty.name = name;
+			// TODO
+			// faculty.departments = ;
 			logger.info('success');
-			return group;
+			return faculty;
 		} catch (error) {
 			logger.error(error);
 			return error;

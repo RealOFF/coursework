@@ -1,5 +1,3 @@
-//Uncomment the code in this file to see typeorm in work
-
 import {
 	ICreateArguments,
 	IUpdateArguments,
