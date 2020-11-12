@@ -8,6 +8,6 @@ export class Subject extends Base {
 	@Column({ length: 250, nullable: false })
 	name!: string;
 
-	@OneToMany(() => AudienceType, (audienceType) => audienceType.subject)
+	@OneToMany(() => AudienceType, (audienceType) => audienceType.subjects)
 	audienceTypes!: AudienceType[];
 }
