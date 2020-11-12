@@ -5,7 +5,7 @@ import { Audience } from '../../../models/entities/Audience';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -18,7 +18,7 @@ export class AudienceService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -50,12 +50,20 @@ export class AudienceService
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager.find(Audience, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+			.createQueryBuilder(Audience, 'audience')
+			.offset(Number(offset))
+			.limit(Number(limit))
+			.select([
+				'audience.id',
+				'audience.name',
+				'type.id',
+				'type.name',
+			])
+			.leftJoinAndSelect('audience.types', 'type')
+			.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;

@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, JoinColumn, ManyToMany } from 'typeorm';
+import { Column, Entity, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
 
 import { Base } from '../Base';
 import { Subject } from './Subject';
@@ -21,10 +21,10 @@ export class SubjectSession extends Base {
 	subject!: Subject;
 
 	@ManyToMany(() => Teacher)
-	@JoinColumn()
+	@JoinTable()
 	teachers!: Teacher[];
 
 	@ManyToMany(() => Group)
-	@JoinColumn()
+	@JoinTable()
 	groups!: Group[];
 }

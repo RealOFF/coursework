@@ -35,10 +35,10 @@ export class BaseRouter implements IRouter {
 	}
 
 	get routes() {
-		router.use('/audience', this.audienceRouter.routes);
-		router.use('/audienceType', this.audienceTypeRouter.routes);
-		router.use('/department', this.departmentRouter.routes);
-		router.use('/faculty', this.facultyRouter.routes);
+		router.use('/audiences', this.audienceRouter.routes);
+		router.use('/audienceTypes', this.audienceTypeRouter.routes);
+		router.use('/departments', this.departmentRouter.routes);
+		router.use('/faculties', this.facultyRouter.routes);
 		router.use('/groups', this.groupRouter.routes);
 		router.use('/students', this.studentRouter.routes);
 		router.use('/subject', this.subjectRouter.routes);

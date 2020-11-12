@@ -5,7 +5,7 @@ import { Faculty, Department } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -18,7 +18,7 @@ export class FacultyService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -36,7 +36,7 @@ export class FacultyService
 			faculty.name = name;
 			if (departmentIds?.length) {
 				const departments = await this.manager.find(Department, {
-					select: ['id', 'name', 'createdAt'],
+					select: ['id', 'name'],
 					where: { id: In(departmentIds.map(Number)) },
 				});
 				if (!departments) {
@@ -74,12 +74,12 @@ export class FacultyService
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
 			return this.manager
 				.createQueryBuilder(Faculty, 'faculty')
-				.offset(Number(skip))
-				.limit(Number(take))
+				.offset(Number(offset))
+				.limit(Number(limit))
 				.select([
 					'faculty.id',
 					'faculty.name',

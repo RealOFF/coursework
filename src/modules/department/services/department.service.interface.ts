@@ -1,6 +1,6 @@
 export interface ICreateArguments {
 	name: string;
-	facultyId: number;
+	facultyId?: number;
 }
 
 export interface IUpdateArguments extends ICreateArguments {

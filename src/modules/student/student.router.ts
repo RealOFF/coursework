@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { param, validationResult } from 'express-validator';
+import { param, query, validationResult } from 'express-validator';
 
 import { IRouter } from '../router.interface';
 import { StudentService } from './services/student.service';
@@ -16,7 +16,7 @@ export class StudentRouter implements IRouter {
 	get routes() {
 		router.get(
 			'/all',
-			[param('skip').isNumeric(), param('take').isNumeric()],
+			[query('offset').isNumeric(), query('limit').isNumeric()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -25,9 +25,9 @@ export class StudentRouter implements IRouter {
 				}
 
 				try {
-					const quote = await this.studentService.getSkipTake(
-						req.params.skip,
-						req.params.take,
+					const quote = await this.studentService.getOffsetLimit(
+												req.query.offset as string,
+						req.query.limit as string,
 					);
 					return res.send(quote);
 				} catch (err) {

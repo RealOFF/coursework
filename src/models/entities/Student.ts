@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, JoinTable } from 'typeorm';
 
 import { Base } from '../Base';
 import { Group } from './Group';
@@ -15,6 +15,6 @@ export class Student extends Base {
 	patronymic!: string;
 
 	@ManyToMany(() => Group, (group) => group.students)
-	@JoinColumn()
+	@JoinTable()
 	groups!: Group[];
 }

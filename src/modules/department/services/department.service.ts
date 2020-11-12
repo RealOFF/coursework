@@ -5,7 +5,7 @@ import { Department, Faculty } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -18,7 +18,7 @@ export class DepartmentService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -64,12 +64,20 @@ export class DepartmentService
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager.find(Department, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+				.createQueryBuilder(Department, 'department')
+				.offset(Number(offset))
+				.limit(Number(limit))
+				.select([
+					'department.id',
+					'department.name',
+					'faculty.id',
+					'faculty.name',
+				])
+				.leftJoinAndSelect('department.faculty', 'faculty')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;

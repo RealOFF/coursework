@@ -7,7 +7,7 @@ import { Teacher } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -20,7 +20,7 @@ export class TeacherService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -57,12 +57,20 @@ export class TeacherService
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager.find(Teacher, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+				.createQueryBuilder(Teacher, 'teacher')
+				.offset(Number(offset))
+				.limit(Number(limit))
+				.select([
+					'teacher.id',
+					'teacher.name',
+					'department.id',
+					'department.name',
+				])
+				.leftJoinAndSelect('teacher.departments', 'department')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;

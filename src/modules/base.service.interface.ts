@@ -2,8 +2,8 @@ export interface IGetById {
 	getById(id: string): Promise<any>;
 }
 
-export interface IGetSkipTake {
-	getSkipTake(skip: string, take: string): Promise<any>;
+export interface IGetOffsetLimit {
+	getOffsetLimit(offset: string, limit: string): Promise<any>;
 }
 
 export interface IDeleteById {

@@ -1,11 +1,11 @@
-import { EntityManager, getManager } from 'typeorm';
+import { EntityManager, getManager, In } from 'typeorm';
 
-import { logger } from '../../../helpers/logger';
-import { Student } from '../../../models/entities/Student';
+import { logger, DatabaseError } from '../../../helpers';
+import { Student, Group } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -18,7 +18,7 @@ export class StudentService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -30,13 +30,25 @@ export class StudentService
 		firstName,
 		lastName,
 		patronymic,
+		groupIds,
 	}: ICreateArguments): Promise<Student> {
 		try {
 			const student = new Student();
 			student.firstName = firstName;
 			student.lastName = lastName;
 			student.patronymic = patronymic;
-			student.groups = [];
+			if (groupIds?.length) {
+				const groups = await this.manager.find(Group, {
+					select: ['id', 'name'],
+					where: { id: In(groupIds.map(Number)) },
+				});
+				if (!groups) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				student.groups = groups;
+			}
 			await this.manager.save(student);
 			logger.info('success');
 			return student;
@@ -48,25 +60,25 @@ export class StudentService
 
 	async getById(id: string) {
 		try {
-			console.log(
-				await this.manager
-					.createQueryBuilder(Student, 'student')
-					.leftJoinAndSelect('student.groups', 'group')
-					.getMany(),
-			);
-			return await this.manager.findOne(Student, { id: Number(id) });
+			return this.manager
+				.createQueryBuilder(Student, 'student')
+				.where({ id: Number(id) })
+				.leftJoinAndSelect('student.groups', 'group')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return await this.manager.find(Student, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+				.createQueryBuilder(Student, 'student')
+				.offset(Number(offset))
+				.limit(Number(limit))
+				.leftJoinAndSelect('student.groups', 'group')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -87,7 +99,7 @@ export class StudentService
 		firstName,
 		lastName,
 		patronymic,
-		groups,
+		groupIds,
 	}: IUpdateArguments): Promise<Student> {
 		try {
 			const student = new Student();
@@ -95,13 +107,19 @@ export class StudentService
 			student.firstName = firstName;
 			student.lastName = lastName;
 			student.patronymic = patronymic;
-			student.groups = groups;
-			this.manager.update(
-				Student,
-				{ id: Number(id) },
-				{ firstName, lastName, patronymic, groups },
-			);
-			// await this.manager.save(student);
+			if (groupIds?.length) {
+				const groups = await this.manager.find(Group, {
+					select: ['id', 'name'],
+					where: { id: In(groupIds.map(Number)) },
+				});
+				if (!groups) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				student.groups = groups;
+			}
+			await this.manager.save(student);
 			logger.info('success');
 			return student;
 		} catch (error) {

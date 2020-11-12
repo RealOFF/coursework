@@ -5,7 +5,7 @@ import { Group } from '../../../models/entities/Group';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -15,7 +15,7 @@ export class GroupService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -40,19 +40,25 @@ export class GroupService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Group, { id: Number(id) });
+			return this.manager
+				.createQueryBuilder(Group, 'group')
+				.where({ id: Number(id) })
+				.leftJoinAndSelect('group.students', 'student')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager.find(Group, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+				.createQueryBuilder(Group, 'group')
+				.offset(Number(offset))
+				.limit(Number(limit))
+				.leftJoinAndSelect('group.students', 'student')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;

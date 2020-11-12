@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, JoinTable } from 'typeorm';
 
 import { Base } from '../Base';
 import { AudienceType } from './AudienceType';
@@ -10,10 +10,10 @@ export class Audience extends Base {
 	name!: string;
 
 	@ManyToMany(() => AudienceType)
-	@JoinColumn()
+	@JoinTable()
 	types!: AudienceType[];
 
 	@ManyToMany(() => Department)
-	@JoinColumn()
+	@JoinTable()
 	deparments!: Department[];
 }

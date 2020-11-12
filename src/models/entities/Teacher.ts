@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToMany, JoinColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, JoinTable } from 'typeorm';
 
 import { Base } from '../Base';
 import { Department } from './Department';
@@ -15,6 +15,6 @@ export class Teacher extends Base {
 	patronymic!: string;
 
 	@ManyToMany(() => Department)
-	@JoinColumn()
+	@JoinTable()
 	deparments!: Department[];
 }

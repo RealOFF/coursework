@@ -5,7 +5,7 @@ import { Subject } from '../../../models/entities/Subject';
 import {
 	ICreate,
 	IGetById,
-	IGetSkipTake,
+	IGetOffsetLimit,
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
@@ -18,7 +18,7 @@ export class SubjectService
 	implements
 		ICreate<ICreateArguments>,
 		IGetById,
-		IGetSkipTake,
+		IGetOffsetLimit,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
 	private manager: EntityManager;
@@ -50,12 +50,20 @@ export class SubjectService
 		}
 	}
 
-	async getSkipTake(skip: string, take: string) {
+	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return await this.manager.find(Subject, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+				.createQueryBuilder(Subject, 'subject')
+				.offset(Number(offset))
+				.limit(Number(limit))
+				.select([
+					'subject.id',
+					'subject.name',
+					'audienceType.id',
+					'audienceType.name',
+				])
+				.leftJoinAndSelect('subject.audienceTypes', 'audienceType')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
