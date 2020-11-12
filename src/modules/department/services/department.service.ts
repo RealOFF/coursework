@@ -33,17 +33,19 @@ export class DepartmentService
 		try {
 			const department = new Department();
 			department.name = name;
-			const faculty = await this.manager.findOne(Faculty, {
-				id: Number(facultyId),
-			});
-			if (!faculty) {
-				const error = new DatabaseError(
-					`Faculty id ${facultyId} not found.`,
-				);
-				error.reason = DatabaseError.REASONS.NOT_FOUND;
-				throw error;
+			if (facultyId) {
+				const faculty = await this.manager.findOne(Faculty, {
+					id: Number(facultyId),
+				});
+				if (!faculty) {
+					const error = new DatabaseError(
+						`Faculty id ${facultyId} not found.`,
+					);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				department.faculty = faculty;
 			}
-			department.faculty = faculty;
 			this.manager.save(department);
 			logger.info('success');
 			return department;
@@ -92,17 +94,19 @@ export class DepartmentService
 			const department = new Department();
 			department.id = Number(id);
 			department.name = name;
-			const faculty = await this.manager.findOne(Faculty, {
-				id: Number(facultyId),
-			});
-			if (!faculty) {
-				const error = new DatabaseError(
-					`Faculty id ${facultyId} not found.`,
-				);
-				error.reason = DatabaseError.REASONS.NOT_FOUND;
-				throw error;
+			if (facultyId) {
+				const faculty = await this.manager.findOne(Faculty, {
+					id: Number(facultyId),
+				});
+				if (!faculty) {
+					const error = new DatabaseError(
+						`Faculty id ${facultyId} not found.`,
+					);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				department.faculty = faculty;
 			}
-			department.faculty = faculty;
 			await this.manager.save(department);
 			logger.info('success');
 			return department;
