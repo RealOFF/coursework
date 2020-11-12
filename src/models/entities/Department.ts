@@ -9,7 +9,7 @@ export class Department extends Base {
 	name!: string;
 
 	@ManyToOne(() => Faculty, (faculty) => faculty.departments, {
-        eager: true
-    })
+		eager: true,
+	})
 	faculty!: Faculty;
 }

@@ -32,7 +32,7 @@ export class BaseRouter implements IRouter {
 		this.subjectRouter = new SubjectRouter();
 		this.teacherRouter = new TeacherRouter();
 	}
-	// eslint-disable-line
+
 	get routes() {
 		router.use('/audience', this.audienceRouter.routes);
 		router.use('/audienceType', this.audienceTypeRouter.routes);

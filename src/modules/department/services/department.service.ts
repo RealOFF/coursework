@@ -20,7 +20,7 @@ export class DepartmentService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-	// eslint-disable-line
+
 
 	private manager: EntityManager;
 	constructor() {
@@ -29,14 +29,18 @@ export class DepartmentService
 
 	async create({
 		name,
-		facultyId
-	}: ICreateArguments): Promise<Department|DatabaseError|Error> {
+		facultyId,
+	}: ICreateArguments): Promise<Department | DatabaseError | Error> {
 		try {
 			const department = new Department();
 			department.name = name;
-			const faculty = await this.manager.findOne(Faculty, { id: Number(facultyId)});
+			const faculty = await this.manager.findOne(Faculty, {
+				id: Number(facultyId),
+			});
 			if (!faculty) {
-				const error = new DatabaseError(`Faculty id ${facultyId} not found.`);
+				const error = new DatabaseError(
+					`Faculty id ${facultyId} not found.`,
+				);
 				error.reason = DatabaseError.REASONS.NOT_FOUND;
 				throw error;
 			}
@@ -84,14 +88,18 @@ export class DepartmentService
 		id,
 		name,
 		facultyId,
-	}: IUpdateArguments): Promise<Department|DatabaseError|Error> {
+	}: IUpdateArguments): Promise<Department | DatabaseError | Error> {
 		try {
 			const department = new Department();
 			department.id = Number(id);
 			department.name = name;
-			const faculty = await this.manager.findOne(Faculty, { id: Number(facultyId)});
+			const faculty = await this.manager.findOne(Faculty, {
+				id: Number(facultyId),
+			});
 			if (!faculty) {
-				const error = new DatabaseError(`Faculty id ${facultyId} not found.`);
+				const error = new DatabaseError(
+					`Faculty id ${facultyId} not found.`,
+				);
 				error.reason = DatabaseError.REASONS.NOT_FOUND;
 				throw error;
 			}

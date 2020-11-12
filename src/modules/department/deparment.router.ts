@@ -12,7 +12,7 @@ export class DepartmentRouter implements IRouter {
 	constructor() {
 		this.departmentService = new DepartmentService();
 	}
-	// eslint-disable-line
+
 	get routes() {
 		router.get(
 			'/all',
@@ -23,7 +23,6 @@ export class DepartmentRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
 				try {
 					const quote = await this.departmentService.getSkipTake(
 						req.params.skip,
@@ -45,7 +44,6 @@ export class DepartmentRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
 				try {
 					const quote = await this.departmentService.getById(
 						req.params.id,
@@ -66,7 +64,6 @@ export class DepartmentRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
 				try {
 					const quote = await this.departmentService.deleteById(
 						req.params.id,
@@ -79,12 +76,14 @@ export class DepartmentRouter implements IRouter {
 		);
 
 		router.post('/', async (req: Request, res: Response) => {
-			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.departmentService.create(req.body);
 
-				if (quote instanceof DatabaseError && quote.reason === DatabaseError.REASONS.NOT_FOUND) {
-					return res.status(404).json({message: quote.message});
+				if (
+					quote instanceof DatabaseError &&
+					quote.reason === DatabaseError.REASONS.NOT_FOUND
+				) {
+					return res.status(404).json({ message: quote.message });
 				}
 
 				return res.send(quote);
@@ -94,12 +93,14 @@ export class DepartmentRouter implements IRouter {
 		});
 
 		router.put('/', async (req: Request, res: Response) => {
-			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.departmentService.update(req.body);
-				
-				if (quote instanceof DatabaseError && quote.reason === DatabaseError.REASONS.NOT_FOUND) {
-					return res.status(404).json({message: quote.message});
+
+				if (
+					quote instanceof DatabaseError &&
+					quote.reason === DatabaseError.REASONS.NOT_FOUND
+				) {
+					return res.status(404).json({ message: quote.message });
 				}
 				return res.send(quote);
 			} catch (err) {

@@ -20,7 +20,7 @@ export class FacultyService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-	// eslint-disable-line
+
 
 	private manager: EntityManager;
 	constructor() {
@@ -29,8 +29,8 @@ export class FacultyService
 
 	async create({
 		name,
-		// facultyId
-	}: ICreateArguments): Promise<Faculty> {
+	}: // facultyId
+	ICreateArguments): Promise<Faculty> {
 		try {
 			const faculty = new Faculty();
 			faculty.name = name;
@@ -77,8 +77,8 @@ export class FacultyService
 	async update({
 		id,
 		name,
-		// departments,
-	}: IUpdateArguments): Promise<Faculty> {
+	}: // departments,
+	IUpdateArguments): Promise<Faculty> {
 		try {
 			const faculty = new Faculty();
 			faculty.id = Number(id);

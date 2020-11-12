@@ -1,7 +1,4 @@
-import {
-	ICreateArguments,
-	IUpdateArguments,
-} from './group.service.interface';
+import { ICreateArguments, IUpdateArguments } from './group.service.interface';
 import {
 	ICreate,
 	IGetById,
@@ -20,16 +17,14 @@ export class GroupService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-	// eslint-disable-line
+
 
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();
 	}
 
-	async create({
-		name, type
-	}: ICreateArguments): Promise<Group> {
+	async create({ name, type }: ICreateArguments): Promise<Group> {
 		try {
 			const group = new Group();
 			group.name = name;
@@ -78,7 +73,7 @@ export class GroupService
 		id,
 		name,
 		type,
-		students
+		students,
 	}: IUpdateArguments): Promise<Group> {
 		try {
 			const group = new Group();

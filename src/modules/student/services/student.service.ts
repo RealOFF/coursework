@@ -20,7 +20,7 @@ export class StudentService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-	// eslint-disable-line
+
 
 	private manager: EntityManager;
 	constructor() {
@@ -49,9 +49,12 @@ export class StudentService
 
 	async getById(id: string) {
 		try {
-            console.log(await this.manager.createQueryBuilder(Student, "student")
-            .leftJoinAndSelect("student.groups", "group")
-            .getMany());
+			console.log(
+				await this.manager
+					.createQueryBuilder(Student, 'student')
+					.leftJoinAndSelect('student.groups', 'group')
+					.getMany(),
+			);
 			return await this.manager.findOne(Student, { id: Number(id) });
 		} catch (error) {
 			logger.error(error);
@@ -88,14 +91,18 @@ export class StudentService
 		groups,
 	}: IUpdateArguments): Promise<Student> {
 		try {
-            const student = new Student();
-            student.id = Number(id);
-            student.firstName = firstName;
-            student.lastName = lastName;
-            student.patronymic = patronymic;
-            student.groups = groups;
-            this.manager.update(Student, {id: Number(id)}, {firstName, lastName, patronymic, groups})
-            // await this.manager.save(student);
+			const student = new Student();
+			student.id = Number(id);
+			student.firstName = firstName;
+			student.lastName = lastName;
+			student.patronymic = patronymic;
+			student.groups = groups;
+			this.manager.update(
+				Student,
+				{ id: Number(id) },
+				{ firstName, lastName, patronymic, groups },
+			);
+			// await this.manager.save(student);
 			logger.info('success');
 			return student;
 		} catch (error) {

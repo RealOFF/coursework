@@ -20,16 +20,14 @@ export class SubjectService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-	// eslint-disable-line
+
 
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();
 	}
 
-	async create({
-		name,
-	}: ICreateArguments): Promise<Subject> {
+	async create({ name }: ICreateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.name = name;
@@ -74,18 +72,15 @@ export class SubjectService
 		}
 	}
 
-	async update({
-		id,
-		name,
-	}: IUpdateArguments): Promise<Subject> {
+	async update({ id, name }: IUpdateArguments): Promise<Subject> {
 		try {
-            const subject= new Subject();
-            subject.id = Number(id);
-            subject.name = name;
-            // TODO
+			const subject = new Subject();
+			subject.id = Number(id);
+			subject.name = name;
+			// TODO
 			//subject.audienceTypes = ;
-            this.manager.update(Subject, {id: Number(id)}, {name})
-            // await this.manager.save(student);
+			this.manager.update(Subject, { id: Number(id) }, { name });
+			// await this.manager.save(student);
 			logger.info('success');
 			return subject;
 		} catch (error) {

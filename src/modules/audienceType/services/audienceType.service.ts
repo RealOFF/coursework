@@ -20,16 +20,14 @@ export class AudienceTypeService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-	// eslint-disable-line
+
 
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();
 	}
 
-	async create({
-		name
-	}: ICreateArguments): Promise<AudienceType> {
+	async create({ name }: ICreateArguments): Promise<AudienceType> {
 		try {
 			const audienceType = new AudienceType();
 			audienceType.name = name;
@@ -78,7 +76,7 @@ export class AudienceTypeService
 		id,
 		name,
 		audiences,
-		subjects
+		subjects,
 	}: IUpdateArguments): Promise<AudienceType> {
 		try {
 			const audienceType = new AudienceType();

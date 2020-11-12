@@ -11,7 +11,7 @@ export class FacultyRouter implements IRouter {
 	constructor() {
 		this.facultyService = new FacultyService();
 	}
-	// eslint-disable-line
+
 	get routes() {
 		router.get(
 			'/all',
@@ -22,7 +22,7 @@ export class FacultyRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
+
 				try {
 					const quote = await this.facultyService.getSkipTake(
 						req.params.skip,
@@ -44,7 +44,7 @@ export class FacultyRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
+
 				try {
 					const quote = await this.facultyService.getById(
 						req.params.id,
@@ -65,7 +65,7 @@ export class FacultyRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
+
 				try {
 					const quote = await this.facultyService.deleteById(
 						req.params.id,
@@ -78,7 +78,6 @@ export class FacultyRouter implements IRouter {
 		);
 
 		router.post('/', async (req: Request, res: Response) => {
-			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.facultyService.create(req.body);
 				return res.send(quote);
@@ -88,7 +87,6 @@ export class FacultyRouter implements IRouter {
 		});
 
 		router.put('/', async (req: Request, res: Response) => {
-			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.facultyService.update(req.body);
 				return res.send(quote);

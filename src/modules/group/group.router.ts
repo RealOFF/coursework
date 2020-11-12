@@ -11,7 +11,7 @@ export class GroupRouter implements IRouter {
 	constructor() {
 		this.groupService = new GroupService();
 	}
-	// eslint-disable-line
+
 	get routes() {
 		router.get(
 			'/all',
@@ -22,7 +22,7 @@ export class GroupRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
+
 				try {
 					const quote = await this.groupService.getSkipTake(
 						req.params.skip,
@@ -44,7 +44,7 @@ export class GroupRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
+
 				try {
 					const quote = await this.groupService.getById(
 						req.params.id,
@@ -65,7 +65,7 @@ export class GroupRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
-				// eslint-disable-next-line no-useless-catch
+
 				try {
 					const quote = await this.groupService.deleteById(
 						req.params.id,
@@ -78,7 +78,6 @@ export class GroupRouter implements IRouter {
 		);
 
 		router.post('/', async (req: Request, res: Response) => {
-			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.groupService.create(req.body);
 				return res.send(quote);
@@ -88,7 +87,6 @@ export class GroupRouter implements IRouter {
 		});
 
 		router.put('/', async (req: Request, res: Response) => {
-			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.groupService.update(req.body);
 				return res.send(quote);
