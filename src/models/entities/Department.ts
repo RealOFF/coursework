@@ -8,6 +8,8 @@ export class Department extends Base {
 	@Column({ length: 250, nullable: false })
 	name!: string;
 
-	@ManyToOne(() => Faculty, (faculty) => faculty.departments)
+	@ManyToOne(() => Faculty, (faculty) => faculty.departments, {
+        eager: true
+    })
 	faculty!: Faculty;
 }

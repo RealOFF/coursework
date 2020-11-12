@@ -1,3 +1,4 @@
+import { EntityManager, getManager } from 'typeorm';
 import {
 	ICreateArguments,
 	IUpdateArguments,
@@ -9,9 +10,8 @@ import {
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
-import { logger } from '../../../helpers/logger';
-import { Department } from '../../../models/entities/Department';
-import { EntityManager, getManager } from 'typeorm';
+import { logger, DatabaseError } from '../../../helpers';
+import { Department, Faculty } from '../../../models/entities';
 
 export class DepartmentService
 	implements
@@ -29,13 +29,18 @@ export class DepartmentService
 
 	async create({
 		name,
-		// facultyId
-	}: ICreateArguments): Promise<Department> {
+		facultyId
+	}: ICreateArguments): Promise<Department|DatabaseError|Error> {
 		try {
 			const department = new Department();
 			department.name = name;
-			// TODO
-			// department.faculty = ;
+			const faculty = await this.manager.findOne(Faculty, { id: Number(facultyId)});
+			if (!faculty) {
+				const error = new DatabaseError(`Faculty id ${facultyId} not found.`);
+				error.reason = DatabaseError.REASONS.NOT_FOUND;
+				throw error;
+			}
+			department.faculty = faculty;
 			this.manager.save(department);
 			logger.info('success');
 			return department;
@@ -78,14 +83,20 @@ export class DepartmentService
 	async update({
 		id,
 		name,
-		// facultyId,
-	}: IUpdateArguments): Promise<Department> {
+		facultyId,
+	}: IUpdateArguments): Promise<Department|DatabaseError|Error> {
 		try {
 			const department = new Department();
 			department.id = Number(id);
 			department.name = name;
-			// TODO
-			// department.faculty = ;
+			const faculty = await this.manager.findOne(Faculty, { id: Number(facultyId)});
+			if (!faculty) {
+				const error = new DatabaseError(`Faculty id ${facultyId} not found.`);
+				error.reason = DatabaseError.REASONS.NOT_FOUND;
+				throw error;
+			}
+			department.faculty = faculty;
+			await this.manager.save(department);
 			logger.info('success');
 			return department;
 		} catch (error) {

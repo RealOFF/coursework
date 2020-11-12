@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 import { param, validationResult } from 'express-validator';
 import { IRouter } from '../router.interface';
 import { DepartmentService } from './services/department.service';
+import { DatabaseError } from '../../helpers';
 
 const router = Router();
 
@@ -81,6 +82,11 @@ export class DepartmentRouter implements IRouter {
 			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.departmentService.create(req.body);
+
+				if (quote instanceof DatabaseError && quote.reason === DatabaseError.REASONS.NOT_FOUND) {
+					return res.status(404).json({message: quote.message});
+				}
+
 				return res.send(quote);
 			} catch (err) {
 				throw err;
@@ -91,6 +97,10 @@ export class DepartmentRouter implements IRouter {
 			// eslint-disable-next-line no-useless-catch
 			try {
 				const quote = await this.departmentService.update(req.body);
+				
+				if (quote instanceof DatabaseError && quote.reason === DatabaseError.REASONS.NOT_FOUND) {
+					return res.status(404).json({message: quote.message});
+				}
 				return res.send(quote);
 			} catch (err) {
 				throw err;
