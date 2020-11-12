@@ -1,8 +1,9 @@
 import { Request, Response, Router } from 'express';
 import { param, validationResult } from 'express-validator';
+
+import { DatabaseError } from '../../helpers';
 import { IRouter } from '../router.interface';
 import { DepartmentService } from './services/department.service';
-import { DatabaseError } from '../../helpers';
 
 const router = Router();
 

@@ -1,8 +1,7 @@
 import { EntityManager, getManager } from 'typeorm';
-import {
-	ICreateArguments,
-	IUpdateArguments,
-} from './department.service.interface';
+
+import { logger, DatabaseError } from '../../../helpers';
+import { Department, Faculty } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
@@ -10,8 +9,10 @@ import {
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
-import { logger, DatabaseError } from '../../../helpers';
-import { Department, Faculty } from '../../../models/entities';
+import {
+	ICreateArguments,
+	IUpdateArguments,
+} from './department.service.interface';
 
 export class DepartmentService
 	implements
@@ -20,8 +21,6 @@ export class DepartmentService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-
-
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();

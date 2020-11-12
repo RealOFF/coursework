@@ -1,7 +1,7 @@
-import {
-	ICreateArguments,
-	IUpdateArguments,
-} from './faculty.service.interface';
+import { EntityManager, getManager, In } from 'typeorm';
+
+import { logger, DatabaseError } from '../../../helpers';
+import { Faculty, Department } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
@@ -9,9 +9,10 @@ import {
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
-import { logger } from '../../../helpers/logger';
-import { Faculty } from '../../../models/entities/Faculty';
-import { EntityManager, getManager } from 'typeorm';
+import {
+	ICreateArguments,
+	IUpdateArguments,
+} from './faculty.service.interface';
 
 export class FacultyService
 	implements
@@ -20,8 +21,6 @@ export class FacultyService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-
-
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();
@@ -46,7 +45,17 @@ export class FacultyService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Faculty, { id: Number(id) });
+			return this.manager
+				.createQueryBuilder(Faculty, 'faculty')
+				.where({ id: Number(id) })
+				.select([
+					'faculty.id',
+					'faculty.name',
+					'department.id',
+					'department.name',
+				])
+				.leftJoinAndSelect('faculty.departments', 'department')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -55,10 +64,18 @@ export class FacultyService
 
 	async getSkipTake(skip: string, take: string) {
 		try {
-			return this.manager.find(Faculty, {
-				skip: Number(skip),
-				take: Number(take),
-			});
+			return this.manager
+				.createQueryBuilder(Faculty, 'faculty')
+				.offset(Number(skip))
+				.limit(Number(take))
+				.select([
+					'faculty.id',
+					'faculty.name',
+					'department.id',
+					'department.name',
+				])
+				.leftJoinAndSelect('faculty.departments', 'department')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -77,14 +94,23 @@ export class FacultyService
 	async update({
 		id,
 		name,
-	}: // departments,
-	IUpdateArguments): Promise<Faculty> {
+		departmentIds,
+	}: IUpdateArguments): Promise<Faculty> {
 		try {
 			const faculty = new Faculty();
 			faculty.id = Number(id);
 			faculty.name = name;
-			// TODO
-			// faculty.departments = ;
+			const departments = await this.manager.find(Department, {
+				select: ['id', 'name', 'createdAt'],
+				where: { id: In(departmentIds.map(Number)) },
+			});
+			if (!departments) {
+				const error = new DatabaseError(`Departments not found.`);
+				error.reason = DatabaseError.REASONS.NOT_FOUND;
+				throw error;
+			}
+			faculty.departments = departments;
+			this.manager.save(faculty);
 			logger.info('success');
 			return faculty;
 		} catch (error) {

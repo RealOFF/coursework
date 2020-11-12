@@ -1,7 +1,7 @@
-import {
-	ICreateArguments,
-	IUpdateArguments,
-} from './audienceType.service.interface';
+import { EntityManager, getManager } from 'typeorm';
+
+import { logger } from '../../../helpers/logger';
+import { AudienceType } from '../../../models/entities/AudienceType';
 import {
 	ICreate,
 	IGetById,
@@ -9,9 +9,10 @@ import {
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
-import { logger } from '../../../helpers/logger';
-import { AudienceType } from '../../../models/entities/AudienceType';
-import { EntityManager, getManager } from 'typeorm';
+import {
+	ICreateArguments,
+	IUpdateArguments,
+} from './audienceType.service.interface';
 
 export class AudienceTypeService
 	implements
@@ -20,8 +21,6 @@ export class AudienceTypeService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-
-
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();

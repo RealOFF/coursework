@@ -2,7 +2,6 @@ import { IHelper } from './helper.interface';
 import { successResponse, errorResponse } from './responseType';
 
 class Helper implements IHelper {
-
 	createSuccessResponse(body: any): successResponse {
 		const response: successResponse = {
 			status: body.status || 200,

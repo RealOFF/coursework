@@ -1,16 +1,16 @@
-import { Environment } from './config/environment';
-import { Server } from './server/app';
-import { logger } from './helpers/logger';
+import { Application } from 'express';
+import 'reflect-metadata';
+
+import { config } from './config/config';
 import { connectToDatabase } from './config/db';
+import { Environment } from './config/environment';
+import { logger } from './helpers/logger';
+import { Server } from './server/app';
+
 /**
  * Setuping environment variables
  */
 Environment.setup();
-import 'reflect-metadata';
-
-import { Application } from 'express';
-
-import { config } from './config/config';
 
 async function startServer() {
 	await connectToDatabase();

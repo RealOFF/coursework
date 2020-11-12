@@ -5,4 +5,6 @@ module.exports = {
 	semi: true,
 	singleQuote: true,
 	trailingComma: 'all',
+	importOrder: ['^@core/(.*)$', '^@server/(.*)$', '^@ui/(.*)$', '^[./]'],
+	importOrderSeparation: true,
 };

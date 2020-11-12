@@ -1,9 +1,10 @@
-import express, { Application } from 'express';
 import cors from 'cors';
+import express, { Application } from 'express';
 import swaggerUi from 'swagger-ui-express';
-import { ServerInterface } from './app.interface';
-import { BaseRouter, router } from '../modules/baseRouter';
+
 import swaggerDocument from '../../swagger.json';
+import { BaseRouter, router } from '../modules/baseRouter';
+import { ServerInterface } from './app.interface';
 
 export class Server implements ServerInterface {
 	setupDocGenerator() {

@@ -1,9 +1,9 @@
 //Uncomment the code in this file to see typeorm in work
 
-import {
-	ICreateArguments,
-	IUpdateArguments,
-} from './teacher.service.interface';
+import { EntityManager, getManager } from 'typeorm';
+
+import { logger } from '../../../helpers/logger';
+import { Teacher } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
@@ -11,9 +11,10 @@ import {
 	IUpdate,
 	IDeleteById,
 } from '../../base.service.interface';
-import { logger } from '../../../helpers/logger';
-import { Teacher } from '../../../models/entities';
-import { EntityManager, getManager } from 'typeorm';
+import {
+	ICreateArguments,
+	IUpdateArguments,
+} from './teacher.service.interface';
 
 export class TeacherService
 	implements
@@ -22,8 +23,6 @@ export class TeacherService
 		IGetSkipTake,
 		IUpdate<IUpdateArguments>,
 		IDeleteById {
-
-
 	private manager: EntityManager;
 	constructor() {
 		this.manager = getManager();
