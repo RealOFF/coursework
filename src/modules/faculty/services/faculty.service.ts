@@ -28,12 +28,24 @@ export class FacultyService
 
 	async create({
 		name,
-	}: // facultyId
+		departmentIds,
+	}:
 	ICreateArguments): Promise<Faculty> {
 		try {
 			const faculty = new Faculty();
 			faculty.name = name;
-			faculty.departments = [];
+			if (departmentIds?.length) {
+				const departments = await this.manager.find(Department, {
+					select: ['id', 'name', 'createdAt'],
+					where: { id: In(departmentIds.map(Number)) },
+				});
+				if (!departments) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				faculty.departments = departments;
+			}
 			this.manager.save(faculty);
 			logger.info('success');
 			return faculty;
@@ -100,16 +112,18 @@ export class FacultyService
 			const faculty = new Faculty();
 			faculty.id = Number(id);
 			faculty.name = name;
-			const departments = await this.manager.find(Department, {
-				select: ['id', 'name', 'createdAt'],
-				where: { id: In(departmentIds.map(Number)) },
-			});
-			if (!departments) {
-				const error = new DatabaseError(`Departments not found.`);
-				error.reason = DatabaseError.REASONS.NOT_FOUND;
-				throw error;
+			if (departmentIds?.length) {
+				const departments = await this.manager.find(Department, {
+					select: ['id', 'name', 'createdAt'],
+					where: { id: In(departmentIds.map(Number)) },
+				});
+				if (!departments) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				faculty.departments = departments;
 			}
-			faculty.departments = departments;
 			this.manager.save(faculty);
 			logger.info('success');
 			return faculty;

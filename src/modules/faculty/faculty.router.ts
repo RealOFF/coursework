@@ -1,5 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { param, validationResult } from 'express-validator';
+import { query, param, validationResult } from 'express-validator';
+
 import { IRouter } from '../router.interface';
 import { FacultyService } from './services/faculty.service';
 
@@ -15,7 +16,7 @@ export class FacultyRouter implements IRouter {
 	get routes() {
 		router.get(
 			'/all',
-			[param('skip').isNumeric(), param('take').isNumeric()],
+			[query('skip').isNumeric(), query('take').isNumeric()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -25,8 +26,8 @@ export class FacultyRouter implements IRouter {
 
 				try {
 					const quote = await this.facultyService.getSkipTake(
-						req.params.skip,
-						req.params.take,
+						req.query.skip as string,
+						req.query.take as string,
 					);
 					return res.send(quote);
 				} catch (err) {
