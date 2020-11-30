@@ -43,7 +43,7 @@ export class StudentService
 					where: { id: In(groupIds.map(Number)) },
 				});
 				if (!groups) {
-					const error = new DatabaseError(`Departments not found.`);
+					const error = new DatabaseError(`Groups not found.`);
 					error.reason = DatabaseError.REASONS.NOT_FOUND;
 					throw error;
 				}
@@ -113,7 +113,7 @@ export class StudentService
 					where: { id: In(groupIds.map(Number)) },
 				});
 				if (!groups) {
-					const error = new DatabaseError(`Departments not found.`);
+					const error = new DatabaseError(`Groups not found.`);
 					error.reason = DatabaseError.REASONS.NOT_FOUND;
 					throw error;
 				}
