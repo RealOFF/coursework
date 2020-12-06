@@ -23,10 +23,11 @@ export class GroupService
 		this.manager = getManager();
 	}
 
-	async create({ name, typeId }: ICreateArguments): Promise<Group> {
+	async create({ name, semester, typeId }: ICreateArguments): Promise<Group> {
 		try {
 			const group = new Group();
 			group.name = name;
+			group.semester = semester;
 			group.students = [];
 			if (typeId) {
 				const type = await this.manager.findOne(GroupType, {
@@ -89,11 +90,12 @@ export class GroupService
 		}
 	}
 
-	async update({ id, name, typeId }: IUpdateArguments): Promise<Group> {
+	async update({ id, name, typeId, semester }: IUpdateArguments): Promise<Group> {
 		try {
 			const group = new Group();
 			group.id = Number(id);
 			group.name = name;
+			group.semester = semester;
 			if (typeId) {
 				const type = await this.manager.findOne(GroupType, {
 					id: Number(typeId),

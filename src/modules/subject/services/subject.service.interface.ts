@@ -1,5 +1,6 @@
 export interface ICreateArguments {
 	name: string;
+	semester: number;
 	audienceTypeIds: string[];
 }
 

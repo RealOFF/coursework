@@ -28,11 +28,13 @@ export class SubjectService
 
 	async create({
 		name,
+		semester,
 		audienceTypeIds,
 	}: ICreateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.name = name;
+			subject.semester = semester;
 			if (audienceTypeIds?.length) {
 				const audienceTypes = await this.manager.find(AudienceType, {
 					select: ['id', 'name'],
@@ -100,12 +102,14 @@ export class SubjectService
 	async update({
 		id,
 		name,
+		semester,
 		audienceTypeIds,
 	}: IUpdateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.id = Number(id);
 			subject.name = name;
+			subject.semester = semester;
 			if (audienceTypeIds?.length) {
 				const audienceTypes = await this.manager.find(AudienceType, {
 					select: ['id', 'name'],

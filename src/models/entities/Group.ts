@@ -9,6 +9,9 @@ export class Group extends Base {
 	@Column({ length: 250, nullable: false })
 	name!: string;
 
+	@Column({ nullable: false })
+	semester!: number;
+
 	@ManyToMany(() => Student, (student) => student.groups)
 	students!: Student[];
 
