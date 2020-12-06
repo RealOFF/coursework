@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { param, query, validationResult } from 'express-validator';
+import { param, query, body, validationResult } from 'express-validator';
 
 import { IRouter } from '../router.interface';
 import { GroupService } from './services/group.service';
@@ -85,23 +85,50 @@ export class GroupRouter implements IRouter {
 			},
 		);
 
-		router.post('/', async (req: Request, res: Response) => {
-			try {
-				const quote = await this.groupService.create(req.body);
-				return res.send(quote);
-			} catch (err) {
-				throw err;
-			}
-		});
+		router.post(
+			'/',
+			[
+				body('name').isString(),
+				body('typeId').isNumeric()
+			],
+			async (req: Request, res: Response) => {
+				const errors = validationResult(req);
 
-		router.put('/', async (req: Request, res: Response) => {
-			try {
-				const quote = await this.groupService.update(req.body);
-				return res.send(quote);
-			} catch (err) {
-				throw err;
+				if (!errors.isEmpty()) {
+					return res.status(400).json({ errors: errors.array() });
+				}
+
+				try {
+					const quote = await this.groupService.create(req.body);
+					return res.send(quote);
+				} catch (err) {
+					throw err;
+				}
 			}
-		});
+		);
+
+		router.put(
+			'/',
+			[
+				body('id').isNumeric(),
+				body('name').isString(),
+				body('typeId').isNumeric()
+			],
+			async (req: Request, res: Response) => {
+				const errors = validationResult(req);
+
+				if (!errors.isEmpty()) {
+					return res.status(400).json({ errors: errors.array() });
+				}
+
+				try {
+					const quote = await this.groupService.update(req.body);
+					return res.send(quote);
+				} catch (err) {
+					throw err;
+				}
+			}
+		);
 
 		return router;
 	}

@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { param, query, validationResult } from 'express-validator';
+import { param, query, body, validationResult } from 'express-validator';
 
 import { IRouter } from '../router.interface';
 import { AudienceTypeService } from './services/audienceType.service';
@@ -85,7 +85,12 @@ export class AudienceTypeRouter implements IRouter {
 			},
 		);
 
-		router.post('/', async (req: Request, res: Response) => {
+		router.post(
+			'/',
+			[
+				body('name').isString(),
+			],
+			async (req: Request, res: Response) => {
 			try {
 				const quote = await this.audienceTypeService.create(req.body);
 				return res.send(quote);
@@ -94,14 +99,27 @@ export class AudienceTypeRouter implements IRouter {
 			}
 		});
 
-		router.put('/', async (req: Request, res: Response) => {
-			try {
-				const quote = await this.audienceTypeService.update(req.body);
-				return res.send(quote);
-			} catch (err) {
-				throw err;
+		router.put(
+			'/',
+			[
+				body('id').isNumeric(),
+				body('name').isString(),
+			],
+			async (req: Request, res: Response) => {
+				const errors = validationResult(req);
+
+				if (!errors.isEmpty()) {
+					return res.status(400).json({ errors: errors.array() });
+				}
+
+				try {
+					const quote = await this.audienceTypeService.update(req.body);
+					return res.send(quote);
+				} catch (err) {
+					throw err;
+				}
 			}
-		});
+		);
 
 		return router;
 	}

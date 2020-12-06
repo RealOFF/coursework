@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { param, query, validationResult } from 'express-validator';
+import { param, query, body, validationResult } from 'express-validator';
 
 import { DatabaseError } from '../../helpers';
 import { IRouter } from '../router.interface';
@@ -31,6 +31,7 @@ export class DepartmentRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
+
 				try {
 					const quote = await this.departmentService.getOffsetLimit(
 												req.query.offset as string,
@@ -52,6 +53,7 @@ export class DepartmentRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
+
 				try {
 					const quote = await this.departmentService.getById(
 						req.params.id,
@@ -72,6 +74,7 @@ export class DepartmentRouter implements IRouter {
 				if (!errors.isEmpty()) {
 					return res.status(400).json({ errors: errors.array() });
 				}
+
 				try {
 					const quote = await this.departmentService.deleteById(
 						req.params.id,
@@ -83,38 +86,65 @@ export class DepartmentRouter implements IRouter {
 			},
 		);
 
-		router.post('/', async (req: Request, res: Response) => {
-			try {
-				const quote = await this.departmentService.create(req.body);
+		router.post(
+			'/',
+			[
+				body('name').isString(),
+				body('facultyId').isNumeric()
+			],
+			async (req: Request, res: Response) => {
+				const errors = validationResult(req);
 
-				if (
-					quote instanceof DatabaseError &&
-					quote.reason === DatabaseError.REASONS.NOT_FOUND
-				) {
-					return res.status(404).json({ message: quote.message });
+				if (!errors.isEmpty()) {
+					return res.status(400).json({ errors: errors.array() });
 				}
 
-				return res.send(quote);
-			} catch (err) {
-				throw err;
-			}
-		});
+				try {
+					const quote = await this.departmentService.create(req.body);
 
-		router.put('/', async (req: Request, res: Response) => {
-			try {
-				const quote = await this.departmentService.update(req.body);
+					if (
+						quote instanceof DatabaseError &&
+						quote.reason === DatabaseError.REASONS.NOT_FOUND
+					) {
+						return res.status(404).json({ message: quote.message });
+					}
 
-				if (
-					quote instanceof DatabaseError &&
-					quote.reason === DatabaseError.REASONS.NOT_FOUND
-				) {
-					return res.status(404).json({ message: quote.message });
+					return res.send(quote);
+				} catch (err) {
+					throw err;
 				}
-				return res.send(quote);
-			} catch (err) {
-				throw err;
 			}
-		});
+		);
+
+		router.put(
+			'/',
+			[
+				body('id').isNumeric(),
+				body('name').isString(),
+				body('facultyId').isNumeric()
+			],
+			async (req: Request, res: Response) => {
+				const errors = validationResult(req);
+
+				if (!errors.isEmpty()) {
+					return res.status(400).json({ errors: errors.array() });
+				}
+
+				try {
+					const quote = await this.departmentService.update(req.body);
+
+					if (
+						quote instanceof DatabaseError &&
+						quote.reason === DatabaseError.REASONS.NOT_FOUND
+					) {
+						return res.status(404).json({ message: quote.message });
+					}
+					return res.send(quote);
+				} catch (err) {
+					throw err;
+				}
+			}
+		);
 
 		return router;
 	}
