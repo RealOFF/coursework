@@ -57,7 +57,17 @@ export class DepartmentService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Department, { id: Number(id) });
+			return await this.manager
+				.createQueryBuilder(Department, 'department')
+				.where({ id: Number(id) })
+				.select([
+					'department.id',
+					'department.name',
+					'faculty.id',
+					'faculty.name',
+				])
+				.leftJoinAndSelect('department.faculty', 'faculty')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;

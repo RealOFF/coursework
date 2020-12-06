@@ -43,7 +43,20 @@ export class AudienceTypeService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(AudienceType, { id: Number(id) });
+			return await this.manager
+				.createQueryBuilder(AudienceType, 'audienceType')
+				.where({ id: Number(id) })
+				.select([
+					'audienceType.id',
+					'audienceType.name',
+					'subject.id',
+					'subject.name',
+					'audience.id',
+					'audience.name'
+				])
+				.leftJoinAndSelect('audienceType.audiences', 'audience')
+				.leftJoinAndSelect('audienceType.subjects', 'subject')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -92,8 +105,6 @@ export class AudienceTypeService
 			const audienceType = new AudienceType();
 			audienceType.id = Number(id);
 			audienceType.name = name;
-			audienceType.audiences = [];
-			audienceType.subjects = [];
 			logger.info('success');
 			return audienceType;
 		} catch (error) {

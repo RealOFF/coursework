@@ -1,7 +1,7 @@
 import { EntityManager, getManager } from 'typeorm';
 
-import { logger } from '../../../helpers/logger';
-import { Group } from '../../../models/entities/Group';
+import { logger, DatabaseError } from '../../../helpers';
+import { Group, GroupType } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
@@ -23,12 +23,24 @@ export class GroupService
 		this.manager = getManager();
 	}
 
-	async create({ name, type }: ICreateArguments): Promise<Group> {
+	async create({ name, typeId }: ICreateArguments): Promise<Group> {
 		try {
 			const group = new Group();
 			group.name = name;
-			group.type = type;
 			group.students = [];
+			if (typeId) {
+				const type = await this.manager.findOne(GroupType, {
+					id: Number(typeId),
+				});
+				if (!type) {
+					const error = new DatabaseError(
+						`Faculty id ${typeId} not found.`,
+					);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				group.type = type;
+			}
 			this.manager.save(group);
 			logger.info('success');
 			return group;
@@ -44,6 +56,7 @@ export class GroupService
 				.createQueryBuilder(Group, 'group')
 				.where({ id: Number(id) })
 				.leftJoinAndSelect('group.students', 'student')
+				.leftJoinAndSelect('group.type', 'type')
 				.getMany();
 		} catch (error) {
 			logger.error(error);
@@ -60,6 +73,7 @@ export class GroupService
 
 			return result
 				.leftJoinAndSelect('group.students', 'student')
+				.leftJoinAndSelect('group.type', 'type')
 				.getMany();
 		} catch (error) {
 			logger.error(error);
@@ -79,15 +93,25 @@ export class GroupService
 	async update({
 		id,
 		name,
-		type,
-		students,
+		typeId,
 	}: IUpdateArguments): Promise<Group> {
 		try {
 			const group = new Group();
 			group.id = Number(id);
 			group.name = name;
-			group.type = type;
-			group.students = students;
+			if (typeId) {
+				const type = await this.manager.findOne(GroupType, {
+					id: Number(typeId),
+				});
+				if (!type) {
+					const error = new DatabaseError(
+						`Faculty id ${typeId} not found.`,
+					);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				group.type = type;
+			}
 			logger.info('success');
 			return group;
 		} catch (error) {

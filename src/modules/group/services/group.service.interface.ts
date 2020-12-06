@@ -2,10 +2,9 @@ import { GroupType } from '../../../models/entities';
 
 export interface ICreateArguments {
 	name: string;
-	type: GroupType;
+	typeId: GroupType;
 }
 
 export interface IUpdateArguments extends ICreateArguments {
 	id: string;
-	students: any[];
 }

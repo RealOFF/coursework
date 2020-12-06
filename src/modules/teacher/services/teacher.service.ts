@@ -1,9 +1,9 @@
 //Uncomment the code in this file to see typeorm in work
 
-import { EntityManager, getManager } from 'typeorm';
+import { EntityManager, getManager, In } from 'typeorm';
 
-import { logger } from '../../../helpers/logger';
-import { Teacher } from '../../../models/entities';
+import { logger, DatabaseError } from '../../../helpers';
+import { Teacher, Department } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
@@ -32,13 +32,25 @@ export class TeacherService
 		firstName,
 		lastName,
 		patronymic,
+		departmentIds,
 	}: ICreateArguments): Promise<Teacher> {
 		try {
 			const teacher = new Teacher();
 			teacher.firstName = firstName;
 			teacher.lastName = lastName;
 			teacher.patronymic = patronymic;
-			teacher.departments = [];
+			if (departmentIds?.length) {
+				const departments = await this.manager.find(Department, {
+					select: ['id', 'name'],
+					where: { id: In(departmentIds.map(Number)) },
+				});
+				if (!departments) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				teacher.departments = departments;
+			}
 			this.manager.save(teacher);
 			logger.info('success');
 			return teacher;
@@ -50,7 +62,11 @@ export class TeacherService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Teacher, { id: Number(id) });
+			return this.manager
+				.createQueryBuilder(Teacher, 'techer')
+				.where({ id: Number(id) })
+				.leftJoinAndSelect('techer.departments', 'department')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -93,7 +109,7 @@ export class TeacherService
 		firstName,
 		lastName,
 		patronymic,
-		departments,
+		departmentIds,
 	}: IUpdateArguments): Promise<Teacher> {
 		try {
 			const teacher = new Teacher();
@@ -101,7 +117,19 @@ export class TeacherService
 			teacher.firstName = firstName;
 			teacher.lastName = lastName;
 			teacher.patronymic = patronymic;
-			teacher.departments = departments;
+			if (departmentIds?.length) {
+				const departments = await this.manager.find(Department, {
+					select: ['id', 'name'],
+					where: { id: In(departmentIds.map(Number)) },
+				});
+				if (!departments) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				teacher.departments = departments;
+			}
+
 			this.manager.save(teacher);
 			logger.info('success');
 			return teacher;

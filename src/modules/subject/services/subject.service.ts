@@ -1,7 +1,7 @@
-import { EntityManager, getManager } from 'typeorm';
+import { EntityManager, getManager, In } from 'typeorm';
 
-import { logger } from '../../../helpers/logger';
-import { Subject } from '../../../models/entities/Subject';
+import { logger, DatabaseError } from '../../../helpers';
+import { Subject, AudienceType } from '../../../models/entities';
 import {
 	ICreate,
 	IGetById,
@@ -26,12 +26,23 @@ export class SubjectService
 		this.manager = getManager();
 	}
 
-	async create({ name }: ICreateArguments): Promise<Subject> {
+	async create({ name, audienceTypeIds }: ICreateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.name = name;
-			// TODO
-			//subject.audienceTypes = ;
+			if (audienceTypeIds?.length) {
+				const audienceTypes = await this.manager.find(AudienceType, {
+					select: ['id', 'name'],
+					where: { id: In(audienceTypeIds.map(Number)) },
+				});
+				if (!audienceTypes) {
+					const error = new DatabaseError(`Types not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				subject.audienceTypes = audienceTypes;
+
+			}
 			await this.manager.save(subject);
 			logger.info('success');
 			return subject;
@@ -43,7 +54,11 @@ export class SubjectService
 
 	async getById(id: string) {
 		try {
-			return await this.manager.findOne(Subject, { id: Number(id) });
+			return this.manager
+				.createQueryBuilder(Subject, 'subject')
+				.where({ id: Number(id) })
+				.leftJoinAndSelect('subject.audienceType', 'audienceType')
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -81,15 +96,25 @@ export class SubjectService
 		}
 	}
 
-	async update({ id, name }: IUpdateArguments): Promise<Subject> {
+	async update({ id, name, audienceTypeIds }: IUpdateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.id = Number(id);
 			subject.name = name;
-			// TODO
-			//subject.audienceTypes = ;
-			this.manager.update(Subject, { id: Number(id) }, { name });
-			// await this.manager.save(student);
+			if (audienceTypeIds?.length) {
+				const audienceTypes = await this.manager.find(AudienceType, {
+					select: ['id', 'name'],
+					where: { id: In(audienceTypeIds.map(Number)) },
+				});
+				if (!audienceTypes) {
+					const error = new DatabaseError(`Types not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				subject.audienceTypes = audienceTypes;
+
+			}
+			await this.manager.save(subject);
 			logger.info('success');
 			return subject;
 		} catch (error) {
