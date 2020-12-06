@@ -16,7 +16,14 @@ export class TeacherRouter implements IRouter {
 	get routes() {
 		router.get(
 			'/all',
-			[query('offset').isNumeric(), query('limit').isNumeric()],
+			[
+				query('offset')
+					.optional()
+					.isNumeric(),
+				query('limit')
+					.optional()
+					.isNumeric()
+			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 

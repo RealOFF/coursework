@@ -6,5 +6,5 @@ export interface ICreateArguments {
 
 export interface IUpdateArguments extends ICreateArguments {
 	id: string;
-	deparments: any[];
+	departments: any[];
 }

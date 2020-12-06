@@ -53,10 +53,12 @@ export class GroupService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager
-				.createQueryBuilder(Group, 'group')
-				.offset(Number(offset))
-				.limit(Number(limit))
+			const result = this.manager
+				.createQueryBuilder(Group, 'group');
+			offset && result.offset(Number(offset));
+			limit && result.limit(Number(limit));
+
+			return result
 				.leftJoinAndSelect('group.students', 'student')
 				.getMany();
 		} catch (error) {

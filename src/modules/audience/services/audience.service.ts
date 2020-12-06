@@ -1,6 +1,6 @@
-import { EntityManager, getManager } from 'typeorm';
+import { EntityManager, getManager, In } from 'typeorm';
 
-import { logger } from '../../../helpers/logger';
+import { logger, DatabaseError } from '../../../helpers';
 import { Audience } from '../../../models/entities/Audience';
 import {
 	ICreate,
@@ -13,6 +13,7 @@ import {
 	ICreateArguments,
 	IUpdateArguments,
 } from './audience.service.interface';
+import { Department, AudienceType } from '../../../models/entities';
 
 export class AudienceService
 	implements
@@ -26,13 +27,36 @@ export class AudienceService
 		this.manager = getManager();
 	}
 
-	async create({ name }: ICreateArguments): Promise<Audience> {
+	async create({ name, typeIds, departmentIds }: ICreateArguments): Promise<Audience> {
 		try {
 			const audience = new Audience();
 			audience.name = name;
-			audience.types = [];
-			audience.deparments = [];
-			this.manager.save(audience);
+			if (typeIds?.length) {
+				const types = await this.manager.find(AudienceType, {
+					select: ['id', 'name'],
+					where: { id: In(typeIds.map(Number)) },
+				});
+				if (!types) {
+					const error = new DatabaseError(`Types not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				audience.types = types;
+
+			}
+			if (departmentIds?.length) {
+				const departments = await this.manager.find(Department, {
+					select: ['id', 'name'],
+					where: { id: In(departmentIds.map(Number)) },
+				});
+				if (!departments) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				audience.departments = departments;
+			}
+			await this.manager.save(audience);
 			logger.info('success');
 			return audience;
 		} catch (error) {
@@ -43,7 +67,20 @@ export class AudienceService
 
 	async getById(id: string) {
 		try {
-			return this.manager.findOne(Audience, { id: Number(id) });
+			return await this.manager
+			.createQueryBuilder(Audience, 'audience')
+			.where({ id: Number(id) })
+			.leftJoinAndSelect('audience.types', 'type')
+			.leftJoinAndSelect('audience.departments', 'department')
+			.select([
+				'audience.id',
+				'audience.name',
+				'type.id',
+				'type.name',
+				'department.id',
+				'department.name'
+			])
+			.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -52,18 +89,23 @@ export class AudienceService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager
-			.createQueryBuilder(Audience, 'audience')
-			.offset(Number(offset))
-			.limit(Number(limit))
-			.select([
-				'audience.id',
-				'audience.name',
-				'type.id',
-				'type.name',
-			])
-			.leftJoinAndSelect('audience.types', 'type')
-			.getMany();
+			const result = this.manager
+				.createQueryBuilder(Audience, 'audience');
+			offset && result.offset(Number(offset));
+			limit && result.limit(Number(limit));
+
+			return result
+				.leftJoinAndSelect('audience.types', 'type')
+				.leftJoinAndSelect('audience.departments', 'department')
+				.select([
+					'audience.id',
+					'audience.name',
+					'type.id',
+					'type.name',
+					'department.id',
+					'department.name'
+				])
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -82,15 +124,38 @@ export class AudienceService
 	async update({
 		id,
 		name,
-		types,
-		deparments,
+		typeIds,
+		departmentIds,
 	}: IUpdateArguments): Promise<Audience> {
 		try {
 			const audience = new Audience();
 			audience.id = Number(id);
 			audience.name = name;
-			audience.types = types;
-			audience.deparments = deparments;
+			if (typeIds?.length) {
+				const types = await this.manager.find(AudienceType, {
+					select: ['id', 'name'],
+					where: { id: In(typeIds.map(Number)) },
+				});
+				if (!types) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				audience.types = types;
+			}
+			if (departmentIds?.length) {
+				const departments = await this.manager.find(Department, {
+					select: ['id', 'name'],
+					where: { id: In(departmentIds.map(Number)) },
+				});
+				if (!departments) {
+					const error = new DatabaseError(`Departments not found.`);
+					error.reason = DatabaseError.REASONS.NOT_FOUND;
+					throw error;
+				}
+				audience.departments = departments;
+			}
+			await this.manager.save(audience);
 			logger.info('success');
 			return audience;
 		} catch (error) {

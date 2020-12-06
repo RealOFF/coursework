@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 import { AudienceRouter } from './audience/audience.router';
 import { AudienceTypeRouter } from './audienceType/audienceType.router';
-import { DepartmentRouter } from './department/deparment.router';
+import { DepartmentRouter } from './department/department.router';
 import { FacultyRouter } from './faculty/faculty.router';
 import { GroupRouter } from './group/group.router';
 import { IRouter } from './router.interface';

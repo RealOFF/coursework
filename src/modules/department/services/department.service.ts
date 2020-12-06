@@ -66,10 +66,12 @@ export class DepartmentService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager
+			const result = this.manager
 				.createQueryBuilder(Department, 'department')
-				.offset(Number(offset))
-				.limit(Number(limit))
+			offset && result.offset(Number(offset));
+			limit && result.limit(Number(limit));
+
+			return result
 				.select([
 					'department.id',
 					'department.name',

@@ -9,11 +9,11 @@ export class Audience extends Base {
 	@Column({ length: 250, nullable: false })
 	name!: string;
 
-	@ManyToMany(() => AudienceType)
+	@ManyToMany(() => AudienceType, (type) => type.audiences)
 	@JoinTable()
 	types!: AudienceType[];
 
 	@ManyToMany(() => Department)
 	@JoinTable()
-	deparments!: Department[];
+	departments!: Department[];
 }

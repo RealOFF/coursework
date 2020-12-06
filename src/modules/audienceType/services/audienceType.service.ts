@@ -52,10 +52,12 @@ export class AudienceTypeService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager
+			const result = this.manager
 				.createQueryBuilder(AudienceType, 'audienceType')
-				.offset(Number(offset))
-				.limit(Number(limit))
+			offset && result.offset(Number(offset));
+			limit && result.limit(Number(limit));
+
+			return result
 				.select([
 					'audienceType.id',
 					'audienceType.name',
@@ -64,8 +66,8 @@ export class AudienceTypeService
 					'audience.id',
 					'audience.name'
 				])
-				.leftJoinAndSelect('audienceType.subjects', 'subject')
 				.leftJoinAndSelect('audienceType.audiences', 'audience')
+				.leftJoinAndSelect('audienceType.subjects', 'subject')
 				.getMany();
 		} catch (error) {
 			logger.error(error);
@@ -85,15 +87,13 @@ export class AudienceTypeService
 	async update({
 		id,
 		name,
-		audiences,
-		subjects,
 	}: IUpdateArguments): Promise<AudienceType> {
 		try {
 			const audienceType = new AudienceType();
 			audienceType.id = Number(id);
 			audienceType.name = name;
-			audienceType.audiences = audiences;
-			audienceType.subjects = subjects;
+			audienceType.audiences = [];
+			audienceType.subjects = [];
 			logger.info('success');
 			return audienceType;
 		} catch (error) {

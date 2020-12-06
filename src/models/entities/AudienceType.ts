@@ -9,7 +9,7 @@ export class AudienceType extends Base {
 	@Column({ length: 250, nullable: false })
 	name!: string;
 
-	@ManyToMany(() => Audience)
+	@ManyToMany(() => Audience, (audience) => audience.types)
 	@JoinTable()
 	audiences!: Audience[];
 

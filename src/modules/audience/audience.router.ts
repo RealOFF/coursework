@@ -16,7 +16,14 @@ export class AudienceRouter implements IRouter {
 	get routes() {
 		router.get(
 			'/all',
-			[query('offset').isNumeric(), query('limit').isNumeric()],
+			[
+				query('offset')
+					.optional()
+					.isNumeric(),
+				query('limit')
+					.optional()
+					.isNumeric()
+			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -26,7 +33,7 @@ export class AudienceRouter implements IRouter {
 
 				try {
 					const quote = await this.audienceService.getOffsetLimit(
-												req.query.offset as string,
+						req.query.offset as string,
 						req.query.limit as string,
 					);
 					return res.send(quote);

@@ -38,7 +38,7 @@ export class TeacherService
 			teacher.firstName = firstName;
 			teacher.lastName = lastName;
 			teacher.patronymic = patronymic;
-			teacher.deparments = [];
+			teacher.departments = [];
 			this.manager.save(teacher);
 			logger.info('success');
 			return teacher;
@@ -59,10 +59,12 @@ export class TeacherService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager
+			const result = this.manager
 				.createQueryBuilder(Teacher, 'teacher')
-				.offset(Number(offset))
-				.limit(Number(limit))
+			offset && result.offset(Number(offset));
+			limit && result.limit(Number(limit));
+
+			return result
 				.select([
 					'teacher.id',
 					'teacher.name',
@@ -91,7 +93,7 @@ export class TeacherService
 		firstName,
 		lastName,
 		patronymic,
-		deparments,
+		departments,
 	}: IUpdateArguments): Promise<Teacher> {
 		try {
 			const teacher = new Teacher();
@@ -99,7 +101,7 @@ export class TeacherService
 			teacher.firstName = firstName;
 			teacher.lastName = lastName;
 			teacher.patronymic = patronymic;
-			teacher.deparments = deparments;
+			teacher.departments = departments;
 			this.manager.save(teacher);
 			logger.info('success');
 			return teacher;

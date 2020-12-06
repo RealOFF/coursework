@@ -4,6 +4,4 @@ export interface ICreateArguments {
 
 export interface IUpdateArguments extends ICreateArguments {
 	id: string;
-	audiences: any[];
-	subjects: any[];
 }

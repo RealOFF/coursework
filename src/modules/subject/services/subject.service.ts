@@ -52,10 +52,12 @@ export class SubjectService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			return this.manager
+			const result = this.manager
 				.createQueryBuilder(Subject, 'subject')
-				.offset(Number(offset))
-				.limit(Number(limit))
+			offset && result.offset(Number(offset));
+			limit && result.limit(Number(limit));
+			
+			return result
 				.select([
 					'subject.id',
 					'subject.name',

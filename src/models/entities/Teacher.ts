@@ -14,7 +14,7 @@ export class Teacher extends Base {
 	@Column({ length: 250, nullable: true })
 	patronymic!: string;
 
-	@ManyToMany(() => Department)
+	@ManyToMany(() => Department, (department) => department.teachers)
 	@JoinTable()
-	deparments!: Department[];
+	departments!: Department[];
 }
