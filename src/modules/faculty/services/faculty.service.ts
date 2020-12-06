@@ -42,9 +42,9 @@ export class FacultyService
 				}
 				faculty.departments = departments;
 			}
-			this.manager.save(faculty);
+			const savedFaculty = await this.manager.save(faculty);
 			logger.info('success');
-			return faculty;
+			return savedFaculty;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -121,9 +121,9 @@ export class FacultyService
 				}
 				faculty.departments = departments;
 			}
-			this.manager.save(faculty);
+			const savedFaculty = await this.manager.save(faculty);
 			logger.info('success');
-			return faculty;
+			return savedFaculty;
 		} catch (error) {
 			logger.error(error);
 			return error;

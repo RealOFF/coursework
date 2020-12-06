@@ -59,9 +59,8 @@ export class AudienceService
 				}
 				audience.departments = departments;
 			}
-			await this.manager.save(audience);
 			logger.info('success');
-			return audience;
+			return await this.manager.save(audience);
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -160,9 +159,8 @@ export class AudienceService
 				}
 				audience.departments = departments;
 			}
-			await this.manager.save(audience);
 			logger.info('success');
-			return audience;
+			return await this.manager.save(audience);
 		} catch (error) {
 			logger.error(error);
 			return error;

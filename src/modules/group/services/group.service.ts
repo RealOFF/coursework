@@ -42,9 +42,9 @@ export class GroupService
 				}
 				group.type = type;
 			}
-			this.manager.save(group);
+			const savedGroup = await this.manager.save(group);
 			logger.info('success');
-			return group;
+			return savedGroup;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -109,8 +109,9 @@ export class GroupService
 				}
 				group.type = type;
 			}
+			const savedGroup = await this.manager.save(group);
 			logger.info('success');
-			return group;
+			return savedGroup;
 		} catch (error) {
 			logger.error(error);
 			return error;

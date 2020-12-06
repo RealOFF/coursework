@@ -51,9 +51,9 @@ export class TeacherService
 				}
 				teacher.departments = departments;
 			}
-			this.manager.save(teacher);
+			const savedTeacher = await this.manager.save(teacher);
 			logger.info('success');
-			return teacher;
+			return savedTeacher;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -129,9 +129,9 @@ export class TeacherService
 				teacher.departments = departments;
 			}
 
-			this.manager.save(teacher);
+			const savedTeacher = await this.manager.save(teacher);
 			logger.info('success');
-			return teacher;
+			return savedTeacher;
 		} catch (error) {
 			logger.error(error);
 			return error;

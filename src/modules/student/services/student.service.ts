@@ -49,9 +49,9 @@ export class StudentService
 				}
 				student.groups = groups;
 			}
-			await this.manager.save(student);
+			const savedStudent = await this.manager.save(student);
 			logger.info('success');
-			return student;
+			return savedStudent;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -120,9 +120,9 @@ export class StudentService
 				}
 				student.groups = groups;
 			}
-			await this.manager.save(student);
+			const savedStudent = await this.manager.save(student);
 			logger.info('success');
-			return student;
+			return savedStudent;
 		} catch (error) {
 			logger.error(error);
 			return error;

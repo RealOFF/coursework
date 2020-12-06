@@ -32,9 +32,9 @@ export class AudienceTypeService
 			audienceType.name = name;
 			audienceType.audiences = [];
 			audienceType.subjects = [];
-			this.manager.save(audienceType);
+			const savedAudienceType = await this.manager.save(audienceType);
 			logger.info('success');
-			return audienceType;
+			return savedAudienceType;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -104,8 +104,9 @@ export class AudienceTypeService
 			const audienceType = new AudienceType();
 			audienceType.id = Number(id);
 			audienceType.name = name;
+			const savedAudienceType = await this.manager.save(audienceType);
 			logger.info('success');
-			return audienceType;
+			return savedAudienceType;
 		} catch (error) {
 			logger.error(error);
 			return error;

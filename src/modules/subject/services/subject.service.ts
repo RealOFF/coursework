@@ -47,9 +47,9 @@ export class SubjectService
 				}
 				subject.audienceTypes = audienceTypes;
 			}
-			await this.manager.save(subject);
+			const savedSubject = await this.manager.save(subject);
 			logger.info('success');
-			return subject;
+			return savedSubject;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -122,9 +122,9 @@ export class SubjectService
 				}
 				subject.audienceTypes = audienceTypes;
 			}
-			await this.manager.save(subject);
+			const savedSubject = await this.manager.save(subject);
 			logger.info('success');
-			return subject;
+			return savedSubject;
 		} catch (error) {
 			logger.error(error);
 			return error;

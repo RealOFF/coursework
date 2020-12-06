@@ -31,9 +31,9 @@ export class GroupTypeService
 			const groupType = new GroupType();
 			groupType.name = name;
 			groupType.groups = [];
-			this.manager.save(groupType);
+			const savedGroupType = await this.manager.save(groupType);
 			logger.info('success');
-			return groupType;
+			return savedGroupType;
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -97,8 +97,9 @@ export class GroupTypeService
 			const groupType = new GroupType();
 			groupType.id = Number(id);
 			groupType.name = name;
+			const savedGroupType = await this.manager.save(groupType);
 			logger.info('success');
-			return groupType;
+			return savedGroupType;
 		} catch (error) {
 			logger.error(error);
 			return error;
