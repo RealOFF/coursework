@@ -1,1 +1,3613 @@
-{"kinds":{"32":"Variable","64":"Function","128":"Class","256":"Interface","512":"Constructor","1024":"Property","2048":"Method","262144":"Accessor","2097152":"Object literal"},"rows":[{"id":0,"kind":256,"name":"ConfigInterface","url":"interfaces/configinterface.html","classes":"tsd-kind-interface"},{"id":1,"kind":1024,"name":"SERVER_PORT","url":"interfaces/configinterface.html#server_port","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":2,"kind":1024,"name":"NODE_ENV","url":"interfaces/configinterface.html#node_env","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":3,"kind":1024,"name":"DB_HOST","url":"interfaces/configinterface.html#db_host","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":4,"kind":1024,"name":"DB_USERNAME","url":"interfaces/configinterface.html#db_username","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":5,"kind":1024,"name":"DB_PASSWORD","url":"interfaces/configinterface.html#db_password","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":6,"kind":1024,"name":"DB_NAME","url":"interfaces/configinterface.html#db_name","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":7,"kind":1024,"name":"DB_PORT","url":"interfaces/configinterface.html#db_port","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":8,"kind":1024,"name":"TYPEORM_CONNECTION","url":"interfaces/configinterface.html#typeorm_connection","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":9,"kind":1024,"name":"TYPEORM_DEBUG_MODE","url":"interfaces/configinterface.html#typeorm_debug_mode","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ConfigInterface"},{"id":10,"kind":2097152,"name":"config","url":"globals.html#config","classes":"tsd-kind-object-literal"},{"id":11,"kind":32,"name":"SERVER_PORT","url":"globals.html#config.server_port","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":12,"kind":32,"name":"NODE_ENV","url":"globals.html#config.node_env","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":13,"kind":32,"name":"DB_HOST","url":"globals.html#config.db_host","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":14,"kind":32,"name":"DB_USERNAME","url":"globals.html#config.db_username","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":15,"kind":32,"name":"DB_PASSWORD","url":"globals.html#config.db_password","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":16,"kind":32,"name":"DB_NAME","url":"globals.html#config.db_name","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":17,"kind":32,"name":"DB_PORT","url":"globals.html#config.db_port","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":18,"kind":32,"name":"TYPEORM_CONNECTION","url":"globals.html#config.typeorm_connection","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":19,"kind":32,"name":"TYPEORM_DEBUG_MODE","url":"globals.html#config.typeorm_debug_mode","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"config"},{"id":20,"kind":32,"name":"logger","url":"globals.html#logger","classes":"tsd-kind-variable"},{"id":21,"kind":64,"name":"connectToDatabase","url":"globals.html#connecttodatabase","classes":"tsd-kind-function"},{"id":22,"kind":128,"name":"Environment","url":"classes/environment.html","classes":"tsd-kind-class"},{"id":23,"kind":2048,"name":"setup","url":"classes/environment.html#setup","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-static","parent":"Environment"},{"id":24,"kind":256,"name":"IRouter","url":"interfaces/irouter.html","classes":"tsd-kind-interface"},{"id":25,"kind":1024,"name":"routes","url":"interfaces/irouter.html#routes","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IRouter"},{"id":26,"kind":128,"name":"Base","url":"classes/base.html","classes":"tsd-kind-class"},{"id":27,"kind":1024,"name":"id","url":"classes/base.html#id","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Base"},{"id":28,"kind":1024,"name":"createdAt","url":"classes/base.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Base"},{"id":29,"kind":1024,"name":"updatedAt","url":"classes/base.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Base"},{"id":30,"kind":128,"name":"Subject","url":"classes/subject.html","classes":"tsd-kind-class"},{"id":31,"kind":1024,"name":"name","url":"classes/subject.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Subject"},{"id":32,"kind":1024,"name":"audienceTypes","url":"classes/subject.html#audiencetypes","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Subject"},{"id":33,"kind":1024,"name":"id","url":"classes/subject.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Subject"},{"id":34,"kind":1024,"name":"createdAt","url":"classes/subject.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Subject"},{"id":35,"kind":1024,"name":"updatedAt","url":"classes/subject.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Subject"},{"id":36,"kind":128,"name":"AudienceType","url":"classes/audiencetype.html","classes":"tsd-kind-class"},{"id":37,"kind":1024,"name":"name","url":"classes/audiencetype.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"AudienceType"},{"id":38,"kind":1024,"name":"audiences","url":"classes/audiencetype.html#audiences","classes":"tsd-kind-property tsd-parent-kind-class","parent":"AudienceType"},{"id":39,"kind":1024,"name":"subjects","url":"classes/audiencetype.html#subjects","classes":"tsd-kind-property tsd-parent-kind-class","parent":"AudienceType"},{"id":40,"kind":1024,"name":"id","url":"classes/audiencetype.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"AudienceType"},{"id":41,"kind":1024,"name":"createdAt","url":"classes/audiencetype.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"AudienceType"},{"id":42,"kind":1024,"name":"updatedAt","url":"classes/audiencetype.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"AudienceType"},{"id":43,"kind":128,"name":"Faculty","url":"classes/faculty.html","classes":"tsd-kind-class"},{"id":44,"kind":1024,"name":"name","url":"classes/faculty.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Faculty"},{"id":45,"kind":1024,"name":"departments","url":"classes/faculty.html#departments","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Faculty"},{"id":46,"kind":1024,"name":"id","url":"classes/faculty.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Faculty"},{"id":47,"kind":1024,"name":"createdAt","url":"classes/faculty.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Faculty"},{"id":48,"kind":1024,"name":"updatedAt","url":"classes/faculty.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Faculty"},{"id":49,"kind":128,"name":"Department","url":"classes/department.html","classes":"tsd-kind-class"},{"id":50,"kind":1024,"name":"name","url":"classes/department.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Department"},{"id":51,"kind":1024,"name":"faculty","url":"classes/department.html#faculty","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Department"},{"id":52,"kind":1024,"name":"id","url":"classes/department.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Department"},{"id":53,"kind":1024,"name":"createdAt","url":"classes/department.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Department"},{"id":54,"kind":1024,"name":"updatedAt","url":"classes/department.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Department"},{"id":55,"kind":128,"name":"Audience","url":"classes/audience.html","classes":"tsd-kind-class"},{"id":56,"kind":1024,"name":"name","url":"classes/audience.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Audience"},{"id":57,"kind":1024,"name":"types","url":"classes/audience.html#types","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Audience"},{"id":58,"kind":1024,"name":"deparments","url":"classes/audience.html#deparments","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Audience"},{"id":59,"kind":1024,"name":"id","url":"classes/audience.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Audience"},{"id":60,"kind":1024,"name":"createdAt","url":"classes/audience.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Audience"},{"id":61,"kind":1024,"name":"updatedAt","url":"classes/audience.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Audience"},{"id":62,"kind":256,"name":"IGetById","url":"interfaces/igetbyid.html","classes":"tsd-kind-interface"},{"id":63,"kind":2048,"name":"getById","url":"interfaces/igetbyid.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"IGetById"},{"id":64,"kind":256,"name":"IGetOffsetLimit","url":"interfaces/igetoffsetlimit.html","classes":"tsd-kind-interface"},{"id":65,"kind":2048,"name":"getOffsetLimit","url":"interfaces/igetoffsetlimit.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"IGetOffsetLimit"},{"id":66,"kind":256,"name":"IDeleteById","url":"interfaces/ideletebyid.html","classes":"tsd-kind-interface"},{"id":67,"kind":2048,"name":"deleteById","url":"interfaces/ideletebyid.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"IDeleteById"},{"id":68,"kind":256,"name":"ICreate","url":"interfaces/icreate.html","classes":"tsd-kind-interface tsd-has-type-parameter"},{"id":69,"kind":2048,"name":"create","url":"interfaces/icreate.html#create","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"ICreate"},{"id":70,"kind":256,"name":"IUpdate","url":"interfaces/iupdate.html","classes":"tsd-kind-interface tsd-has-type-parameter"},{"id":71,"kind":2048,"name":"update","url":"interfaces/iupdate.html#update","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"IUpdate"},{"id":72,"kind":256,"name":"ICreateArguments","url":"interfaces/icreatearguments.html","classes":"tsd-kind-interface"},{"id":73,"kind":1024,"name":"name","url":"interfaces/icreatearguments.html#name","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":74,"kind":256,"name":"IUpdateArguments","url":"interfaces/iupdatearguments.html","classes":"tsd-kind-interface"},{"id":75,"kind":1024,"name":"id","url":"interfaces/iupdatearguments.html#id","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IUpdateArguments"},{"id":76,"kind":1024,"name":"types","url":"interfaces/iupdatearguments.html#types","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IUpdateArguments"},{"id":77,"kind":1024,"name":"deparments","url":"interfaces/iupdatearguments.html#deparments","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IUpdateArguments"},{"id":78,"kind":1024,"name":"name","url":"interfaces/iupdatearguments.html#name","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited","parent":"IUpdateArguments"},{"id":79,"kind":128,"name":"AudienceService","url":"classes/audienceservice.html","classes":"tsd-kind-class"},{"id":80,"kind":1024,"name":"manager","url":"classes/audienceservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"AudienceService"},{"id":81,"kind":512,"name":"constructor","url":"classes/audienceservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"AudienceService"},{"id":82,"kind":2048,"name":"create","url":"classes/audienceservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceService"},{"id":83,"kind":2048,"name":"getById","url":"classes/audienceservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceService"},{"id":84,"kind":2048,"name":"getOffsetLimit","url":"classes/audienceservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceService"},{"id":85,"kind":2048,"name":"deleteById","url":"classes/audienceservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceService"},{"id":86,"kind":2048,"name":"update","url":"classes/audienceservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceService"},{"id":87,"kind":128,"name":"AudienceRouter","url":"classes/audiencerouter.html","classes":"tsd-kind-class"},{"id":88,"kind":1024,"name":"audienceService","url":"classes/audiencerouter.html#audienceservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"AudienceRouter"},{"id":89,"kind":512,"name":"constructor","url":"classes/audiencerouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"AudienceRouter"},{"id":90,"kind":262144,"name":"routes","url":"classes/audiencerouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"AudienceRouter"},{"id":91,"kind":32,"name":"router","url":"globals.html#router","classes":"tsd-kind-variable"},{"id":92,"kind":1024,"name":"audiences","url":"interfaces/iupdatearguments.html#audiences","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IUpdateArguments"},{"id":93,"kind":1024,"name":"subjects","url":"interfaces/iupdatearguments.html#subjects","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IUpdateArguments"},{"id":94,"kind":128,"name":"AudienceTypeService","url":"classes/audiencetypeservice.html","classes":"tsd-kind-class"},{"id":95,"kind":1024,"name":"manager","url":"classes/audiencetypeservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"AudienceTypeService"},{"id":96,"kind":512,"name":"constructor","url":"classes/audiencetypeservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"AudienceTypeService"},{"id":97,"kind":2048,"name":"create","url":"classes/audiencetypeservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceTypeService"},{"id":98,"kind":2048,"name":"getById","url":"classes/audiencetypeservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceTypeService"},{"id":99,"kind":2048,"name":"getOffsetLimit","url":"classes/audiencetypeservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceTypeService"},{"id":100,"kind":2048,"name":"deleteById","url":"classes/audiencetypeservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceTypeService"},{"id":101,"kind":2048,"name":"update","url":"classes/audiencetypeservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"AudienceTypeService"},{"id":102,"kind":128,"name":"AudienceTypeRouter","url":"classes/audiencetyperouter.html","classes":"tsd-kind-class"},{"id":103,"kind":1024,"name":"audienceTypeService","url":"classes/audiencetyperouter.html#audiencetypeservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"AudienceTypeRouter"},{"id":104,"kind":512,"name":"constructor","url":"classes/audiencetyperouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"AudienceTypeRouter"},{"id":105,"kind":262144,"name":"routes","url":"classes/audiencetyperouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"AudienceTypeRouter"},{"id":106,"kind":128,"name":"DatabaseError","url":"classes/databaseerror.html","classes":"tsd-kind-class"},{"id":107,"kind":2097152,"name":"REASONS","url":"classes/databaseerror.html#reasons","classes":"tsd-kind-object-literal tsd-parent-kind-class tsd-is-static","parent":"DatabaseError"},{"id":108,"kind":32,"name":"NOT_FOUND","url":"classes/databaseerror.html#reasons.not_found","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"DatabaseError.REASONS"},{"id":109,"kind":1024,"name":"name","url":"classes/databaseerror.html#name","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-overwrite","parent":"DatabaseError"},{"id":110,"kind":1024,"name":"reason","url":"classes/databaseerror.html#reason","classes":"tsd-kind-property tsd-parent-kind-class","parent":"DatabaseError"},{"id":111,"kind":1024,"name":"message","url":"classes/databaseerror.html#message","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"DatabaseError"},{"id":112,"kind":1024,"name":"stack","url":"classes/databaseerror.html#stack","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited","parent":"DatabaseError"},{"id":113,"kind":1024,"name":"Error","url":"classes/databaseerror.html#error","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-static","parent":"DatabaseError"},{"id":114,"kind":256,"name":"successResponse","url":"interfaces/successresponse.html","classes":"tsd-kind-interface"},{"id":115,"kind":1024,"name":"status","url":"interfaces/successresponse.html#status","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"successResponse"},{"id":116,"kind":1024,"name":"body","url":"interfaces/successresponse.html#body","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"successResponse"},{"id":117,"kind":1024,"name":"message","url":"interfaces/successresponse.html#message","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"successResponse"},{"id":118,"kind":256,"name":"errorResponse","url":"interfaces/errorresponse.html","classes":"tsd-kind-interface"},{"id":119,"kind":1024,"name":"status","url":"interfaces/errorresponse.html#status","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"errorResponse"},{"id":120,"kind":1024,"name":"message","url":"interfaces/errorresponse.html#message","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"errorResponse"},{"id":121,"kind":256,"name":"IHelper","url":"interfaces/ihelper.html","classes":"tsd-kind-interface"},{"id":122,"kind":2048,"name":"createSuccessResponse","url":"interfaces/ihelper.html#createsuccessresponse","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"IHelper"},{"id":123,"kind":2048,"name":"createErrorResponse","url":"interfaces/ihelper.html#createerrorresponse","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"IHelper"},{"id":124,"kind":128,"name":"Helper","url":"classes/helper.html","classes":"tsd-kind-class"},{"id":125,"kind":2048,"name":"createSuccessResponse","url":"classes/helper.html#createsuccessresponse","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Helper"},{"id":126,"kind":2048,"name":"createErrorResponse","url":"classes/helper.html#createerrorresponse","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Helper"},{"id":127,"kind":128,"name":"Student","url":"classes/student.html","classes":"tsd-kind-class"},{"id":128,"kind":1024,"name":"firstName","url":"classes/student.html#firstname","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Student"},{"id":129,"kind":1024,"name":"lastName","url":"classes/student.html#lastname","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Student"},{"id":130,"kind":1024,"name":"patronymic","url":"classes/student.html#patronymic","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Student"},{"id":131,"kind":1024,"name":"groups","url":"classes/student.html#groups","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Student"},{"id":132,"kind":1024,"name":"id","url":"classes/student.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Student"},{"id":133,"kind":1024,"name":"createdAt","url":"classes/student.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Student"},{"id":134,"kind":1024,"name":"updatedAt","url":"classes/student.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Student"},{"id":135,"kind":128,"name":"GroupType","url":"classes/grouptype.html","classes":"tsd-kind-class"},{"id":136,"kind":1024,"name":"name","url":"classes/grouptype.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"GroupType"},{"id":137,"kind":1024,"name":"groups","url":"classes/grouptype.html#groups","classes":"tsd-kind-property tsd-parent-kind-class","parent":"GroupType"},{"id":138,"kind":1024,"name":"id","url":"classes/grouptype.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"GroupType"},{"id":139,"kind":1024,"name":"createdAt","url":"classes/grouptype.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"GroupType"},{"id":140,"kind":1024,"name":"updatedAt","url":"classes/grouptype.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"GroupType"},{"id":141,"kind":128,"name":"Group","url":"classes/group.html","classes":"tsd-kind-class"},{"id":142,"kind":1024,"name":"name","url":"classes/group.html#name","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Group"},{"id":143,"kind":1024,"name":"students","url":"classes/group.html#students","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Group"},{"id":144,"kind":1024,"name":"type","url":"classes/group.html#type","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Group"},{"id":145,"kind":1024,"name":"id","url":"classes/group.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Group"},{"id":146,"kind":1024,"name":"createdAt","url":"classes/group.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Group"},{"id":147,"kind":1024,"name":"updatedAt","url":"classes/group.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Group"},{"id":148,"kind":128,"name":"Teacher","url":"classes/teacher.html","classes":"tsd-kind-class"},{"id":149,"kind":1024,"name":"firstName","url":"classes/teacher.html#firstname","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Teacher"},{"id":150,"kind":1024,"name":"lastName","url":"classes/teacher.html#lastname","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Teacher"},{"id":151,"kind":1024,"name":"patronymic","url":"classes/teacher.html#patronymic","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Teacher"},{"id":152,"kind":1024,"name":"deparments","url":"classes/teacher.html#deparments","classes":"tsd-kind-property tsd-parent-kind-class","parent":"Teacher"},{"id":153,"kind":1024,"name":"id","url":"classes/teacher.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Teacher"},{"id":154,"kind":1024,"name":"createdAt","url":"classes/teacher.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Teacher"},{"id":155,"kind":1024,"name":"updatedAt","url":"classes/teacher.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"Teacher"},{"id":156,"kind":128,"name":"SubjectSession","url":"classes/subjectsession.html","classes":"tsd-kind-class"},{"id":157,"kind":1024,"name":"startTime","url":"classes/subjectsession.html#starttime","classes":"tsd-kind-property tsd-parent-kind-class","parent":"SubjectSession"},{"id":158,"kind":1024,"name":"endTime","url":"classes/subjectsession.html#endtime","classes":"tsd-kind-property tsd-parent-kind-class","parent":"SubjectSession"},{"id":159,"kind":1024,"name":"audience","url":"classes/subjectsession.html#audience","classes":"tsd-kind-property tsd-parent-kind-class","parent":"SubjectSession"},{"id":160,"kind":1024,"name":"subject","url":"classes/subjectsession.html#subject","classes":"tsd-kind-property tsd-parent-kind-class","parent":"SubjectSession"},{"id":161,"kind":1024,"name":"teachers","url":"classes/subjectsession.html#teachers","classes":"tsd-kind-property tsd-parent-kind-class","parent":"SubjectSession"},{"id":162,"kind":1024,"name":"groups","url":"classes/subjectsession.html#groups","classes":"tsd-kind-property tsd-parent-kind-class","parent":"SubjectSession"},{"id":163,"kind":1024,"name":"id","url":"classes/subjectsession.html#id","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"SubjectSession"},{"id":164,"kind":1024,"name":"createdAt","url":"classes/subjectsession.html#createdat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"SubjectSession"},{"id":165,"kind":1024,"name":"updatedAt","url":"classes/subjectsession.html#updatedat","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-inherited","parent":"SubjectSession"},{"id":166,"kind":1024,"name":"facultyId","url":"interfaces/icreatearguments.html#facultyid","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":167,"kind":1024,"name":"facultyId","url":"interfaces/iupdatearguments.html#facultyid","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-inherited","parent":"IUpdateArguments"},{"id":168,"kind":128,"name":"DepartmentService","url":"classes/departmentservice.html","classes":"tsd-kind-class"},{"id":169,"kind":1024,"name":"manager","url":"classes/departmentservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"DepartmentService"},{"id":170,"kind":512,"name":"constructor","url":"classes/departmentservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"DepartmentService"},{"id":171,"kind":2048,"name":"create","url":"classes/departmentservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"DepartmentService"},{"id":172,"kind":2048,"name":"getById","url":"classes/departmentservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"DepartmentService"},{"id":173,"kind":2048,"name":"getOffsetLimit","url":"classes/departmentservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"DepartmentService"},{"id":174,"kind":2048,"name":"deleteById","url":"classes/departmentservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"DepartmentService"},{"id":175,"kind":2048,"name":"update","url":"classes/departmentservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"DepartmentService"},{"id":176,"kind":128,"name":"DepartmentRouter","url":"classes/departmentrouter.html","classes":"tsd-kind-class"},{"id":177,"kind":1024,"name":"departmentService","url":"classes/departmentrouter.html#departmentservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"DepartmentRouter"},{"id":178,"kind":512,"name":"constructor","url":"classes/departmentrouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"DepartmentRouter"},{"id":179,"kind":262144,"name":"routes","url":"classes/departmentrouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"DepartmentRouter"},{"id":180,"kind":1024,"name":"departmentIds","url":"interfaces/icreatearguments.html#departmentids","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":181,"kind":1024,"name":"departmentIds","url":"interfaces/iupdatearguments.html#departmentids","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-inherited","parent":"IUpdateArguments"},{"id":182,"kind":128,"name":"FacultyService","url":"classes/facultyservice.html","classes":"tsd-kind-class"},{"id":183,"kind":1024,"name":"manager","url":"classes/facultyservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"FacultyService"},{"id":184,"kind":512,"name":"constructor","url":"classes/facultyservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"FacultyService"},{"id":185,"kind":2048,"name":"create","url":"classes/facultyservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"FacultyService"},{"id":186,"kind":2048,"name":"getById","url":"classes/facultyservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"FacultyService"},{"id":187,"kind":2048,"name":"getOffsetLimit","url":"classes/facultyservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"FacultyService"},{"id":188,"kind":2048,"name":"deleteById","url":"classes/facultyservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"FacultyService"},{"id":189,"kind":2048,"name":"update","url":"classes/facultyservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"FacultyService"},{"id":190,"kind":128,"name":"FacultyRouter","url":"classes/facultyrouter.html","classes":"tsd-kind-class"},{"id":191,"kind":1024,"name":"facultyService","url":"classes/facultyrouter.html#facultyservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"FacultyRouter"},{"id":192,"kind":512,"name":"constructor","url":"classes/facultyrouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"FacultyRouter"},{"id":193,"kind":262144,"name":"routes","url":"classes/facultyrouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"FacultyRouter"},{"id":194,"kind":1024,"name":"type","url":"interfaces/icreatearguments.html#type","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":195,"kind":1024,"name":"students","url":"interfaces/iupdatearguments.html#students","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"IUpdateArguments"},{"id":196,"kind":1024,"name":"type","url":"interfaces/iupdatearguments.html#type","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-inherited","parent":"IUpdateArguments"},{"id":197,"kind":128,"name":"GroupService","url":"classes/groupservice.html","classes":"tsd-kind-class"},{"id":198,"kind":1024,"name":"manager","url":"classes/groupservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"GroupService"},{"id":199,"kind":512,"name":"constructor","url":"classes/groupservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"GroupService"},{"id":200,"kind":2048,"name":"create","url":"classes/groupservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"GroupService"},{"id":201,"kind":2048,"name":"getById","url":"classes/groupservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"GroupService"},{"id":202,"kind":2048,"name":"getOffsetLimit","url":"classes/groupservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"GroupService"},{"id":203,"kind":2048,"name":"deleteById","url":"classes/groupservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"GroupService"},{"id":204,"kind":2048,"name":"update","url":"classes/groupservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"GroupService"},{"id":205,"kind":128,"name":"GroupRouter","url":"classes/grouprouter.html","classes":"tsd-kind-class"},{"id":206,"kind":1024,"name":"groupService","url":"classes/grouprouter.html#groupservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"GroupRouter"},{"id":207,"kind":512,"name":"constructor","url":"classes/grouprouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"GroupRouter"},{"id":208,"kind":262144,"name":"routes","url":"classes/grouprouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"GroupRouter"},{"id":209,"kind":1024,"name":"firstName","url":"interfaces/icreatearguments.html#firstname","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":210,"kind":1024,"name":"lastName","url":"interfaces/icreatearguments.html#lastname","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":211,"kind":1024,"name":"patronymic","url":"interfaces/icreatearguments.html#patronymic","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":212,"kind":1024,"name":"groupIds","url":"interfaces/icreatearguments.html#groupids","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"ICreateArguments"},{"id":213,"kind":1024,"name":"firstName","url":"interfaces/iupdatearguments.html#firstname","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited","parent":"IUpdateArguments"},{"id":214,"kind":1024,"name":"lastName","url":"interfaces/iupdatearguments.html#lastname","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited","parent":"IUpdateArguments"},{"id":215,"kind":1024,"name":"patronymic","url":"interfaces/iupdatearguments.html#patronymic","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited","parent":"IUpdateArguments"},{"id":216,"kind":1024,"name":"groupIds","url":"interfaces/iupdatearguments.html#groupids","classes":"tsd-kind-property tsd-parent-kind-interface tsd-is-inherited","parent":"IUpdateArguments"},{"id":217,"kind":128,"name":"StudentService","url":"classes/studentservice.html","classes":"tsd-kind-class"},{"id":218,"kind":1024,"name":"manager","url":"classes/studentservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"StudentService"},{"id":219,"kind":512,"name":"constructor","url":"classes/studentservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"StudentService"},{"id":220,"kind":2048,"name":"create","url":"classes/studentservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"StudentService"},{"id":221,"kind":2048,"name":"getById","url":"classes/studentservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"StudentService"},{"id":222,"kind":2048,"name":"getOffsetLimit","url":"classes/studentservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"StudentService"},{"id":223,"kind":2048,"name":"deleteById","url":"classes/studentservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"StudentService"},{"id":224,"kind":2048,"name":"update","url":"classes/studentservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"StudentService"},{"id":225,"kind":128,"name":"StudentRouter","url":"classes/studentrouter.html","classes":"tsd-kind-class"},{"id":226,"kind":1024,"name":"studentService","url":"classes/studentrouter.html#studentservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"StudentRouter"},{"id":227,"kind":512,"name":"constructor","url":"classes/studentrouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"StudentRouter"},{"id":228,"kind":262144,"name":"routes","url":"classes/studentrouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"StudentRouter"},{"id":229,"kind":128,"name":"SubjectService","url":"classes/subjectservice.html","classes":"tsd-kind-class"},{"id":230,"kind":1024,"name":"manager","url":"classes/subjectservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"SubjectService"},{"id":231,"kind":512,"name":"constructor","url":"classes/subjectservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"SubjectService"},{"id":232,"kind":2048,"name":"create","url":"classes/subjectservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"SubjectService"},{"id":233,"kind":2048,"name":"getById","url":"classes/subjectservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"SubjectService"},{"id":234,"kind":2048,"name":"getOffsetLimit","url":"classes/subjectservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"SubjectService"},{"id":235,"kind":2048,"name":"deleteById","url":"classes/subjectservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"SubjectService"},{"id":236,"kind":2048,"name":"update","url":"classes/subjectservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"SubjectService"},{"id":237,"kind":128,"name":"SubjectRouter","url":"classes/subjectrouter.html","classes":"tsd-kind-class"},{"id":238,"kind":1024,"name":"subjectService","url":"classes/subjectrouter.html#subjectservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"SubjectRouter"},{"id":239,"kind":512,"name":"constructor","url":"classes/subjectrouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"SubjectRouter"},{"id":240,"kind":262144,"name":"routes","url":"classes/subjectrouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"SubjectRouter"},{"id":241,"kind":128,"name":"TeacherService","url":"classes/teacherservice.html","classes":"tsd-kind-class"},{"id":242,"kind":1024,"name":"manager","url":"classes/teacherservice.html#manager","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"TeacherService"},{"id":243,"kind":512,"name":"constructor","url":"classes/teacherservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"TeacherService"},{"id":244,"kind":2048,"name":"create","url":"classes/teacherservice.html#create","classes":"tsd-kind-method tsd-parent-kind-class","parent":"TeacherService"},{"id":245,"kind":2048,"name":"getById","url":"classes/teacherservice.html#getbyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"TeacherService"},{"id":246,"kind":2048,"name":"getOffsetLimit","url":"classes/teacherservice.html#getoffsetlimit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"TeacherService"},{"id":247,"kind":2048,"name":"deleteById","url":"classes/teacherservice.html#deletebyid","classes":"tsd-kind-method tsd-parent-kind-class","parent":"TeacherService"},{"id":248,"kind":2048,"name":"update","url":"classes/teacherservice.html#update","classes":"tsd-kind-method tsd-parent-kind-class","parent":"TeacherService"},{"id":249,"kind":128,"name":"TeacherRouter","url":"classes/teacherrouter.html","classes":"tsd-kind-class"},{"id":250,"kind":1024,"name":"teacherService","url":"classes/teacherrouter.html#teacherservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"TeacherRouter"},{"id":251,"kind":512,"name":"constructor","url":"classes/teacherrouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"TeacherRouter"},{"id":252,"kind":262144,"name":"routes","url":"classes/teacherrouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"TeacherRouter"},{"id":253,"kind":128,"name":"BaseRouter","url":"classes/baserouter.html","classes":"tsd-kind-class"},{"id":254,"kind":1024,"name":"audienceRouter","url":"classes/baserouter.html#audiencerouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":255,"kind":1024,"name":"audienceTypeRouter","url":"classes/baserouter.html#audiencetyperouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":256,"kind":1024,"name":"departmentRouter","url":"classes/baserouter.html#departmentrouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":257,"kind":1024,"name":"facultyRouter","url":"classes/baserouter.html#facultyrouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":258,"kind":1024,"name":"groupRouter","url":"classes/baserouter.html#grouprouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":259,"kind":1024,"name":"studentRouter","url":"classes/baserouter.html#studentrouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":260,"kind":1024,"name":"subjectRouter","url":"classes/baserouter.html#subjectrouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":261,"kind":1024,"name":"teacherRouter","url":"classes/baserouter.html#teacherrouter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"BaseRouter"},{"id":262,"kind":512,"name":"constructor","url":"classes/baserouter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"BaseRouter"},{"id":263,"kind":262144,"name":"routes","url":"classes/baserouter.html#routes","classes":"tsd-kind-get-signature tsd-parent-kind-class","parent":"BaseRouter"},{"id":264,"kind":256,"name":"ServerInterface","url":"interfaces/serverinterface.html","classes":"tsd-kind-interface"},{"id":265,"kind":2048,"name":"server","url":"interfaces/serverinterface.html#server","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"ServerInterface"},{"id":266,"kind":128,"name":"Server","url":"classes/server.html","classes":"tsd-kind-class"},{"id":267,"kind":2048,"name":"setupDocGenerator","url":"classes/server.html#setupdocgenerator","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Server"},{"id":268,"kind":2048,"name":"server","url":"classes/server.html#server-1","classes":"tsd-kind-method tsd-parent-kind-class","parent":"Server"},{"id":269,"kind":64,"name":"startServer","url":"globals.html#startserver","classes":"tsd-kind-function"}],"index":{"version":"2.3.9","fields":["name","parent"],"fieldVectors":[["name/0",[0,32.507]],["parent/0",[]],["name/1",[1,46.858]],["parent/1",[0,2.974]],["name/2",[2,46.858]],["parent/2",[0,2.974]],["name/3",[3,46.858]],["parent/3",[0,2.974]],["name/4",[4,46.858]],["parent/4",[0,2.974]],["name/5",[5,46.858]],["parent/5",[0,2.974]],["name/6",[6,46.858]],["parent/6",[0,2.974]],["name/7",[7,46.858]],["parent/7",[0,2.974]],["name/8",[8,46.858]],["parent/8",[0,2.974]],["name/9",[9,46.858]],["parent/9",[0,2.974]],["name/10",[10,32.507]],["parent/10",[]],["name/11",[1,46.858]],["parent/11",[10,2.974]],["name/12",[2,46.858]],["parent/12",[10,2.974]],["name/13",[3,46.858]],["parent/13",[10,2.974]],["name/14",[4,46.858]],["parent/14",[10,2.974]],["name/15",[5,46.858]],["parent/15",[10,2.974]],["name/16",[6,46.858]],["parent/16",[10,2.974]],["name/17",[7,46.858]],["parent/17",[10,2.974]],["name/18",[8,46.858]],["parent/18",[10,2.974]],["name/19",[9,46.858]],["parent/19",[10,2.974]],["name/20",[11,51.967]],["parent/20",[]],["name/21",[12,51.967]],["parent/21",[]],["name/22",[13,46.858]],["parent/22",[]],["name/23",[14,51.967]],["parent/23",[13,4.287]],["name/24",[15,46.858]],["parent/24",[]],["name/25",[16,32.507]],["parent/25",[15,4.287]],["name/26",[17,40.98]],["parent/26",[]],["name/27",[18,30.764]],["parent/27",[17,3.749]],["name/28",[19,31.598]],["parent/28",[17,3.749]],["name/29",[20,31.598]],["parent/29",[17,3.749]],["name/30",[21,35.872]],["parent/30",[]],["name/31",[22,32.507]],["parent/31",[21,3.282]],["name/32",[23,51.967]],["parent/32",[21,3.282]],["name/33",[18,30.764]],["parent/33",[21,3.282]],["name/34",[19,31.598]],["parent/34",[21,3.282]],["name/35",[20,31.598]],["parent/35",[21,3.282]],["name/36",[24,35.872]],["parent/36",[]],["name/37",[22,32.507]],["parent/37",[24,3.282]],["name/38",[25,46.858]],["parent/38",[24,3.282]],["name/39",[26,46.858]],["parent/39",[24,3.282]],["name/40",[18,30.764]],["parent/40",[24,3.282]],["name/41",[19,31.598]],["parent/41",[24,3.282]],["name/42",[20,31.598]],["parent/42",[24,3.282]],["name/43",[27,35.872]],["parent/43",[]],["name/44",[22,32.507]],["parent/44",[27,3.282]],["name/45",[28,51.967]],["parent/45",[27,3.282]],["name/46",[18,30.764]],["parent/46",[27,3.282]],["name/47",[19,31.598]],["parent/47",[27,3.282]],["name/48",[20,31.598]],["parent/48",[27,3.282]],["name/49",[29,37.303]],["parent/49",[]],["name/50",[22,32.507]],["parent/50",[29,3.413]],["name/51",[27,35.872]],["parent/51",[29,3.413]],["name/52",[18,30.764]],["parent/52",[29,3.413]],["name/53",[19,31.598]],["parent/53",[29,3.413]],["name/54",[20,31.598]],["parent/54",[29,3.413]],["name/55",[30,34.621]],["parent/55",[]],["name/56",[22,32.507]],["parent/56",[30,3.168]],["name/57",[31,46.858]],["parent/57",[30,3.168]],["name/58",[32,43.494]],["parent/58",[30,3.168]],["name/59",[18,30.764]],["parent/59",[30,3.168]],["name/60",[19,31.598]],["parent/60",[30,3.168]],["name/61",[20,31.598]],["parent/61",[30,3.168]],["name/62",[33,46.858]],["parent/62",[]],["name/63",[34,33.508]],["parent/63",[33,4.287]],["name/64",[35,46.858]],["parent/64",[]],["name/65",[36,33.508]],["parent/65",[35,4.287]],["name/66",[37,46.858]],["parent/66",[]],["name/67",[38,33.508]],["parent/67",[37,4.287]],["name/68",[39,46.858]],["parent/68",[]],["name/69",[40,33.508]],["parent/69",[39,4.287]],["name/70",[41,46.858]],["parent/70",[]],["name/71",[42,33.508]],["parent/71",[41,4.287]],["name/72",[43,33.508]],["parent/72",[]],["name/73",[22,32.507]],["parent/73",[43,3.066]],["name/74",[44,28.613]],["parent/74",[]],["name/75",[18,30.764]],["parent/75",[44,2.618]],["name/76",[31,46.858]],["parent/76",[44,2.618]],["name/77",[32,43.494]],["parent/77",[44,2.618]],["name/78",[22,32.507]],["parent/78",[44,2.618]],["name/79",[45,33.508]],["parent/79",[]],["name/80",[46,34.621]],["parent/80",[45,3.066]],["name/81",[47,27.399]],["parent/81",[45,3.066]],["name/82",[40,33.508]],["parent/82",[45,3.066]],["name/83",[34,33.508]],["parent/83",[45,3.066]],["name/84",[36,33.508]],["parent/84",[45,3.066]],["name/85",[38,33.508]],["parent/85",[45,3.066]],["name/86",[42,33.508]],["parent/86",[45,3.066]],["name/87",[48,38.974]],["parent/87",[]],["name/88",[45,33.508]],["parent/88",[48,3.566]],["name/89",[47,27.399]],["parent/89",[48,3.566]],["name/90",[16,32.507]],["parent/90",[48,3.566]],["name/91",[49,51.967]],["parent/91",[]],["name/92",[25,46.858]],["parent/92",[44,2.618]],["name/93",[26,46.858]],["parent/93",[44,2.618]],["name/94",[50,33.508]],["parent/94",[]],["name/95",[46,34.621]],["parent/95",[50,3.066]],["name/96",[47,27.399]],["parent/96",[50,3.066]],["name/97",[40,33.508]],["parent/97",[50,3.066]],["name/98",[34,33.508]],["parent/98",[50,3.066]],["name/99",[36,33.508]],["parent/99",[50,3.066]],["name/100",[38,33.508]],["parent/100",[50,3.066]],["name/101",[42,33.508]],["parent/101",[50,3.066]],["name/102",[51,38.974]],["parent/102",[]],["name/103",[50,33.508]],["parent/103",[51,3.566]],["name/104",[47,27.399]],["parent/104",[51,3.566]],["name/105",[16,32.507]],["parent/105",[51,3.566]],["name/106",[52,35.872]],["parent/106",[]],["name/107",[53,51.967]],["parent/107",[52,3.282]],["name/108",[54,51.967]],["parent/108",[55,4.755]],["name/109",[22,32.507]],["parent/109",[52,3.282]],["name/110",[56,51.967]],["parent/110",[52,3.282]],["name/111",[57,43.494]],["parent/111",[52,3.282]],["name/112",[58,51.967]],["parent/112",[52,3.282]],["name/113",[59,51.967]],["parent/113",[52,3.282]],["name/114",[60,40.98]],["parent/114",[]],["name/115",[61,46.858]],["parent/115",[60,3.749]],["name/116",[62,51.967]],["parent/116",[60,3.749]],["name/117",[57,43.494]],["parent/117",[60,3.749]],["name/118",[63,43.494]],["parent/118",[]],["name/119",[61,46.858]],["parent/119",[63,3.979]],["name/120",[57,43.494]],["parent/120",[63,3.979]],["name/121",[64,43.494]],["parent/121",[]],["name/122",[65,46.858]],["parent/122",[64,3.979]],["name/123",[66,46.858]],["parent/123",[64,3.979]],["name/124",[67,43.494]],["parent/124",[]],["name/125",[65,46.858]],["parent/125",[67,3.979]],["name/126",[66,46.858]],["parent/126",[67,3.979]],["name/127",[68,34.621]],["parent/127",[]],["name/128",[69,40.98]],["parent/128",[68,3.168]],["name/129",[70,40.98]],["parent/129",[68,3.168]],["name/130",[71,40.98]],["parent/130",[68,3.168]],["name/131",[72,43.494]],["parent/131",[68,3.168]],["name/132",[18,30.764]],["parent/132",[68,3.168]],["name/133",[19,31.598]],["parent/133",[68,3.168]],["name/134",[20,31.598]],["parent/134",[68,3.168]],["name/135",[73,37.303]],["parent/135",[]],["name/136",[22,32.507]],["parent/136",[73,3.413]],["name/137",[72,43.494]],["parent/137",[73,3.413]],["name/138",[18,30.764]],["parent/138",[73,3.413]],["name/139",[19,31.598]],["parent/139",[73,3.413]],["name/140",[20,31.598]],["parent/140",[73,3.413]],["name/141",[74,35.872]],["parent/141",[]],["name/142",[22,32.507]],["parent/142",[74,3.282]],["name/143",[75,46.858]],["parent/143",[74,3.282]],["name/144",[76,43.494]],["parent/144",[74,3.282]],["name/145",[18,30.764]],["parent/145",[74,3.282]],["name/146",[19,31.598]],["parent/146",[74,3.282]],["name/147",[20,31.598]],["parent/147",[74,3.282]],["name/148",[77,34.621]],["parent/148",[]],["name/149",[69,40.98]],["parent/149",[77,3.168]],["name/150",[70,40.98]],["parent/150",[77,3.168]],["name/151",[71,40.98]],["parent/151",[77,3.168]],["name/152",[32,43.494]],["parent/152",[77,3.168]],["name/153",[18,30.764]],["parent/153",[77,3.168]],["name/154",[19,31.598]],["parent/154",[77,3.168]],["name/155",[20,31.598]],["parent/155",[77,3.168]],["name/156",[78,32.507]],["parent/156",[]],["name/157",[79,51.967]],["parent/157",[78,2.974]],["name/158",[80,51.967]],["parent/158",[78,2.974]],["name/159",[30,34.621]],["parent/159",[78,2.974]],["name/160",[21,35.872]],["parent/160",[78,2.974]],["name/161",[81,51.967]],["parent/161",[78,2.974]],["name/162",[72,43.494]],["parent/162",[78,2.974]],["name/163",[18,30.764]],["parent/163",[78,2.974]],["name/164",[19,31.598]],["parent/164",[78,2.974]],["name/165",[20,31.598]],["parent/165",[78,2.974]],["name/166",[82,46.858]],["parent/166",[43,3.066]],["name/167",[82,46.858]],["parent/167",[44,2.618]],["name/168",[83,33.508]],["parent/168",[]],["name/169",[46,34.621]],["parent/169",[83,3.066]],["name/170",[47,27.399]],["parent/170",[83,3.066]],["name/171",[40,33.508]],["parent/171",[83,3.066]],["name/172",[34,33.508]],["parent/172",[83,3.066]],["name/173",[36,33.508]],["parent/173",[83,3.066]],["name/174",[38,33.508]],["parent/174",[83,3.066]],["name/175",[42,33.508]],["parent/175",[83,3.066]],["name/176",[84,38.974]],["parent/176",[]],["name/177",[83,33.508]],["parent/177",[84,3.566]],["name/178",[47,27.399]],["parent/178",[84,3.566]],["name/179",[16,32.507]],["parent/179",[84,3.566]],["name/180",[85,46.858]],["parent/180",[43,3.066]],["name/181",[85,46.858]],["parent/181",[44,2.618]],["name/182",[86,33.508]],["parent/182",[]],["name/183",[46,34.621]],["parent/183",[86,3.066]],["name/184",[47,27.399]],["parent/184",[86,3.066]],["name/185",[40,33.508]],["parent/185",[86,3.066]],["name/186",[34,33.508]],["parent/186",[86,3.066]],["name/187",[36,33.508]],["parent/187",[86,3.066]],["name/188",[38,33.508]],["parent/188",[86,3.066]],["name/189",[42,33.508]],["parent/189",[86,3.066]],["name/190",[87,38.974]],["parent/190",[]],["name/191",[86,33.508]],["parent/191",[87,3.566]],["name/192",[47,27.399]],["parent/192",[87,3.566]],["name/193",[16,32.507]],["parent/193",[87,3.566]],["name/194",[76,43.494]],["parent/194",[43,3.066]],["name/195",[75,46.858]],["parent/195",[44,2.618]],["name/196",[76,43.494]],["parent/196",[44,2.618]],["name/197",[88,33.508]],["parent/197",[]],["name/198",[46,34.621]],["parent/198",[88,3.066]],["name/199",[47,27.399]],["parent/199",[88,3.066]],["name/200",[40,33.508]],["parent/200",[88,3.066]],["name/201",[34,33.508]],["parent/201",[88,3.066]],["name/202",[36,33.508]],["parent/202",[88,3.066]],["name/203",[38,33.508]],["parent/203",[88,3.066]],["name/204",[42,33.508]],["parent/204",[88,3.066]],["name/205",[89,38.974]],["parent/205",[]],["name/206",[88,33.508]],["parent/206",[89,3.566]],["name/207",[47,27.399]],["parent/207",[89,3.566]],["name/208",[16,32.507]],["parent/208",[89,3.566]],["name/209",[69,40.98]],["parent/209",[43,3.066]],["name/210",[70,40.98]],["parent/210",[43,3.066]],["name/211",[71,40.98]],["parent/211",[43,3.066]],["name/212",[90,46.858]],["parent/212",[43,3.066]],["name/213",[69,40.98]],["parent/213",[44,2.618]],["name/214",[70,40.98]],["parent/214",[44,2.618]],["name/215",[71,40.98]],["parent/215",[44,2.618]],["name/216",[90,46.858]],["parent/216",[44,2.618]],["name/217",[91,33.508]],["parent/217",[]],["name/218",[46,34.621]],["parent/218",[91,3.066]],["name/219",[47,27.399]],["parent/219",[91,3.066]],["name/220",[40,33.508]],["parent/220",[91,3.066]],["name/221",[34,33.508]],["parent/221",[91,3.066]],["name/222",[36,33.508]],["parent/222",[91,3.066]],["name/223",[38,33.508]],["parent/223",[91,3.066]],["name/224",[42,33.508]],["parent/224",[91,3.066]],["name/225",[92,38.974]],["parent/225",[]],["name/226",[91,33.508]],["parent/226",[92,3.566]],["name/227",[47,27.399]],["parent/227",[92,3.566]],["name/228",[16,32.507]],["parent/228",[92,3.566]],["name/229",[93,33.508]],["parent/229",[]],["name/230",[46,34.621]],["parent/230",[93,3.066]],["name/231",[47,27.399]],["parent/231",[93,3.066]],["name/232",[40,33.508]],["parent/232",[93,3.066]],["name/233",[34,33.508]],["parent/233",[93,3.066]],["name/234",[36,33.508]],["parent/234",[93,3.066]],["name/235",[38,33.508]],["parent/235",[93,3.066]],["name/236",[42,33.508]],["parent/236",[93,3.066]],["name/237",[94,38.974]],["parent/237",[]],["name/238",[93,33.508]],["parent/238",[94,3.566]],["name/239",[47,27.399]],["parent/239",[94,3.566]],["name/240",[16,32.507]],["parent/240",[94,3.566]],["name/241",[95,33.508]],["parent/241",[]],["name/242",[46,34.621]],["parent/242",[95,3.066]],["name/243",[47,27.399]],["parent/243",[95,3.066]],["name/244",[40,33.508]],["parent/244",[95,3.066]],["name/245",[34,33.508]],["parent/245",[95,3.066]],["name/246",[36,33.508]],["parent/246",[95,3.066]],["name/247",[38,33.508]],["parent/247",[95,3.066]],["name/248",[42,33.508]],["parent/248",[95,3.066]],["name/249",[96,38.974]],["parent/249",[]],["name/250",[95,33.508]],["parent/250",[96,3.566]],["name/251",[47,27.399]],["parent/251",[96,3.566]],["name/252",[16,32.507]],["parent/252",[96,3.566]],["name/253",[97,31.598]],["parent/253",[]],["name/254",[48,38.974]],["parent/254",[97,2.891]],["name/255",[51,38.974]],["parent/255",[97,2.891]],["name/256",[84,38.974]],["parent/256",[97,2.891]],["name/257",[87,38.974]],["parent/257",[97,2.891]],["name/258",[89,38.974]],["parent/258",[97,2.891]],["name/259",[92,38.974]],["parent/259",[97,2.891]],["name/260",[94,38.974]],["parent/260",[97,2.891]],["name/261",[96,38.974]],["parent/261",[97,2.891]],["name/262",[47,27.399]],["parent/262",[97,2.891]],["name/263",[16,32.507]],["parent/263",[97,2.891]],["name/264",[98,46.858]],["parent/264",[]],["name/265",[99,38.974]],["parent/265",[98,4.287]],["name/266",[99,38.974]],["parent/266",[]],["name/267",[100,51.967]],["parent/267",[99,3.566]],["name/268",[99,38.974]],["parent/268",[99,3.566]],["name/269",[101,51.967]],["parent/269",[]]],"invertedIndex":[["audience",{"_index":30,"name":{"55":{},"159":{}},"parent":{"56":{},"57":{},"58":{},"59":{},"60":{},"61":{}}}],["audiencerouter",{"_index":48,"name":{"87":{},"254":{}},"parent":{"88":{},"89":{},"90":{}}}],["audiences",{"_index":25,"name":{"38":{},"92":{}},"parent":{}}],["audienceservice",{"_index":45,"name":{"79":{},"88":{}},"parent":{"80":{},"81":{},"82":{},"83":{},"84":{},"85":{},"86":{}}}],["audiencetype",{"_index":24,"name":{"36":{}},"parent":{"37":{},"38":{},"39":{},"40":{},"41":{},"42":{}}}],["audiencetyperouter",{"_index":51,"name":{"102":{},"255":{}},"parent":{"103":{},"104":{},"105":{}}}],["audiencetypes",{"_index":23,"name":{"32":{}},"parent":{}}],["audiencetypeservice",{"_index":50,"name":{"94":{},"103":{}},"parent":{"95":{},"96":{},"97":{},"98":{},"99":{},"100":{},"101":{}}}],["base",{"_index":17,"name":{"26":{}},"parent":{"27":{},"28":{},"29":{}}}],["baserouter",{"_index":97,"name":{"253":{}},"parent":{"254":{},"255":{},"256":{},"257":{},"258":{},"259":{},"260":{},"261":{},"262":{},"263":{}}}],["body",{"_index":62,"name":{"116":{}},"parent":{}}],["config",{"_index":10,"name":{"10":{}},"parent":{"11":{},"12":{},"13":{},"14":{},"15":{},"16":{},"17":{},"18":{},"19":{}}}],["configinterface",{"_index":0,"name":{"0":{}},"parent":{"1":{},"2":{},"3":{},"4":{},"5":{},"6":{},"7":{},"8":{},"9":{}}}],["connecttodatabase",{"_index":12,"name":{"21":{}},"parent":{}}],["constructor",{"_index":47,"name":{"81":{},"89":{},"96":{},"104":{},"170":{},"178":{},"184":{},"192":{},"199":{},"207":{},"219":{},"227":{},"231":{},"239":{},"243":{},"251":{},"262":{}},"parent":{}}],["create",{"_index":40,"name":{"69":{},"82":{},"97":{},"171":{},"185":{},"200":{},"220":{},"232":{},"244":{}},"parent":{}}],["createdat",{"_index":19,"name":{"28":{},"34":{},"41":{},"47":{},"53":{},"60":{},"133":{},"139":{},"146":{},"154":{},"164":{}},"parent":{}}],["createerrorresponse",{"_index":66,"name":{"123":{},"126":{}},"parent":{}}],["createsuccessresponse",{"_index":65,"name":{"122":{},"125":{}},"parent":{}}],["databaseerror",{"_index":52,"name":{"106":{}},"parent":{"107":{},"109":{},"110":{},"111":{},"112":{},"113":{}}}],["databaseerror.reasons",{"_index":55,"name":{},"parent":{"108":{}}}],["db_host",{"_index":3,"name":{"3":{},"13":{}},"parent":{}}],["db_name",{"_index":6,"name":{"6":{},"16":{}},"parent":{}}],["db_password",{"_index":5,"name":{"5":{},"15":{}},"parent":{}}],["db_port",{"_index":7,"name":{"7":{},"17":{}},"parent":{}}],["db_username",{"_index":4,"name":{"4":{},"14":{}},"parent":{}}],["deletebyid",{"_index":38,"name":{"67":{},"85":{},"100":{},"174":{},"188":{},"203":{},"223":{},"235":{},"247":{}},"parent":{}}],["deparments",{"_index":32,"name":{"58":{},"77":{},"152":{}},"parent":{}}],["department",{"_index":29,"name":{"49":{}},"parent":{"50":{},"51":{},"52":{},"53":{},"54":{}}}],["departmentids",{"_index":85,"name":{"180":{},"181":{}},"parent":{}}],["departmentrouter",{"_index":84,"name":{"176":{},"256":{}},"parent":{"177":{},"178":{},"179":{}}}],["departments",{"_index":28,"name":{"45":{}},"parent":{}}],["departmentservice",{"_index":83,"name":{"168":{},"177":{}},"parent":{"169":{},"170":{},"171":{},"172":{},"173":{},"174":{},"175":{}}}],["endtime",{"_index":80,"name":{"158":{}},"parent":{}}],["environment",{"_index":13,"name":{"22":{}},"parent":{"23":{}}}],["error",{"_index":59,"name":{"113":{}},"parent":{}}],["errorresponse",{"_index":63,"name":{"118":{}},"parent":{"119":{},"120":{}}}],["faculty",{"_index":27,"name":{"43":{},"51":{}},"parent":{"44":{},"45":{},"46":{},"47":{},"48":{}}}],["facultyid",{"_index":82,"name":{"166":{},"167":{}},"parent":{}}],["facultyrouter",{"_index":87,"name":{"190":{},"257":{}},"parent":{"191":{},"192":{},"193":{}}}],["facultyservice",{"_index":86,"name":{"182":{},"191":{}},"parent":{"183":{},"184":{},"185":{},"186":{},"187":{},"188":{},"189":{}}}],["firstname",{"_index":69,"name":{"128":{},"149":{},"209":{},"213":{}},"parent":{}}],["getbyid",{"_index":34,"name":{"63":{},"83":{},"98":{},"172":{},"186":{},"201":{},"221":{},"233":{},"245":{}},"parent":{}}],["getoffsetlimit",{"_index":36,"name":{"65":{},"84":{},"99":{},"173":{},"187":{},"202":{},"222":{},"234":{},"246":{}},"parent":{}}],["group",{"_index":74,"name":{"141":{}},"parent":{"142":{},"143":{},"144":{},"145":{},"146":{},"147":{}}}],["groupids",{"_index":90,"name":{"212":{},"216":{}},"parent":{}}],["grouprouter",{"_index":89,"name":{"205":{},"258":{}},"parent":{"206":{},"207":{},"208":{}}}],["groups",{"_index":72,"name":{"131":{},"137":{},"162":{}},"parent":{}}],["groupservice",{"_index":88,"name":{"197":{},"206":{}},"parent":{"198":{},"199":{},"200":{},"201":{},"202":{},"203":{},"204":{}}}],["grouptype",{"_index":73,"name":{"135":{}},"parent":{"136":{},"137":{},"138":{},"139":{},"140":{}}}],["helper",{"_index":67,"name":{"124":{}},"parent":{"125":{},"126":{}}}],["icreate",{"_index":39,"name":{"68":{}},"parent":{"69":{}}}],["icreatearguments",{"_index":43,"name":{"72":{}},"parent":{"73":{},"166":{},"180":{},"194":{},"209":{},"210":{},"211":{},"212":{}}}],["id",{"_index":18,"name":{"27":{},"33":{},"40":{},"46":{},"52":{},"59":{},"75":{},"132":{},"138":{},"145":{},"153":{},"163":{}},"parent":{}}],["ideletebyid",{"_index":37,"name":{"66":{}},"parent":{"67":{}}}],["igetbyid",{"_index":33,"name":{"62":{}},"parent":{"63":{}}}],["igetoffsetlimit",{"_index":35,"name":{"64":{}},"parent":{"65":{}}}],["ihelper",{"_index":64,"name":{"121":{}},"parent":{"122":{},"123":{}}}],["irouter",{"_index":15,"name":{"24":{}},"parent":{"25":{}}}],["iupdate",{"_index":41,"name":{"70":{}},"parent":{"71":{}}}],["iupdatearguments",{"_index":44,"name":{"74":{}},"parent":{"75":{},"76":{},"77":{},"78":{},"92":{},"93":{},"167":{},"181":{},"195":{},"196":{},"213":{},"214":{},"215":{},"216":{}}}],["lastname",{"_index":70,"name":{"129":{},"150":{},"210":{},"214":{}},"parent":{}}],["logger",{"_index":11,"name":{"20":{}},"parent":{}}],["manager",{"_index":46,"name":{"80":{},"95":{},"169":{},"183":{},"198":{},"218":{},"230":{},"242":{}},"parent":{}}],["message",{"_index":57,"name":{"111":{},"117":{},"120":{}},"parent":{}}],["name",{"_index":22,"name":{"31":{},"37":{},"44":{},"50":{},"56":{},"73":{},"78":{},"109":{},"136":{},"142":{}},"parent":{}}],["node_env",{"_index":2,"name":{"2":{},"12":{}},"parent":{}}],["not_found",{"_index":54,"name":{"108":{}},"parent":{}}],["patronymic",{"_index":71,"name":{"130":{},"151":{},"211":{},"215":{}},"parent":{}}],["reason",{"_index":56,"name":{"110":{}},"parent":{}}],["reasons",{"_index":53,"name":{"107":{}},"parent":{}}],["router",{"_index":49,"name":{"91":{}},"parent":{}}],["routes",{"_index":16,"name":{"25":{},"90":{},"105":{},"179":{},"193":{},"208":{},"228":{},"240":{},"252":{},"263":{}},"parent":{}}],["server",{"_index":99,"name":{"265":{},"266":{},"268":{}},"parent":{"267":{},"268":{}}}],["server_port",{"_index":1,"name":{"1":{},"11":{}},"parent":{}}],["serverinterface",{"_index":98,"name":{"264":{}},"parent":{"265":{}}}],["setup",{"_index":14,"name":{"23":{}},"parent":{}}],["setupdocgenerator",{"_index":100,"name":{"267":{}},"parent":{}}],["stack",{"_index":58,"name":{"112":{}},"parent":{}}],["startserver",{"_index":101,"name":{"269":{}},"parent":{}}],["starttime",{"_index":79,"name":{"157":{}},"parent":{}}],["status",{"_index":61,"name":{"115":{},"119":{}},"parent":{}}],["student",{"_index":68,"name":{"127":{}},"parent":{"128":{},"129":{},"130":{},"131":{},"132":{},"133":{},"134":{}}}],["studentrouter",{"_index":92,"name":{"225":{},"259":{}},"parent":{"226":{},"227":{},"228":{}}}],["students",{"_index":75,"name":{"143":{},"195":{}},"parent":{}}],["studentservice",{"_index":91,"name":{"217":{},"226":{}},"parent":{"218":{},"219":{},"220":{},"221":{},"222":{},"223":{},"224":{}}}],["subject",{"_index":21,"name":{"30":{},"160":{}},"parent":{"31":{},"32":{},"33":{},"34":{},"35":{}}}],["subjectrouter",{"_index":94,"name":{"237":{},"260":{}},"parent":{"238":{},"239":{},"240":{}}}],["subjects",{"_index":26,"name":{"39":{},"93":{}},"parent":{}}],["subjectservice",{"_index":93,"name":{"229":{},"238":{}},"parent":{"230":{},"231":{},"232":{},"233":{},"234":{},"235":{},"236":{}}}],["subjectsession",{"_index":78,"name":{"156":{}},"parent":{"157":{},"158":{},"159":{},"160":{},"161":{},"162":{},"163":{},"164":{},"165":{}}}],["successresponse",{"_index":60,"name":{"114":{}},"parent":{"115":{},"116":{},"117":{}}}],["teacher",{"_index":77,"name":{"148":{}},"parent":{"149":{},"150":{},"151":{},"152":{},"153":{},"154":{},"155":{}}}],["teacherrouter",{"_index":96,"name":{"249":{},"261":{}},"parent":{"250":{},"251":{},"252":{}}}],["teachers",{"_index":81,"name":{"161":{}},"parent":{}}],["teacherservice",{"_index":95,"name":{"241":{},"250":{}},"parent":{"242":{},"243":{},"244":{},"245":{},"246":{},"247":{},"248":{}}}],["type",{"_index":76,"name":{"144":{},"194":{},"196":{}},"parent":{}}],["typeorm_connection",{"_index":8,"name":{"8":{},"18":{}},"parent":{}}],["typeorm_debug_mode",{"_index":9,"name":{"9":{},"19":{}},"parent":{}}],["types",{"_index":31,"name":{"57":{},"76":{}},"parent":{}}],["update",{"_index":42,"name":{"71":{},"86":{},"101":{},"175":{},"189":{},"204":{},"224":{},"236":{},"248":{}},"parent":{}}],["updatedat",{"_index":20,"name":{"29":{},"35":{},"42":{},"48":{},"54":{},"61":{},"134":{},"140":{},"147":{},"155":{},"165":{}},"parent":{}}]],"pipeline":[]}}
+{
+	"kinds": {
+		"32": "Variable",
+		"64": "Function",
+		"128": "Class",
+		"256": "Interface",
+		"512": "Constructor",
+		"1024": "Property",
+		"2048": "Method",
+		"262144": "Accessor",
+		"2097152": "Object literal"
+	},
+	"rows": [
+		{
+			"id": 0,
+			"kind": 256,
+			"name": "ConfigInterface",
+			"url": "interfaces/configinterface.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 1,
+			"kind": 1024,
+			"name": "SERVER_PORT",
+			"url": "interfaces/configinterface.html#server_port",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 2,
+			"kind": 1024,
+			"name": "NODE_ENV",
+			"url": "interfaces/configinterface.html#node_env",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 3,
+			"kind": 1024,
+			"name": "DB_HOST",
+			"url": "interfaces/configinterface.html#db_host",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 4,
+			"kind": 1024,
+			"name": "DB_USERNAME",
+			"url": "interfaces/configinterface.html#db_username",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 5,
+			"kind": 1024,
+			"name": "DB_PASSWORD",
+			"url": "interfaces/configinterface.html#db_password",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 6,
+			"kind": 1024,
+			"name": "DB_NAME",
+			"url": "interfaces/configinterface.html#db_name",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 7,
+			"kind": 1024,
+			"name": "DB_PORT",
+			"url": "interfaces/configinterface.html#db_port",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 8,
+			"kind": 1024,
+			"name": "TYPEORM_CONNECTION",
+			"url": "interfaces/configinterface.html#typeorm_connection",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 9,
+			"kind": 1024,
+			"name": "TYPEORM_DEBUG_MODE",
+			"url": "interfaces/configinterface.html#typeorm_debug_mode",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ConfigInterface"
+		},
+		{
+			"id": 10,
+			"kind": 2097152,
+			"name": "config",
+			"url": "globals.html#config",
+			"classes": "tsd-kind-object-literal"
+		},
+		{
+			"id": 11,
+			"kind": 32,
+			"name": "SERVER_PORT",
+			"url": "globals.html#config.server_port",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 12,
+			"kind": 32,
+			"name": "NODE_ENV",
+			"url": "globals.html#config.node_env",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 13,
+			"kind": 32,
+			"name": "DB_HOST",
+			"url": "globals.html#config.db_host",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 14,
+			"kind": 32,
+			"name": "DB_USERNAME",
+			"url": "globals.html#config.db_username",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 15,
+			"kind": 32,
+			"name": "DB_PASSWORD",
+			"url": "globals.html#config.db_password",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 16,
+			"kind": 32,
+			"name": "DB_NAME",
+			"url": "globals.html#config.db_name",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 17,
+			"kind": 32,
+			"name": "DB_PORT",
+			"url": "globals.html#config.db_port",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 18,
+			"kind": 32,
+			"name": "TYPEORM_CONNECTION",
+			"url": "globals.html#config.typeorm_connection",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 19,
+			"kind": 32,
+			"name": "TYPEORM_DEBUG_MODE",
+			"url": "globals.html#config.typeorm_debug_mode",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "config"
+		},
+		{
+			"id": 20,
+			"kind": 32,
+			"name": "logger",
+			"url": "globals.html#logger",
+			"classes": "tsd-kind-variable"
+		},
+		{
+			"id": 21,
+			"kind": 64,
+			"name": "connectToDatabase",
+			"url": "globals.html#connecttodatabase",
+			"classes": "tsd-kind-function"
+		},
+		{
+			"id": 22,
+			"kind": 128,
+			"name": "Environment",
+			"url": "classes/environment.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 23,
+			"kind": 2048,
+			"name": "setup",
+			"url": "classes/environment.html#setup",
+			"classes": "tsd-kind-method tsd-parent-kind-class tsd-is-static",
+			"parent": "Environment"
+		},
+		{
+			"id": 24,
+			"kind": 256,
+			"name": "IRouter",
+			"url": "interfaces/irouter.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 25,
+			"kind": 1024,
+			"name": "routes",
+			"url": "interfaces/irouter.html#routes",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IRouter"
+		},
+		{
+			"id": 26,
+			"kind": 128,
+			"name": "Base",
+			"url": "classes/base.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 27,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/base.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Base"
+		},
+		{
+			"id": 28,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/base.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Base"
+		},
+		{
+			"id": 29,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/base.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Base"
+		},
+		{
+			"id": 30,
+			"kind": 128,
+			"name": "Subject",
+			"url": "classes/subject.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 31,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/subject.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Subject"
+		},
+		{
+			"id": 32,
+			"kind": 1024,
+			"name": "audienceTypes",
+			"url": "classes/subject.html#audiencetypes",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Subject"
+		},
+		{
+			"id": 33,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/subject.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Subject"
+		},
+		{
+			"id": 34,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/subject.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Subject"
+		},
+		{
+			"id": 35,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/subject.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Subject"
+		},
+		{
+			"id": 36,
+			"kind": 128,
+			"name": "AudienceType",
+			"url": "classes/audiencetype.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 37,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/audiencetype.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "AudienceType"
+		},
+		{
+			"id": 38,
+			"kind": 1024,
+			"name": "audiences",
+			"url": "classes/audiencetype.html#audiences",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "AudienceType"
+		},
+		{
+			"id": 39,
+			"kind": 1024,
+			"name": "subjects",
+			"url": "classes/audiencetype.html#subjects",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "AudienceType"
+		},
+		{
+			"id": 40,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/audiencetype.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "AudienceType"
+		},
+		{
+			"id": 41,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/audiencetype.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "AudienceType"
+		},
+		{
+			"id": 42,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/audiencetype.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "AudienceType"
+		},
+		{
+			"id": 43,
+			"kind": 128,
+			"name": "Faculty",
+			"url": "classes/faculty.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 44,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/faculty.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Faculty"
+		},
+		{
+			"id": 45,
+			"kind": 1024,
+			"name": "departments",
+			"url": "classes/faculty.html#departments",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Faculty"
+		},
+		{
+			"id": 46,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/faculty.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Faculty"
+		},
+		{
+			"id": 47,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/faculty.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Faculty"
+		},
+		{
+			"id": 48,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/faculty.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Faculty"
+		},
+		{
+			"id": 49,
+			"kind": 128,
+			"name": "Department",
+			"url": "classes/department.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 50,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/department.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Department"
+		},
+		{
+			"id": 51,
+			"kind": 1024,
+			"name": "faculty",
+			"url": "classes/department.html#faculty",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Department"
+		},
+		{
+			"id": 52,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/department.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Department"
+		},
+		{
+			"id": 53,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/department.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Department"
+		},
+		{
+			"id": 54,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/department.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Department"
+		},
+		{
+			"id": 55,
+			"kind": 128,
+			"name": "Audience",
+			"url": "classes/audience.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 56,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/audience.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Audience"
+		},
+		{
+			"id": 57,
+			"kind": 1024,
+			"name": "types",
+			"url": "classes/audience.html#types",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Audience"
+		},
+		{
+			"id": 58,
+			"kind": 1024,
+			"name": "deparments",
+			"url": "classes/audience.html#deparments",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Audience"
+		},
+		{
+			"id": 59,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/audience.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Audience"
+		},
+		{
+			"id": 60,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/audience.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Audience"
+		},
+		{
+			"id": 61,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/audience.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Audience"
+		},
+		{
+			"id": 62,
+			"kind": 256,
+			"name": "IGetById",
+			"url": "interfaces/igetbyid.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 63,
+			"kind": 2048,
+			"name": "getById",
+			"url": "interfaces/igetbyid.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "IGetById"
+		},
+		{
+			"id": 64,
+			"kind": 256,
+			"name": "IGetOffsetLimit",
+			"url": "interfaces/igetoffsetlimit.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 65,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "interfaces/igetoffsetlimit.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "IGetOffsetLimit"
+		},
+		{
+			"id": 66,
+			"kind": 256,
+			"name": "IDeleteById",
+			"url": "interfaces/ideletebyid.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 67,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "interfaces/ideletebyid.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "IDeleteById"
+		},
+		{
+			"id": 68,
+			"kind": 256,
+			"name": "ICreate",
+			"url": "interfaces/icreate.html",
+			"classes": "tsd-kind-interface tsd-has-type-parameter"
+		},
+		{
+			"id": 69,
+			"kind": 2048,
+			"name": "create",
+			"url": "interfaces/icreate.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "ICreate"
+		},
+		{
+			"id": 70,
+			"kind": 256,
+			"name": "IUpdate",
+			"url": "interfaces/iupdate.html",
+			"classes": "tsd-kind-interface tsd-has-type-parameter"
+		},
+		{
+			"id": 71,
+			"kind": 2048,
+			"name": "update",
+			"url": "interfaces/iupdate.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "IUpdate"
+		},
+		{
+			"id": 72,
+			"kind": 256,
+			"name": "ICreateArguments",
+			"url": "interfaces/icreatearguments.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 73,
+			"kind": 1024,
+			"name": "name",
+			"url": "interfaces/icreatearguments.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 74,
+			"kind": 256,
+			"name": "IUpdateArguments",
+			"url": "interfaces/iupdatearguments.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 75,
+			"kind": 1024,
+			"name": "id",
+			"url": "interfaces/iupdatearguments.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 76,
+			"kind": 1024,
+			"name": "types",
+			"url": "interfaces/iupdatearguments.html#types",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 77,
+			"kind": 1024,
+			"name": "deparments",
+			"url": "interfaces/iupdatearguments.html#deparments",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 78,
+			"kind": 1024,
+			"name": "name",
+			"url": "interfaces/iupdatearguments.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 79,
+			"kind": 128,
+			"name": "AudienceService",
+			"url": "classes/audienceservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 80,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/audienceservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 81,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/audienceservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 82,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/audienceservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 83,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/audienceservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 84,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/audienceservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 85,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/audienceservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 86,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/audienceservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceService"
+		},
+		{
+			"id": 87,
+			"kind": 128,
+			"name": "AudienceRouter",
+			"url": "classes/audiencerouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 88,
+			"kind": 1024,
+			"name": "audienceService",
+			"url": "classes/audiencerouter.html#audienceservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "AudienceRouter"
+		},
+		{
+			"id": 89,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/audiencerouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "AudienceRouter"
+		},
+		{
+			"id": 90,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/audiencerouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "AudienceRouter"
+		},
+		{
+			"id": 91,
+			"kind": 32,
+			"name": "router",
+			"url": "globals.html#router",
+			"classes": "tsd-kind-variable"
+		},
+		{
+			"id": 92,
+			"kind": 1024,
+			"name": "audiences",
+			"url": "interfaces/iupdatearguments.html#audiences",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 93,
+			"kind": 1024,
+			"name": "subjects",
+			"url": "interfaces/iupdatearguments.html#subjects",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 94,
+			"kind": 128,
+			"name": "AudienceTypeService",
+			"url": "classes/audiencetypeservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 95,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/audiencetypeservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 96,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/audiencetypeservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 97,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/audiencetypeservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 98,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/audiencetypeservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 99,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/audiencetypeservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 100,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/audiencetypeservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 101,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/audiencetypeservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "AudienceTypeService"
+		},
+		{
+			"id": 102,
+			"kind": 128,
+			"name": "AudienceTypeRouter",
+			"url": "classes/audiencetyperouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 103,
+			"kind": 1024,
+			"name": "audienceTypeService",
+			"url": "classes/audiencetyperouter.html#audiencetypeservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "AudienceTypeRouter"
+		},
+		{
+			"id": 104,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/audiencetyperouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "AudienceTypeRouter"
+		},
+		{
+			"id": 105,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/audiencetyperouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "AudienceTypeRouter"
+		},
+		{
+			"id": 106,
+			"kind": 128,
+			"name": "DatabaseError",
+			"url": "classes/databaseerror.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 107,
+			"kind": 2097152,
+			"name": "REASONS",
+			"url": "classes/databaseerror.html#reasons",
+			"classes": "tsd-kind-object-literal tsd-parent-kind-class tsd-is-static",
+			"parent": "DatabaseError"
+		},
+		{
+			"id": 108,
+			"kind": 32,
+			"name": "NOT_FOUND",
+			"url": "classes/databaseerror.html#reasons.not_found",
+			"classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+			"parent": "DatabaseError.REASONS"
+		},
+		{
+			"id": 109,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/databaseerror.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-overwrite",
+			"parent": "DatabaseError"
+		},
+		{
+			"id": 110,
+			"kind": 1024,
+			"name": "reason",
+			"url": "classes/databaseerror.html#reason",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "DatabaseError"
+		},
+		{
+			"id": 111,
+			"kind": 1024,
+			"name": "message",
+			"url": "classes/databaseerror.html#message",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "DatabaseError"
+		},
+		{
+			"id": 112,
+			"kind": 1024,
+			"name": "stack",
+			"url": "classes/databaseerror.html#stack",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited",
+			"parent": "DatabaseError"
+		},
+		{
+			"id": 113,
+			"kind": 1024,
+			"name": "Error",
+			"url": "classes/databaseerror.html#error",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-static",
+			"parent": "DatabaseError"
+		},
+		{
+			"id": 114,
+			"kind": 256,
+			"name": "successResponse",
+			"url": "interfaces/successresponse.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 115,
+			"kind": 1024,
+			"name": "status",
+			"url": "interfaces/successresponse.html#status",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "successResponse"
+		},
+		{
+			"id": 116,
+			"kind": 1024,
+			"name": "body",
+			"url": "interfaces/successresponse.html#body",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "successResponse"
+		},
+		{
+			"id": 117,
+			"kind": 1024,
+			"name": "message",
+			"url": "interfaces/successresponse.html#message",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "successResponse"
+		},
+		{
+			"id": 118,
+			"kind": 256,
+			"name": "errorResponse",
+			"url": "interfaces/errorresponse.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 119,
+			"kind": 1024,
+			"name": "status",
+			"url": "interfaces/errorresponse.html#status",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "errorResponse"
+		},
+		{
+			"id": 120,
+			"kind": 1024,
+			"name": "message",
+			"url": "interfaces/errorresponse.html#message",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "errorResponse"
+		},
+		{
+			"id": 121,
+			"kind": 256,
+			"name": "IHelper",
+			"url": "interfaces/ihelper.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 122,
+			"kind": 2048,
+			"name": "createSuccessResponse",
+			"url": "interfaces/ihelper.html#createsuccessresponse",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "IHelper"
+		},
+		{
+			"id": 123,
+			"kind": 2048,
+			"name": "createErrorResponse",
+			"url": "interfaces/ihelper.html#createerrorresponse",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "IHelper"
+		},
+		{
+			"id": 124,
+			"kind": 128,
+			"name": "Helper",
+			"url": "classes/helper.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 125,
+			"kind": 2048,
+			"name": "createSuccessResponse",
+			"url": "classes/helper.html#createsuccessresponse",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "Helper"
+		},
+		{
+			"id": 126,
+			"kind": 2048,
+			"name": "createErrorResponse",
+			"url": "classes/helper.html#createerrorresponse",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "Helper"
+		},
+		{
+			"id": 127,
+			"kind": 128,
+			"name": "Student",
+			"url": "classes/student.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 128,
+			"kind": 1024,
+			"name": "firstName",
+			"url": "classes/student.html#firstname",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Student"
+		},
+		{
+			"id": 129,
+			"kind": 1024,
+			"name": "lastName",
+			"url": "classes/student.html#lastname",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Student"
+		},
+		{
+			"id": 130,
+			"kind": 1024,
+			"name": "patronymic",
+			"url": "classes/student.html#patronymic",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Student"
+		},
+		{
+			"id": 131,
+			"kind": 1024,
+			"name": "groups",
+			"url": "classes/student.html#groups",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Student"
+		},
+		{
+			"id": 132,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/student.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Student"
+		},
+		{
+			"id": 133,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/student.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Student"
+		},
+		{
+			"id": 134,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/student.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Student"
+		},
+		{
+			"id": 135,
+			"kind": 128,
+			"name": "GroupType",
+			"url": "classes/grouptype.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 136,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/grouptype.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "GroupType"
+		},
+		{
+			"id": 137,
+			"kind": 1024,
+			"name": "groups",
+			"url": "classes/grouptype.html#groups",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "GroupType"
+		},
+		{
+			"id": 138,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/grouptype.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "GroupType"
+		},
+		{
+			"id": 139,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/grouptype.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "GroupType"
+		},
+		{
+			"id": 140,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/grouptype.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "GroupType"
+		},
+		{
+			"id": 141,
+			"kind": 128,
+			"name": "Group",
+			"url": "classes/group.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 142,
+			"kind": 1024,
+			"name": "name",
+			"url": "classes/group.html#name",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Group"
+		},
+		{
+			"id": 143,
+			"kind": 1024,
+			"name": "students",
+			"url": "classes/group.html#students",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Group"
+		},
+		{
+			"id": 144,
+			"kind": 1024,
+			"name": "type",
+			"url": "classes/group.html#type",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Group"
+		},
+		{
+			"id": 145,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/group.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Group"
+		},
+		{
+			"id": 146,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/group.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Group"
+		},
+		{
+			"id": 147,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/group.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Group"
+		},
+		{
+			"id": 148,
+			"kind": 128,
+			"name": "Teacher",
+			"url": "classes/teacher.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 149,
+			"kind": 1024,
+			"name": "firstName",
+			"url": "classes/teacher.html#firstname",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Teacher"
+		},
+		{
+			"id": 150,
+			"kind": 1024,
+			"name": "lastName",
+			"url": "classes/teacher.html#lastname",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Teacher"
+		},
+		{
+			"id": 151,
+			"kind": 1024,
+			"name": "patronymic",
+			"url": "classes/teacher.html#patronymic",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Teacher"
+		},
+		{
+			"id": 152,
+			"kind": 1024,
+			"name": "deparments",
+			"url": "classes/teacher.html#deparments",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "Teacher"
+		},
+		{
+			"id": 153,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/teacher.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Teacher"
+		},
+		{
+			"id": 154,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/teacher.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Teacher"
+		},
+		{
+			"id": 155,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/teacher.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "Teacher"
+		},
+		{
+			"id": 156,
+			"kind": 128,
+			"name": "SubjectSession",
+			"url": "classes/subjectsession.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 157,
+			"kind": 1024,
+			"name": "startTime",
+			"url": "classes/subjectsession.html#starttime",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 158,
+			"kind": 1024,
+			"name": "endTime",
+			"url": "classes/subjectsession.html#endtime",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 159,
+			"kind": 1024,
+			"name": "audience",
+			"url": "classes/subjectsession.html#audience",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 160,
+			"kind": 1024,
+			"name": "subject",
+			"url": "classes/subjectsession.html#subject",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 161,
+			"kind": 1024,
+			"name": "teachers",
+			"url": "classes/subjectsession.html#teachers",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 162,
+			"kind": 1024,
+			"name": "groups",
+			"url": "classes/subjectsession.html#groups",
+			"classes": "tsd-kind-property tsd-parent-kind-class",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 163,
+			"kind": 1024,
+			"name": "id",
+			"url": "classes/subjectsession.html#id",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 164,
+			"kind": 1024,
+			"name": "createdAt",
+			"url": "classes/subjectsession.html#createdat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 165,
+			"kind": 1024,
+			"name": "updatedAt",
+			"url": "classes/subjectsession.html#updatedat",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited",
+			"parent": "SubjectSession"
+		},
+		{
+			"id": 166,
+			"kind": 1024,
+			"name": "facultyId",
+			"url": "interfaces/icreatearguments.html#facultyid",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 167,
+			"kind": 1024,
+			"name": "facultyId",
+			"url": "interfaces/iupdatearguments.html#facultyid",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 168,
+			"kind": 128,
+			"name": "DepartmentService",
+			"url": "classes/departmentservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 169,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/departmentservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 170,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/departmentservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 171,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/departmentservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 172,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/departmentservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 173,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/departmentservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 174,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/departmentservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 175,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/departmentservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "DepartmentService"
+		},
+		{
+			"id": 176,
+			"kind": 128,
+			"name": "DepartmentRouter",
+			"url": "classes/departmentrouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 177,
+			"kind": 1024,
+			"name": "departmentService",
+			"url": "classes/departmentrouter.html#departmentservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "DepartmentRouter"
+		},
+		{
+			"id": 178,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/departmentrouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "DepartmentRouter"
+		},
+		{
+			"id": 179,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/departmentrouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "DepartmentRouter"
+		},
+		{
+			"id": 180,
+			"kind": 1024,
+			"name": "departmentIds",
+			"url": "interfaces/icreatearguments.html#departmentids",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 181,
+			"kind": 1024,
+			"name": "departmentIds",
+			"url": "interfaces/iupdatearguments.html#departmentids",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 182,
+			"kind": 128,
+			"name": "FacultyService",
+			"url": "classes/facultyservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 183,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/facultyservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 184,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/facultyservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 185,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/facultyservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 186,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/facultyservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 187,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/facultyservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 188,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/facultyservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 189,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/facultyservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "FacultyService"
+		},
+		{
+			"id": 190,
+			"kind": 128,
+			"name": "FacultyRouter",
+			"url": "classes/facultyrouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 191,
+			"kind": 1024,
+			"name": "facultyService",
+			"url": "classes/facultyrouter.html#facultyservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "FacultyRouter"
+		},
+		{
+			"id": 192,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/facultyrouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "FacultyRouter"
+		},
+		{
+			"id": 193,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/facultyrouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "FacultyRouter"
+		},
+		{
+			"id": 194,
+			"kind": 1024,
+			"name": "type",
+			"url": "interfaces/icreatearguments.html#type",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 195,
+			"kind": 1024,
+			"name": "students",
+			"url": "interfaces/iupdatearguments.html#students",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 196,
+			"kind": 1024,
+			"name": "type",
+			"url": "interfaces/iupdatearguments.html#type",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 197,
+			"kind": 128,
+			"name": "GroupService",
+			"url": "classes/groupservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 198,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/groupservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "GroupService"
+		},
+		{
+			"id": 199,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/groupservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "GroupService"
+		},
+		{
+			"id": 200,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/groupservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "GroupService"
+		},
+		{
+			"id": 201,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/groupservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "GroupService"
+		},
+		{
+			"id": 202,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/groupservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "GroupService"
+		},
+		{
+			"id": 203,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/groupservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "GroupService"
+		},
+		{
+			"id": 204,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/groupservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "GroupService"
+		},
+		{
+			"id": 205,
+			"kind": 128,
+			"name": "GroupRouter",
+			"url": "classes/grouprouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 206,
+			"kind": 1024,
+			"name": "groupService",
+			"url": "classes/grouprouter.html#groupservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "GroupRouter"
+		},
+		{
+			"id": 207,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/grouprouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "GroupRouter"
+		},
+		{
+			"id": 208,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/grouprouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "GroupRouter"
+		},
+		{
+			"id": 209,
+			"kind": 1024,
+			"name": "firstName",
+			"url": "interfaces/icreatearguments.html#firstname",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 210,
+			"kind": 1024,
+			"name": "lastName",
+			"url": "interfaces/icreatearguments.html#lastname",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 211,
+			"kind": 1024,
+			"name": "patronymic",
+			"url": "interfaces/icreatearguments.html#patronymic",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 212,
+			"kind": 1024,
+			"name": "groupIds",
+			"url": "interfaces/icreatearguments.html#groupids",
+			"classes": "tsd-kind-property tsd-parent-kind-interface",
+			"parent": "ICreateArguments"
+		},
+		{
+			"id": 213,
+			"kind": 1024,
+			"name": "firstName",
+			"url": "interfaces/iupdatearguments.html#firstname",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 214,
+			"kind": 1024,
+			"name": "lastName",
+			"url": "interfaces/iupdatearguments.html#lastname",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 215,
+			"kind": 1024,
+			"name": "patronymic",
+			"url": "interfaces/iupdatearguments.html#patronymic",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 216,
+			"kind": 1024,
+			"name": "groupIds",
+			"url": "interfaces/iupdatearguments.html#groupids",
+			"classes": "tsd-kind-property tsd-parent-kind-interface tsd-is-inherited",
+			"parent": "IUpdateArguments"
+		},
+		{
+			"id": 217,
+			"kind": 128,
+			"name": "StudentService",
+			"url": "classes/studentservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 218,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/studentservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "StudentService"
+		},
+		{
+			"id": 219,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/studentservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "StudentService"
+		},
+		{
+			"id": 220,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/studentservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "StudentService"
+		},
+		{
+			"id": 221,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/studentservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "StudentService"
+		},
+		{
+			"id": 222,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/studentservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "StudentService"
+		},
+		{
+			"id": 223,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/studentservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "StudentService"
+		},
+		{
+			"id": 224,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/studentservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "StudentService"
+		},
+		{
+			"id": 225,
+			"kind": 128,
+			"name": "StudentRouter",
+			"url": "classes/studentrouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 226,
+			"kind": 1024,
+			"name": "studentService",
+			"url": "classes/studentrouter.html#studentservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "StudentRouter"
+		},
+		{
+			"id": 227,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/studentrouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "StudentRouter"
+		},
+		{
+			"id": 228,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/studentrouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "StudentRouter"
+		},
+		{
+			"id": 229,
+			"kind": 128,
+			"name": "SubjectService",
+			"url": "classes/subjectservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 230,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/subjectservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 231,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/subjectservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 232,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/subjectservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 233,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/subjectservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 234,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/subjectservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 235,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/subjectservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 236,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/subjectservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "SubjectService"
+		},
+		{
+			"id": 237,
+			"kind": 128,
+			"name": "SubjectRouter",
+			"url": "classes/subjectrouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 238,
+			"kind": 1024,
+			"name": "subjectService",
+			"url": "classes/subjectrouter.html#subjectservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "SubjectRouter"
+		},
+		{
+			"id": 239,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/subjectrouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "SubjectRouter"
+		},
+		{
+			"id": 240,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/subjectrouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "SubjectRouter"
+		},
+		{
+			"id": 241,
+			"kind": 128,
+			"name": "TeacherService",
+			"url": "classes/teacherservice.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 242,
+			"kind": 1024,
+			"name": "manager",
+			"url": "classes/teacherservice.html#manager",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 243,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/teacherservice.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 244,
+			"kind": 2048,
+			"name": "create",
+			"url": "classes/teacherservice.html#create",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 245,
+			"kind": 2048,
+			"name": "getById",
+			"url": "classes/teacherservice.html#getbyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 246,
+			"kind": 2048,
+			"name": "getOffsetLimit",
+			"url": "classes/teacherservice.html#getoffsetlimit",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 247,
+			"kind": 2048,
+			"name": "deleteById",
+			"url": "classes/teacherservice.html#deletebyid",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 248,
+			"kind": 2048,
+			"name": "update",
+			"url": "classes/teacherservice.html#update",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "TeacherService"
+		},
+		{
+			"id": 249,
+			"kind": 128,
+			"name": "TeacherRouter",
+			"url": "classes/teacherrouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 250,
+			"kind": 1024,
+			"name": "teacherService",
+			"url": "classes/teacherrouter.html#teacherservice",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "TeacherRouter"
+		},
+		{
+			"id": 251,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/teacherrouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "TeacherRouter"
+		},
+		{
+			"id": 252,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/teacherrouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "TeacherRouter"
+		},
+		{
+			"id": 253,
+			"kind": 128,
+			"name": "BaseRouter",
+			"url": "classes/baserouter.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 254,
+			"kind": 1024,
+			"name": "audienceRouter",
+			"url": "classes/baserouter.html#audiencerouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 255,
+			"kind": 1024,
+			"name": "audienceTypeRouter",
+			"url": "classes/baserouter.html#audiencetyperouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 256,
+			"kind": 1024,
+			"name": "departmentRouter",
+			"url": "classes/baserouter.html#departmentrouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 257,
+			"kind": 1024,
+			"name": "facultyRouter",
+			"url": "classes/baserouter.html#facultyrouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 258,
+			"kind": 1024,
+			"name": "groupRouter",
+			"url": "classes/baserouter.html#grouprouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 259,
+			"kind": 1024,
+			"name": "studentRouter",
+			"url": "classes/baserouter.html#studentrouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 260,
+			"kind": 1024,
+			"name": "subjectRouter",
+			"url": "classes/baserouter.html#subjectrouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 261,
+			"kind": 1024,
+			"name": "teacherRouter",
+			"url": "classes/baserouter.html#teacherrouter",
+			"classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 262,
+			"kind": 512,
+			"name": "constructor",
+			"url": "classes/baserouter.html#constructor",
+			"classes": "tsd-kind-constructor tsd-parent-kind-class",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 263,
+			"kind": 262144,
+			"name": "routes",
+			"url": "classes/baserouter.html#routes",
+			"classes": "tsd-kind-get-signature tsd-parent-kind-class",
+			"parent": "BaseRouter"
+		},
+		{
+			"id": 264,
+			"kind": 256,
+			"name": "ServerInterface",
+			"url": "interfaces/serverinterface.html",
+			"classes": "tsd-kind-interface"
+		},
+		{
+			"id": 265,
+			"kind": 2048,
+			"name": "server",
+			"url": "interfaces/serverinterface.html#server",
+			"classes": "tsd-kind-method tsd-parent-kind-interface",
+			"parent": "ServerInterface"
+		},
+		{
+			"id": 266,
+			"kind": 128,
+			"name": "Server",
+			"url": "classes/server.html",
+			"classes": "tsd-kind-class"
+		},
+		{
+			"id": 267,
+			"kind": 2048,
+			"name": "setupDocGenerator",
+			"url": "classes/server.html#setupdocgenerator",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "Server"
+		},
+		{
+			"id": 268,
+			"kind": 2048,
+			"name": "server",
+			"url": "classes/server.html#server-1",
+			"classes": "tsd-kind-method tsd-parent-kind-class",
+			"parent": "Server"
+		},
+		{
+			"id": 269,
+			"kind": 64,
+			"name": "startServer",
+			"url": "globals.html#startserver",
+			"classes": "tsd-kind-function"
+		}
+	],
+	"index": {
+		"version": "2.3.9",
+		"fields": ["name", "parent"],
+		"fieldVectors": [
+			["name/0", [0, 32.507]],
+			["parent/0", []],
+			["name/1", [1, 46.858]],
+			["parent/1", [0, 2.974]],
+			["name/2", [2, 46.858]],
+			["parent/2", [0, 2.974]],
+			["name/3", [3, 46.858]],
+			["parent/3", [0, 2.974]],
+			["name/4", [4, 46.858]],
+			["parent/4", [0, 2.974]],
+			["name/5", [5, 46.858]],
+			["parent/5", [0, 2.974]],
+			["name/6", [6, 46.858]],
+			["parent/6", [0, 2.974]],
+			["name/7", [7, 46.858]],
+			["parent/7", [0, 2.974]],
+			["name/8", [8, 46.858]],
+			["parent/8", [0, 2.974]],
+			["name/9", [9, 46.858]],
+			["parent/9", [0, 2.974]],
+			["name/10", [10, 32.507]],
+			["parent/10", []],
+			["name/11", [1, 46.858]],
+			["parent/11", [10, 2.974]],
+			["name/12", [2, 46.858]],
+			["parent/12", [10, 2.974]],
+			["name/13", [3, 46.858]],
+			["parent/13", [10, 2.974]],
+			["name/14", [4, 46.858]],
+			["parent/14", [10, 2.974]],
+			["name/15", [5, 46.858]],
+			["parent/15", [10, 2.974]],
+			["name/16", [6, 46.858]],
+			["parent/16", [10, 2.974]],
+			["name/17", [7, 46.858]],
+			["parent/17", [10, 2.974]],
+			["name/18", [8, 46.858]],
+			["parent/18", [10, 2.974]],
+			["name/19", [9, 46.858]],
+			["parent/19", [10, 2.974]],
+			["name/20", [11, 51.967]],
+			["parent/20", []],
+			["name/21", [12, 51.967]],
+			["parent/21", []],
+			["name/22", [13, 46.858]],
+			["parent/22", []],
+			["name/23", [14, 51.967]],
+			["parent/23", [13, 4.287]],
+			["name/24", [15, 46.858]],
+			["parent/24", []],
+			["name/25", [16, 32.507]],
+			["parent/25", [15, 4.287]],
+			["name/26", [17, 40.98]],
+			["parent/26", []],
+			["name/27", [18, 30.764]],
+			["parent/27", [17, 3.749]],
+			["name/28", [19, 31.598]],
+			["parent/28", [17, 3.749]],
+			["name/29", [20, 31.598]],
+			["parent/29", [17, 3.749]],
+			["name/30", [21, 35.872]],
+			["parent/30", []],
+			["name/31", [22, 32.507]],
+			["parent/31", [21, 3.282]],
+			["name/32", [23, 51.967]],
+			["parent/32", [21, 3.282]],
+			["name/33", [18, 30.764]],
+			["parent/33", [21, 3.282]],
+			["name/34", [19, 31.598]],
+			["parent/34", [21, 3.282]],
+			["name/35", [20, 31.598]],
+			["parent/35", [21, 3.282]],
+			["name/36", [24, 35.872]],
+			["parent/36", []],
+			["name/37", [22, 32.507]],
+			["parent/37", [24, 3.282]],
+			["name/38", [25, 46.858]],
+			["parent/38", [24, 3.282]],
+			["name/39", [26, 46.858]],
+			["parent/39", [24, 3.282]],
+			["name/40", [18, 30.764]],
+			["parent/40", [24, 3.282]],
+			["name/41", [19, 31.598]],
+			["parent/41", [24, 3.282]],
+			["name/42", [20, 31.598]],
+			["parent/42", [24, 3.282]],
+			["name/43", [27, 35.872]],
+			["parent/43", []],
+			["name/44", [22, 32.507]],
+			["parent/44", [27, 3.282]],
+			["name/45", [28, 51.967]],
+			["parent/45", [27, 3.282]],
+			["name/46", [18, 30.764]],
+			["parent/46", [27, 3.282]],
+			["name/47", [19, 31.598]],
+			["parent/47", [27, 3.282]],
+			["name/48", [20, 31.598]],
+			["parent/48", [27, 3.282]],
+			["name/49", [29, 37.303]],
+			["parent/49", []],
+			["name/50", [22, 32.507]],
+			["parent/50", [29, 3.413]],
+			["name/51", [27, 35.872]],
+			["parent/51", [29, 3.413]],
+			["name/52", [18, 30.764]],
+			["parent/52", [29, 3.413]],
+			["name/53", [19, 31.598]],
+			["parent/53", [29, 3.413]],
+			["name/54", [20, 31.598]],
+			["parent/54", [29, 3.413]],
+			["name/55", [30, 34.621]],
+			["parent/55", []],
+			["name/56", [22, 32.507]],
+			["parent/56", [30, 3.168]],
+			["name/57", [31, 46.858]],
+			["parent/57", [30, 3.168]],
+			["name/58", [32, 43.494]],
+			["parent/58", [30, 3.168]],
+			["name/59", [18, 30.764]],
+			["parent/59", [30, 3.168]],
+			["name/60", [19, 31.598]],
+			["parent/60", [30, 3.168]],
+			["name/61", [20, 31.598]],
+			["parent/61", [30, 3.168]],
+			["name/62", [33, 46.858]],
+			["parent/62", []],
+			["name/63", [34, 33.508]],
+			["parent/63", [33, 4.287]],
+			["name/64", [35, 46.858]],
+			["parent/64", []],
+			["name/65", [36, 33.508]],
+			["parent/65", [35, 4.287]],
+			["name/66", [37, 46.858]],
+			["parent/66", []],
+			["name/67", [38, 33.508]],
+			["parent/67", [37, 4.287]],
+			["name/68", [39, 46.858]],
+			["parent/68", []],
+			["name/69", [40, 33.508]],
+			["parent/69", [39, 4.287]],
+			["name/70", [41, 46.858]],
+			["parent/70", []],
+			["name/71", [42, 33.508]],
+			["parent/71", [41, 4.287]],
+			["name/72", [43, 33.508]],
+			["parent/72", []],
+			["name/73", [22, 32.507]],
+			["parent/73", [43, 3.066]],
+			["name/74", [44, 28.613]],
+			["parent/74", []],
+			["name/75", [18, 30.764]],
+			["parent/75", [44, 2.618]],
+			["name/76", [31, 46.858]],
+			["parent/76", [44, 2.618]],
+			["name/77", [32, 43.494]],
+			["parent/77", [44, 2.618]],
+			["name/78", [22, 32.507]],
+			["parent/78", [44, 2.618]],
+			["name/79", [45, 33.508]],
+			["parent/79", []],
+			["name/80", [46, 34.621]],
+			["parent/80", [45, 3.066]],
+			["name/81", [47, 27.399]],
+			["parent/81", [45, 3.066]],
+			["name/82", [40, 33.508]],
+			["parent/82", [45, 3.066]],
+			["name/83", [34, 33.508]],
+			["parent/83", [45, 3.066]],
+			["name/84", [36, 33.508]],
+			["parent/84", [45, 3.066]],
+			["name/85", [38, 33.508]],
+			["parent/85", [45, 3.066]],
+			["name/86", [42, 33.508]],
+			["parent/86", [45, 3.066]],
+			["name/87", [48, 38.974]],
+			["parent/87", []],
+			["name/88", [45, 33.508]],
+			["parent/88", [48, 3.566]],
+			["name/89", [47, 27.399]],
+			["parent/89", [48, 3.566]],
+			["name/90", [16, 32.507]],
+			["parent/90", [48, 3.566]],
+			["name/91", [49, 51.967]],
+			["parent/91", []],
+			["name/92", [25, 46.858]],
+			["parent/92", [44, 2.618]],
+			["name/93", [26, 46.858]],
+			["parent/93", [44, 2.618]],
+			["name/94", [50, 33.508]],
+			["parent/94", []],
+			["name/95", [46, 34.621]],
+			["parent/95", [50, 3.066]],
+			["name/96", [47, 27.399]],
+			["parent/96", [50, 3.066]],
+			["name/97", [40, 33.508]],
+			["parent/97", [50, 3.066]],
+			["name/98", [34, 33.508]],
+			["parent/98", [50, 3.066]],
+			["name/99", [36, 33.508]],
+			["parent/99", [50, 3.066]],
+			["name/100", [38, 33.508]],
+			["parent/100", [50, 3.066]],
+			["name/101", [42, 33.508]],
+			["parent/101", [50, 3.066]],
+			["name/102", [51, 38.974]],
+			["parent/102", []],
+			["name/103", [50, 33.508]],
+			["parent/103", [51, 3.566]],
+			["name/104", [47, 27.399]],
+			["parent/104", [51, 3.566]],
+			["name/105", [16, 32.507]],
+			["parent/105", [51, 3.566]],
+			["name/106", [52, 35.872]],
+			["parent/106", []],
+			["name/107", [53, 51.967]],
+			["parent/107", [52, 3.282]],
+			["name/108", [54, 51.967]],
+			["parent/108", [55, 4.755]],
+			["name/109", [22, 32.507]],
+			["parent/109", [52, 3.282]],
+			["name/110", [56, 51.967]],
+			["parent/110", [52, 3.282]],
+			["name/111", [57, 43.494]],
+			["parent/111", [52, 3.282]],
+			["name/112", [58, 51.967]],
+			["parent/112", [52, 3.282]],
+			["name/113", [59, 51.967]],
+			["parent/113", [52, 3.282]],
+			["name/114", [60, 40.98]],
+			["parent/114", []],
+			["name/115", [61, 46.858]],
+			["parent/115", [60, 3.749]],
+			["name/116", [62, 51.967]],
+			["parent/116", [60, 3.749]],
+			["name/117", [57, 43.494]],
+			["parent/117", [60, 3.749]],
+			["name/118", [63, 43.494]],
+			["parent/118", []],
+			["name/119", [61, 46.858]],
+			["parent/119", [63, 3.979]],
+			["name/120", [57, 43.494]],
+			["parent/120", [63, 3.979]],
+			["name/121", [64, 43.494]],
+			["parent/121", []],
+			["name/122", [65, 46.858]],
+			["parent/122", [64, 3.979]],
+			["name/123", [66, 46.858]],
+			["parent/123", [64, 3.979]],
+			["name/124", [67, 43.494]],
+			["parent/124", []],
+			["name/125", [65, 46.858]],
+			["parent/125", [67, 3.979]],
+			["name/126", [66, 46.858]],
+			["parent/126", [67, 3.979]],
+			["name/127", [68, 34.621]],
+			["parent/127", []],
+			["name/128", [69, 40.98]],
+			["parent/128", [68, 3.168]],
+			["name/129", [70, 40.98]],
+			["parent/129", [68, 3.168]],
+			["name/130", [71, 40.98]],
+			["parent/130", [68, 3.168]],
+			["name/131", [72, 43.494]],
+			["parent/131", [68, 3.168]],
+			["name/132", [18, 30.764]],
+			["parent/132", [68, 3.168]],
+			["name/133", [19, 31.598]],
+			["parent/133", [68, 3.168]],
+			["name/134", [20, 31.598]],
+			["parent/134", [68, 3.168]],
+			["name/135", [73, 37.303]],
+			["parent/135", []],
+			["name/136", [22, 32.507]],
+			["parent/136", [73, 3.413]],
+			["name/137", [72, 43.494]],
+			["parent/137", [73, 3.413]],
+			["name/138", [18, 30.764]],
+			["parent/138", [73, 3.413]],
+			["name/139", [19, 31.598]],
+			["parent/139", [73, 3.413]],
+			["name/140", [20, 31.598]],
+			["parent/140", [73, 3.413]],
+			["name/141", [74, 35.872]],
+			["parent/141", []],
+			["name/142", [22, 32.507]],
+			["parent/142", [74, 3.282]],
+			["name/143", [75, 46.858]],
+			["parent/143", [74, 3.282]],
+			["name/144", [76, 43.494]],
+			["parent/144", [74, 3.282]],
+			["name/145", [18, 30.764]],
+			["parent/145", [74, 3.282]],
+			["name/146", [19, 31.598]],
+			["parent/146", [74, 3.282]],
+			["name/147", [20, 31.598]],
+			["parent/147", [74, 3.282]],
+			["name/148", [77, 34.621]],
+			["parent/148", []],
+			["name/149", [69, 40.98]],
+			["parent/149", [77, 3.168]],
+			["name/150", [70, 40.98]],
+			["parent/150", [77, 3.168]],
+			["name/151", [71, 40.98]],
+			["parent/151", [77, 3.168]],
+			["name/152", [32, 43.494]],
+			["parent/152", [77, 3.168]],
+			["name/153", [18, 30.764]],
+			["parent/153", [77, 3.168]],
+			["name/154", [19, 31.598]],
+			["parent/154", [77, 3.168]],
+			["name/155", [20, 31.598]],
+			["parent/155", [77, 3.168]],
+			["name/156", [78, 32.507]],
+			["parent/156", []],
+			["name/157", [79, 51.967]],
+			["parent/157", [78, 2.974]],
+			["name/158", [80, 51.967]],
+			["parent/158", [78, 2.974]],
+			["name/159", [30, 34.621]],
+			["parent/159", [78, 2.974]],
+			["name/160", [21, 35.872]],
+			["parent/160", [78, 2.974]],
+			["name/161", [81, 51.967]],
+			["parent/161", [78, 2.974]],
+			["name/162", [72, 43.494]],
+			["parent/162", [78, 2.974]],
+			["name/163", [18, 30.764]],
+			["parent/163", [78, 2.974]],
+			["name/164", [19, 31.598]],
+			["parent/164", [78, 2.974]],
+			["name/165", [20, 31.598]],
+			["parent/165", [78, 2.974]],
+			["name/166", [82, 46.858]],
+			["parent/166", [43, 3.066]],
+			["name/167", [82, 46.858]],
+			["parent/167", [44, 2.618]],
+			["name/168", [83, 33.508]],
+			["parent/168", []],
+			["name/169", [46, 34.621]],
+			["parent/169", [83, 3.066]],
+			["name/170", [47, 27.399]],
+			["parent/170", [83, 3.066]],
+			["name/171", [40, 33.508]],
+			["parent/171", [83, 3.066]],
+			["name/172", [34, 33.508]],
+			["parent/172", [83, 3.066]],
+			["name/173", [36, 33.508]],
+			["parent/173", [83, 3.066]],
+			["name/174", [38, 33.508]],
+			["parent/174", [83, 3.066]],
+			["name/175", [42, 33.508]],
+			["parent/175", [83, 3.066]],
+			["name/176", [84, 38.974]],
+			["parent/176", []],
+			["name/177", [83, 33.508]],
+			["parent/177", [84, 3.566]],
+			["name/178", [47, 27.399]],
+			["parent/178", [84, 3.566]],
+			["name/179", [16, 32.507]],
+			["parent/179", [84, 3.566]],
+			["name/180", [85, 46.858]],
+			["parent/180", [43, 3.066]],
+			["name/181", [85, 46.858]],
+			["parent/181", [44, 2.618]],
+			["name/182", [86, 33.508]],
+			["parent/182", []],
+			["name/183", [46, 34.621]],
+			["parent/183", [86, 3.066]],
+			["name/184", [47, 27.399]],
+			["parent/184", [86, 3.066]],
+			["name/185", [40, 33.508]],
+			["parent/185", [86, 3.066]],
+			["name/186", [34, 33.508]],
+			["parent/186", [86, 3.066]],
+			["name/187", [36, 33.508]],
+			["parent/187", [86, 3.066]],
+			["name/188", [38, 33.508]],
+			["parent/188", [86, 3.066]],
+			["name/189", [42, 33.508]],
+			["parent/189", [86, 3.066]],
+			["name/190", [87, 38.974]],
+			["parent/190", []],
+			["name/191", [86, 33.508]],
+			["parent/191", [87, 3.566]],
+			["name/192", [47, 27.399]],
+			["parent/192", [87, 3.566]],
+			["name/193", [16, 32.507]],
+			["parent/193", [87, 3.566]],
+			["name/194", [76, 43.494]],
+			["parent/194", [43, 3.066]],
+			["name/195", [75, 46.858]],
+			["parent/195", [44, 2.618]],
+			["name/196", [76, 43.494]],
+			["parent/196", [44, 2.618]],
+			["name/197", [88, 33.508]],
+			["parent/197", []],
+			["name/198", [46, 34.621]],
+			["parent/198", [88, 3.066]],
+			["name/199", [47, 27.399]],
+			["parent/199", [88, 3.066]],
+			["name/200", [40, 33.508]],
+			["parent/200", [88, 3.066]],
+			["name/201", [34, 33.508]],
+			["parent/201", [88, 3.066]],
+			["name/202", [36, 33.508]],
+			["parent/202", [88, 3.066]],
+			["name/203", [38, 33.508]],
+			["parent/203", [88, 3.066]],
+			["name/204", [42, 33.508]],
+			["parent/204", [88, 3.066]],
+			["name/205", [89, 38.974]],
+			["parent/205", []],
+			["name/206", [88, 33.508]],
+			["parent/206", [89, 3.566]],
+			["name/207", [47, 27.399]],
+			["parent/207", [89, 3.566]],
+			["name/208", [16, 32.507]],
+			["parent/208", [89, 3.566]],
+			["name/209", [69, 40.98]],
+			["parent/209", [43, 3.066]],
+			["name/210", [70, 40.98]],
+			["parent/210", [43, 3.066]],
+			["name/211", [71, 40.98]],
+			["parent/211", [43, 3.066]],
+			["name/212", [90, 46.858]],
+			["parent/212", [43, 3.066]],
+			["name/213", [69, 40.98]],
+			["parent/213", [44, 2.618]],
+			["name/214", [70, 40.98]],
+			["parent/214", [44, 2.618]],
+			["name/215", [71, 40.98]],
+			["parent/215", [44, 2.618]],
+			["name/216", [90, 46.858]],
+			["parent/216", [44, 2.618]],
+			["name/217", [91, 33.508]],
+			["parent/217", []],
+			["name/218", [46, 34.621]],
+			["parent/218", [91, 3.066]],
+			["name/219", [47, 27.399]],
+			["parent/219", [91, 3.066]],
+			["name/220", [40, 33.508]],
+			["parent/220", [91, 3.066]],
+			["name/221", [34, 33.508]],
+			["parent/221", [91, 3.066]],
+			["name/222", [36, 33.508]],
+			["parent/222", [91, 3.066]],
+			["name/223", [38, 33.508]],
+			["parent/223", [91, 3.066]],
+			["name/224", [42, 33.508]],
+			["parent/224", [91, 3.066]],
+			["name/225", [92, 38.974]],
+			["parent/225", []],
+			["name/226", [91, 33.508]],
+			["parent/226", [92, 3.566]],
+			["name/227", [47, 27.399]],
+			["parent/227", [92, 3.566]],
+			["name/228", [16, 32.507]],
+			["parent/228", [92, 3.566]],
+			["name/229", [93, 33.508]],
+			["parent/229", []],
+			["name/230", [46, 34.621]],
+			["parent/230", [93, 3.066]],
+			["name/231", [47, 27.399]],
+			["parent/231", [93, 3.066]],
+			["name/232", [40, 33.508]],
+			["parent/232", [93, 3.066]],
+			["name/233", [34, 33.508]],
+			["parent/233", [93, 3.066]],
+			["name/234", [36, 33.508]],
+			["parent/234", [93, 3.066]],
+			["name/235", [38, 33.508]],
+			["parent/235", [93, 3.066]],
+			["name/236", [42, 33.508]],
+			["parent/236", [93, 3.066]],
+			["name/237", [94, 38.974]],
+			["parent/237", []],
+			["name/238", [93, 33.508]],
+			["parent/238", [94, 3.566]],
+			["name/239", [47, 27.399]],
+			["parent/239", [94, 3.566]],
+			["name/240", [16, 32.507]],
+			["parent/240", [94, 3.566]],
+			["name/241", [95, 33.508]],
+			["parent/241", []],
+			["name/242", [46, 34.621]],
+			["parent/242", [95, 3.066]],
+			["name/243", [47, 27.399]],
+			["parent/243", [95, 3.066]],
+			["name/244", [40, 33.508]],
+			["parent/244", [95, 3.066]],
+			["name/245", [34, 33.508]],
+			["parent/245", [95, 3.066]],
+			["name/246", [36, 33.508]],
+			["parent/246", [95, 3.066]],
+			["name/247", [38, 33.508]],
+			["parent/247", [95, 3.066]],
+			["name/248", [42, 33.508]],
+			["parent/248", [95, 3.066]],
+			["name/249", [96, 38.974]],
+			["parent/249", []],
+			["name/250", [95, 33.508]],
+			["parent/250", [96, 3.566]],
+			["name/251", [47, 27.399]],
+			["parent/251", [96, 3.566]],
+			["name/252", [16, 32.507]],
+			["parent/252", [96, 3.566]],
+			["name/253", [97, 31.598]],
+			["parent/253", []],
+			["name/254", [48, 38.974]],
+			["parent/254", [97, 2.891]],
+			["name/255", [51, 38.974]],
+			["parent/255", [97, 2.891]],
+			["name/256", [84, 38.974]],
+			["parent/256", [97, 2.891]],
+			["name/257", [87, 38.974]],
+			["parent/257", [97, 2.891]],
+			["name/258", [89, 38.974]],
+			["parent/258", [97, 2.891]],
+			["name/259", [92, 38.974]],
+			["parent/259", [97, 2.891]],
+			["name/260", [94, 38.974]],
+			["parent/260", [97, 2.891]],
+			["name/261", [96, 38.974]],
+			["parent/261", [97, 2.891]],
+			["name/262", [47, 27.399]],
+			["parent/262", [97, 2.891]],
+			["name/263", [16, 32.507]],
+			["parent/263", [97, 2.891]],
+			["name/264", [98, 46.858]],
+			["parent/264", []],
+			["name/265", [99, 38.974]],
+			["parent/265", [98, 4.287]],
+			["name/266", [99, 38.974]],
+			["parent/266", []],
+			["name/267", [100, 51.967]],
+			["parent/267", [99, 3.566]],
+			["name/268", [99, 38.974]],
+			["parent/268", [99, 3.566]],
+			["name/269", [101, 51.967]],
+			["parent/269", []]
+		],
+		"invertedIndex": [
+			[
+				"audience",
+				{
+					"_index": 30,
+					"name": { "55": {}, "159": {} },
+					"parent": {
+						"56": {},
+						"57": {},
+						"58": {},
+						"59": {},
+						"60": {},
+						"61": {}
+					}
+				}
+			],
+			[
+				"audiencerouter",
+				{
+					"_index": 48,
+					"name": { "87": {}, "254": {} },
+					"parent": { "88": {}, "89": {}, "90": {} }
+				}
+			],
+			[
+				"audiences",
+				{ "_index": 25, "name": { "38": {}, "92": {} }, "parent": {} }
+			],
+			[
+				"audienceservice",
+				{
+					"_index": 45,
+					"name": { "79": {}, "88": {} },
+					"parent": {
+						"80": {},
+						"81": {},
+						"82": {},
+						"83": {},
+						"84": {},
+						"85": {},
+						"86": {}
+					}
+				}
+			],
+			[
+				"audiencetype",
+				{
+					"_index": 24,
+					"name": { "36": {} },
+					"parent": {
+						"37": {},
+						"38": {},
+						"39": {},
+						"40": {},
+						"41": {},
+						"42": {}
+					}
+				}
+			],
+			[
+				"audiencetyperouter",
+				{
+					"_index": 51,
+					"name": { "102": {}, "255": {} },
+					"parent": { "103": {}, "104": {}, "105": {} }
+				}
+			],
+			[
+				"audiencetypes",
+				{ "_index": 23, "name": { "32": {} }, "parent": {} }
+			],
+			[
+				"audiencetypeservice",
+				{
+					"_index": 50,
+					"name": { "94": {}, "103": {} },
+					"parent": {
+						"95": {},
+						"96": {},
+						"97": {},
+						"98": {},
+						"99": {},
+						"100": {},
+						"101": {}
+					}
+				}
+			],
+			[
+				"base",
+				{
+					"_index": 17,
+					"name": { "26": {} },
+					"parent": { "27": {}, "28": {}, "29": {} }
+				}
+			],
+			[
+				"baserouter",
+				{
+					"_index": 97,
+					"name": { "253": {} },
+					"parent": {
+						"254": {},
+						"255": {},
+						"256": {},
+						"257": {},
+						"258": {},
+						"259": {},
+						"260": {},
+						"261": {},
+						"262": {},
+						"263": {}
+					}
+				}
+			],
+			["body", { "_index": 62, "name": { "116": {} }, "parent": {} }],
+			[
+				"config",
+				{
+					"_index": 10,
+					"name": { "10": {} },
+					"parent": {
+						"11": {},
+						"12": {},
+						"13": {},
+						"14": {},
+						"15": {},
+						"16": {},
+						"17": {},
+						"18": {},
+						"19": {}
+					}
+				}
+			],
+			[
+				"configinterface",
+				{
+					"_index": 0,
+					"name": { "0": {} },
+					"parent": {
+						"1": {},
+						"2": {},
+						"3": {},
+						"4": {},
+						"5": {},
+						"6": {},
+						"7": {},
+						"8": {},
+						"9": {}
+					}
+				}
+			],
+			[
+				"connecttodatabase",
+				{ "_index": 12, "name": { "21": {} }, "parent": {} }
+			],
+			[
+				"constructor",
+				{
+					"_index": 47,
+					"name": {
+						"81": {},
+						"89": {},
+						"96": {},
+						"104": {},
+						"170": {},
+						"178": {},
+						"184": {},
+						"192": {},
+						"199": {},
+						"207": {},
+						"219": {},
+						"227": {},
+						"231": {},
+						"239": {},
+						"243": {},
+						"251": {},
+						"262": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"create",
+				{
+					"_index": 40,
+					"name": {
+						"69": {},
+						"82": {},
+						"97": {},
+						"171": {},
+						"185": {},
+						"200": {},
+						"220": {},
+						"232": {},
+						"244": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"createdat",
+				{
+					"_index": 19,
+					"name": {
+						"28": {},
+						"34": {},
+						"41": {},
+						"47": {},
+						"53": {},
+						"60": {},
+						"133": {},
+						"139": {},
+						"146": {},
+						"154": {},
+						"164": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"createerrorresponse",
+				{ "_index": 66, "name": { "123": {}, "126": {} }, "parent": {} }
+			],
+			[
+				"createsuccessresponse",
+				{ "_index": 65, "name": { "122": {}, "125": {} }, "parent": {} }
+			],
+			[
+				"databaseerror",
+				{
+					"_index": 52,
+					"name": { "106": {} },
+					"parent": {
+						"107": {},
+						"109": {},
+						"110": {},
+						"111": {},
+						"112": {},
+						"113": {}
+					}
+				}
+			],
+			[
+				"databaseerror.reasons",
+				{ "_index": 55, "name": {}, "parent": { "108": {} } }
+			],
+			[
+				"db_host",
+				{ "_index": 3, "name": { "3": {}, "13": {} }, "parent": {} }
+			],
+			[
+				"db_name",
+				{ "_index": 6, "name": { "6": {}, "16": {} }, "parent": {} }
+			],
+			[
+				"db_password",
+				{ "_index": 5, "name": { "5": {}, "15": {} }, "parent": {} }
+			],
+			[
+				"db_port",
+				{ "_index": 7, "name": { "7": {}, "17": {} }, "parent": {} }
+			],
+			[
+				"db_username",
+				{ "_index": 4, "name": { "4": {}, "14": {} }, "parent": {} }
+			],
+			[
+				"deletebyid",
+				{
+					"_index": 38,
+					"name": {
+						"67": {},
+						"85": {},
+						"100": {},
+						"174": {},
+						"188": {},
+						"203": {},
+						"223": {},
+						"235": {},
+						"247": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"deparments",
+				{
+					"_index": 32,
+					"name": { "58": {}, "77": {}, "152": {} },
+					"parent": {}
+				}
+			],
+			[
+				"department",
+				{
+					"_index": 29,
+					"name": { "49": {} },
+					"parent": {
+						"50": {},
+						"51": {},
+						"52": {},
+						"53": {},
+						"54": {}
+					}
+				}
+			],
+			[
+				"departmentids",
+				{ "_index": 85, "name": { "180": {}, "181": {} }, "parent": {} }
+			],
+			[
+				"departmentrouter",
+				{
+					"_index": 84,
+					"name": { "176": {}, "256": {} },
+					"parent": { "177": {}, "178": {}, "179": {} }
+				}
+			],
+			[
+				"departments",
+				{ "_index": 28, "name": { "45": {} }, "parent": {} }
+			],
+			[
+				"departmentservice",
+				{
+					"_index": 83,
+					"name": { "168": {}, "177": {} },
+					"parent": {
+						"169": {},
+						"170": {},
+						"171": {},
+						"172": {},
+						"173": {},
+						"174": {},
+						"175": {}
+					}
+				}
+			],
+			["endtime", { "_index": 80, "name": { "158": {} }, "parent": {} }],
+			[
+				"environment",
+				{ "_index": 13, "name": { "22": {} }, "parent": { "23": {} } }
+			],
+			["error", { "_index": 59, "name": { "113": {} }, "parent": {} }],
+			[
+				"errorresponse",
+				{
+					"_index": 63,
+					"name": { "118": {} },
+					"parent": { "119": {}, "120": {} }
+				}
+			],
+			[
+				"faculty",
+				{
+					"_index": 27,
+					"name": { "43": {}, "51": {} },
+					"parent": {
+						"44": {},
+						"45": {},
+						"46": {},
+						"47": {},
+						"48": {}
+					}
+				}
+			],
+			[
+				"facultyid",
+				{ "_index": 82, "name": { "166": {}, "167": {} }, "parent": {} }
+			],
+			[
+				"facultyrouter",
+				{
+					"_index": 87,
+					"name": { "190": {}, "257": {} },
+					"parent": { "191": {}, "192": {}, "193": {} }
+				}
+			],
+			[
+				"facultyservice",
+				{
+					"_index": 86,
+					"name": { "182": {}, "191": {} },
+					"parent": {
+						"183": {},
+						"184": {},
+						"185": {},
+						"186": {},
+						"187": {},
+						"188": {},
+						"189": {}
+					}
+				}
+			],
+			[
+				"firstname",
+				{
+					"_index": 69,
+					"name": { "128": {}, "149": {}, "209": {}, "213": {} },
+					"parent": {}
+				}
+			],
+			[
+				"getbyid",
+				{
+					"_index": 34,
+					"name": {
+						"63": {},
+						"83": {},
+						"98": {},
+						"172": {},
+						"186": {},
+						"201": {},
+						"221": {},
+						"233": {},
+						"245": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"getoffsetlimit",
+				{
+					"_index": 36,
+					"name": {
+						"65": {},
+						"84": {},
+						"99": {},
+						"173": {},
+						"187": {},
+						"202": {},
+						"222": {},
+						"234": {},
+						"246": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"group",
+				{
+					"_index": 74,
+					"name": { "141": {} },
+					"parent": {
+						"142": {},
+						"143": {},
+						"144": {},
+						"145": {},
+						"146": {},
+						"147": {}
+					}
+				}
+			],
+			[
+				"groupids",
+				{ "_index": 90, "name": { "212": {}, "216": {} }, "parent": {} }
+			],
+			[
+				"grouprouter",
+				{
+					"_index": 89,
+					"name": { "205": {}, "258": {} },
+					"parent": { "206": {}, "207": {}, "208": {} }
+				}
+			],
+			[
+				"groups",
+				{
+					"_index": 72,
+					"name": { "131": {}, "137": {}, "162": {} },
+					"parent": {}
+				}
+			],
+			[
+				"groupservice",
+				{
+					"_index": 88,
+					"name": { "197": {}, "206": {} },
+					"parent": {
+						"198": {},
+						"199": {},
+						"200": {},
+						"201": {},
+						"202": {},
+						"203": {},
+						"204": {}
+					}
+				}
+			],
+			[
+				"grouptype",
+				{
+					"_index": 73,
+					"name": { "135": {} },
+					"parent": {
+						"136": {},
+						"137": {},
+						"138": {},
+						"139": {},
+						"140": {}
+					}
+				}
+			],
+			[
+				"helper",
+				{
+					"_index": 67,
+					"name": { "124": {} },
+					"parent": { "125": {}, "126": {} }
+				}
+			],
+			[
+				"icreate",
+				{ "_index": 39, "name": { "68": {} }, "parent": { "69": {} } }
+			],
+			[
+				"icreatearguments",
+				{
+					"_index": 43,
+					"name": { "72": {} },
+					"parent": {
+						"73": {},
+						"166": {},
+						"180": {},
+						"194": {},
+						"209": {},
+						"210": {},
+						"211": {},
+						"212": {}
+					}
+				}
+			],
+			[
+				"id",
+				{
+					"_index": 18,
+					"name": {
+						"27": {},
+						"33": {},
+						"40": {},
+						"46": {},
+						"52": {},
+						"59": {},
+						"75": {},
+						"132": {},
+						"138": {},
+						"145": {},
+						"153": {},
+						"163": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"ideletebyid",
+				{ "_index": 37, "name": { "66": {} }, "parent": { "67": {} } }
+			],
+			[
+				"igetbyid",
+				{ "_index": 33, "name": { "62": {} }, "parent": { "63": {} } }
+			],
+			[
+				"igetoffsetlimit",
+				{ "_index": 35, "name": { "64": {} }, "parent": { "65": {} } }
+			],
+			[
+				"ihelper",
+				{
+					"_index": 64,
+					"name": { "121": {} },
+					"parent": { "122": {}, "123": {} }
+				}
+			],
+			[
+				"irouter",
+				{ "_index": 15, "name": { "24": {} }, "parent": { "25": {} } }
+			],
+			[
+				"iupdate",
+				{ "_index": 41, "name": { "70": {} }, "parent": { "71": {} } }
+			],
+			[
+				"iupdatearguments",
+				{
+					"_index": 44,
+					"name": { "74": {} },
+					"parent": {
+						"75": {},
+						"76": {},
+						"77": {},
+						"78": {},
+						"92": {},
+						"93": {},
+						"167": {},
+						"181": {},
+						"195": {},
+						"196": {},
+						"213": {},
+						"214": {},
+						"215": {},
+						"216": {}
+					}
+				}
+			],
+			[
+				"lastname",
+				{
+					"_index": 70,
+					"name": { "129": {}, "150": {}, "210": {}, "214": {} },
+					"parent": {}
+				}
+			],
+			["logger", { "_index": 11, "name": { "20": {} }, "parent": {} }],
+			[
+				"manager",
+				{
+					"_index": 46,
+					"name": {
+						"80": {},
+						"95": {},
+						"169": {},
+						"183": {},
+						"198": {},
+						"218": {},
+						"230": {},
+						"242": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"message",
+				{
+					"_index": 57,
+					"name": { "111": {}, "117": {}, "120": {} },
+					"parent": {}
+				}
+			],
+			[
+				"name",
+				{
+					"_index": 22,
+					"name": {
+						"31": {},
+						"37": {},
+						"44": {},
+						"50": {},
+						"56": {},
+						"73": {},
+						"78": {},
+						"109": {},
+						"136": {},
+						"142": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"node_env",
+				{ "_index": 2, "name": { "2": {}, "12": {} }, "parent": {} }
+			],
+			[
+				"not_found",
+				{ "_index": 54, "name": { "108": {} }, "parent": {} }
+			],
+			[
+				"patronymic",
+				{
+					"_index": 71,
+					"name": { "130": {}, "151": {}, "211": {}, "215": {} },
+					"parent": {}
+				}
+			],
+			["reason", { "_index": 56, "name": { "110": {} }, "parent": {} }],
+			["reasons", { "_index": 53, "name": { "107": {} }, "parent": {} }],
+			["router", { "_index": 49, "name": { "91": {} }, "parent": {} }],
+			[
+				"routes",
+				{
+					"_index": 16,
+					"name": {
+						"25": {},
+						"90": {},
+						"105": {},
+						"179": {},
+						"193": {},
+						"208": {},
+						"228": {},
+						"240": {},
+						"252": {},
+						"263": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"server",
+				{
+					"_index": 99,
+					"name": { "265": {}, "266": {}, "268": {} },
+					"parent": { "267": {}, "268": {} }
+				}
+			],
+			[
+				"server_port",
+				{ "_index": 1, "name": { "1": {}, "11": {} }, "parent": {} }
+			],
+			[
+				"serverinterface",
+				{ "_index": 98, "name": { "264": {} }, "parent": { "265": {} } }
+			],
+			["setup", { "_index": 14, "name": { "23": {} }, "parent": {} }],
+			[
+				"setupdocgenerator",
+				{ "_index": 100, "name": { "267": {} }, "parent": {} }
+			],
+			["stack", { "_index": 58, "name": { "112": {} }, "parent": {} }],
+			[
+				"startserver",
+				{ "_index": 101, "name": { "269": {} }, "parent": {} }
+			],
+			[
+				"starttime",
+				{ "_index": 79, "name": { "157": {} }, "parent": {} }
+			],
+			[
+				"status",
+				{ "_index": 61, "name": { "115": {}, "119": {} }, "parent": {} }
+			],
+			[
+				"student",
+				{
+					"_index": 68,
+					"name": { "127": {} },
+					"parent": {
+						"128": {},
+						"129": {},
+						"130": {},
+						"131": {},
+						"132": {},
+						"133": {},
+						"134": {}
+					}
+				}
+			],
+			[
+				"studentrouter",
+				{
+					"_index": 92,
+					"name": { "225": {}, "259": {} },
+					"parent": { "226": {}, "227": {}, "228": {} }
+				}
+			],
+			[
+				"students",
+				{ "_index": 75, "name": { "143": {}, "195": {} }, "parent": {} }
+			],
+			[
+				"studentservice",
+				{
+					"_index": 91,
+					"name": { "217": {}, "226": {} },
+					"parent": {
+						"218": {},
+						"219": {},
+						"220": {},
+						"221": {},
+						"222": {},
+						"223": {},
+						"224": {}
+					}
+				}
+			],
+			[
+				"subject",
+				{
+					"_index": 21,
+					"name": { "30": {}, "160": {} },
+					"parent": {
+						"31": {},
+						"32": {},
+						"33": {},
+						"34": {},
+						"35": {}
+					}
+				}
+			],
+			[
+				"subjectrouter",
+				{
+					"_index": 94,
+					"name": { "237": {}, "260": {} },
+					"parent": { "238": {}, "239": {}, "240": {} }
+				}
+			],
+			[
+				"subjects",
+				{ "_index": 26, "name": { "39": {}, "93": {} }, "parent": {} }
+			],
+			[
+				"subjectservice",
+				{
+					"_index": 93,
+					"name": { "229": {}, "238": {} },
+					"parent": {
+						"230": {},
+						"231": {},
+						"232": {},
+						"233": {},
+						"234": {},
+						"235": {},
+						"236": {}
+					}
+				}
+			],
+			[
+				"subjectsession",
+				{
+					"_index": 78,
+					"name": { "156": {} },
+					"parent": {
+						"157": {},
+						"158": {},
+						"159": {},
+						"160": {},
+						"161": {},
+						"162": {},
+						"163": {},
+						"164": {},
+						"165": {}
+					}
+				}
+			],
+			[
+				"successresponse",
+				{
+					"_index": 60,
+					"name": { "114": {} },
+					"parent": { "115": {}, "116": {}, "117": {} }
+				}
+			],
+			[
+				"teacher",
+				{
+					"_index": 77,
+					"name": { "148": {} },
+					"parent": {
+						"149": {},
+						"150": {},
+						"151": {},
+						"152": {},
+						"153": {},
+						"154": {},
+						"155": {}
+					}
+				}
+			],
+			[
+				"teacherrouter",
+				{
+					"_index": 96,
+					"name": { "249": {}, "261": {} },
+					"parent": { "250": {}, "251": {}, "252": {} }
+				}
+			],
+			["teachers", { "_index": 81, "name": { "161": {} }, "parent": {} }],
+			[
+				"teacherservice",
+				{
+					"_index": 95,
+					"name": { "241": {}, "250": {} },
+					"parent": {
+						"242": {},
+						"243": {},
+						"244": {},
+						"245": {},
+						"246": {},
+						"247": {},
+						"248": {}
+					}
+				}
+			],
+			[
+				"type",
+				{
+					"_index": 76,
+					"name": { "144": {}, "194": {}, "196": {} },
+					"parent": {}
+				}
+			],
+			[
+				"typeorm_connection",
+				{ "_index": 8, "name": { "8": {}, "18": {} }, "parent": {} }
+			],
+			[
+				"typeorm_debug_mode",
+				{ "_index": 9, "name": { "9": {}, "19": {} }, "parent": {} }
+			],
+			[
+				"types",
+				{ "_index": 31, "name": { "57": {}, "76": {} }, "parent": {} }
+			],
+			[
+				"update",
+				{
+					"_index": 42,
+					"name": {
+						"71": {},
+						"86": {},
+						"101": {},
+						"175": {},
+						"189": {},
+						"204": {},
+						"224": {},
+						"236": {},
+						"248": {}
+					},
+					"parent": {}
+				}
+			],
+			[
+				"updatedat",
+				{
+					"_index": 20,
+					"name": {
+						"29": {},
+						"35": {},
+						"42": {},
+						"48": {},
+						"54": {},
+						"61": {},
+						"134": {},
+						"140": {},
+						"147": {},
+						"155": {},
+						"165": {}
+					},
+					"parent": {}
+				}
+			]
+		],
+		"pipeline": []
+	}
+}

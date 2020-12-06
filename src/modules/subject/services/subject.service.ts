@@ -26,7 +26,10 @@ export class SubjectService
 		this.manager = getManager();
 	}
 
-	async create({ name, audienceTypeIds }: ICreateArguments): Promise<Subject> {
+	async create({
+		name,
+		audienceTypeIds,
+	}: ICreateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.name = name;
@@ -41,7 +44,6 @@ export class SubjectService
 					throw error;
 				}
 				subject.audienceTypes = audienceTypes;
-
 			}
 			await this.manager.save(subject);
 			logger.info('success');
@@ -67,11 +69,10 @@ export class SubjectService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(Subject, 'subject')
+			const result = this.manager.createQueryBuilder(Subject, 'subject');
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
-			
+
 			return result
 				.select([
 					'subject.id',
@@ -96,7 +97,11 @@ export class SubjectService
 		}
 	}
 
-	async update({ id, name, audienceTypeIds }: IUpdateArguments): Promise<Subject> {
+	async update({
+		id,
+		name,
+		audienceTypeIds,
+	}: IUpdateArguments): Promise<Subject> {
 		try {
 			const subject = new Subject();
 			subject.id = Number(id);
@@ -112,7 +117,6 @@ export class SubjectService
 					throw error;
 				}
 				subject.audienceTypes = audienceTypes;
-
 			}
 			await this.manager.save(subject);
 			logger.info('success');

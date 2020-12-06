@@ -76,8 +76,10 @@ export class DepartmentService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(Department, 'department')
+			const result = this.manager.createQueryBuilder(
+				Department,
+				'department',
+			);
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
 

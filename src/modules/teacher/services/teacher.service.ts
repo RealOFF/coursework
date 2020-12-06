@@ -75,8 +75,7 @@ export class TeacherService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(Teacher, 'teacher')
+			const result = this.manager.createQueryBuilder(Teacher, 'teacher');
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
 

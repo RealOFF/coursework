@@ -17,12 +17,8 @@ export class GroupTypeRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric()
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -33,7 +29,7 @@ export class GroupTypeRouter implements IRouter {
 
 				try {
 					const quote = await this.groupTypeService.getOffsetLimit(
-												req.query.offset as string,
+						req.query.offset as string,
 						req.query.limit as string,
 					);
 					return res.send(quote);
@@ -87,9 +83,7 @@ export class GroupTypeRouter implements IRouter {
 
 		router.post(
 			'/',
-			[
-				body('name').isString(),
-			],
+			[body('name').isString()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -103,15 +97,12 @@ export class GroupTypeRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		router.put(
 			'/',
-			[
-				body('id').isNumeric(),
-				body('name').isString(),
-			],
+			[body('id').isNumeric(), body('name').isString()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -125,7 +116,7 @@ export class GroupTypeRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;

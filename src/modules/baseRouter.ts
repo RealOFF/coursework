@@ -1,12 +1,12 @@
 import { Router } from 'express';
 
-import { IRouter } from './router.interface';
 import { AudienceRouter } from './audience/audience.router';
 import { AudienceTypeRouter } from './audienceType/audienceType.router';
 import { DepartmentRouter } from './department/department.router';
 import { FacultyRouter } from './faculty/faculty.router';
 import { GroupRouter } from './group/group.router';
 import { GroupTypeRouter } from './groupType/groupType.router';
+import { IRouter } from './router.interface';
 import { StudentRouter } from './student/student.router';
 import { SubjectRouter } from './subject/subject.router';
 import { TeacherRouter } from './teacher/teacher.router';

@@ -17,12 +17,8 @@ export class AudienceTypeRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric()
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -33,7 +29,7 @@ export class AudienceTypeRouter implements IRouter {
 
 				try {
 					const quote = await this.audienceTypeService.getOffsetLimit(
-												req.query.offset as string,
+						req.query.offset as string,
 						req.query.limit as string,
 					);
 					return res.send(quote);
@@ -87,24 +83,22 @@ export class AudienceTypeRouter implements IRouter {
 
 		router.post(
 			'/',
-			[
-				body('name').isString(),
-			],
+			[body('name').isString()],
 			async (req: Request, res: Response) => {
-			try {
-				const quote = await this.audienceTypeService.create(req.body);
-				return res.send(quote);
-			} catch (err) {
-				throw err;
-			}
-		});
+				try {
+					const quote = await this.audienceTypeService.create(
+						req.body,
+					);
+					return res.send(quote);
+				} catch (err) {
+					throw err;
+				}
+			},
+		);
 
 		router.put(
 			'/',
-			[
-				body('id').isNumeric(),
-				body('name').isString(),
-			],
+			[body('id').isNumeric(), body('name').isString()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -113,12 +107,14 @@ export class AudienceTypeRouter implements IRouter {
 				}
 
 				try {
-					const quote = await this.audienceTypeService.update(req.body);
+					const quote = await this.audienceTypeService.update(
+						req.body,
+					);
 					return res.send(quote);
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;

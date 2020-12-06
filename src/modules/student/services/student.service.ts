@@ -73,8 +73,7 @@ export class StudentService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(Student, 'student')
+			const result = this.manager.createQueryBuilder(Student, 'student');
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
 

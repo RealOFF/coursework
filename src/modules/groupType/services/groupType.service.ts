@@ -61,8 +61,10 @@ export class GroupTypeService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(GroupType, 'groupType')
+			const result = this.manager.createQueryBuilder(
+				GroupType,
+				'groupType',
+			);
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
 
@@ -90,10 +92,7 @@ export class GroupTypeService
 		}
 	}
 
-	async update({
-		id,
-		name,
-	}: IUpdateArguments): Promise<GroupType> {
+	async update({ id, name }: IUpdateArguments): Promise<GroupType> {
 		try {
 			const groupType = new GroupType();
 			groupType.id = Number(id);

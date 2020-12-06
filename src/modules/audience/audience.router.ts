@@ -17,12 +17,8 @@ export class AudienceRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric()
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -89,9 +85,7 @@ export class AudienceRouter implements IRouter {
 			'/',
 			[
 				body('name').isString(),
-				body(['typeIds', 'departmentIds'])
-					.optional()
-					.isArray()
+				body(['typeIds', 'departmentIds']).optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -106,7 +100,7 @@ export class AudienceRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		router.put(
@@ -114,9 +108,7 @@ export class AudienceRouter implements IRouter {
 			[
 				body('id').isNumeric(),
 				body('name').isString(),
-				body(['typeIds', 'departmentIds'])
-					.optional()
-					.isArray()
+				body(['typeIds', 'departmentIds']).optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -130,7 +122,7 @@ export class AudienceRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;

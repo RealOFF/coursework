@@ -18,12 +18,8 @@ export class DepartmentRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric(),
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -34,7 +30,7 @@ export class DepartmentRouter implements IRouter {
 
 				try {
 					const quote = await this.departmentService.getOffsetLimit(
-												req.query.offset as string,
+						req.query.offset as string,
 						req.query.limit as string,
 					);
 					return res.send(quote);
@@ -88,10 +84,7 @@ export class DepartmentRouter implements IRouter {
 
 		router.post(
 			'/',
-			[
-				body('name').isString(),
-				body('facultyId').isNumeric()
-			],
+			[body('name').isString(), body('facultyId').isNumeric()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -113,7 +106,7 @@ export class DepartmentRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		router.put(
@@ -121,7 +114,7 @@ export class DepartmentRouter implements IRouter {
 			[
 				body('id').isNumeric(),
 				body('name').isString(),
-				body('facultyId').isNumeric()
+				body('facultyId').isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -143,7 +136,7 @@ export class DepartmentRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;

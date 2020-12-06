@@ -17,12 +17,8 @@ export class GroupRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric()
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -87,10 +83,7 @@ export class GroupRouter implements IRouter {
 
 		router.post(
 			'/',
-			[
-				body('name').isString(),
-				body('typeId').isNumeric()
-			],
+			[body('name').isString(), body('typeId').isNumeric()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
 
@@ -104,7 +97,7 @@ export class GroupRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		router.put(
@@ -112,7 +105,7 @@ export class GroupRouter implements IRouter {
 			[
 				body('id').isNumeric(),
 				body('name').isString(),
-				body('typeId').isNumeric()
+				body('typeId').isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -127,7 +120,7 @@ export class GroupRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;

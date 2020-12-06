@@ -1,6 +1,7 @@
 import { EntityManager, getManager, In } from 'typeorm';
 
 import { logger, DatabaseError } from '../../../helpers';
+import { Department, AudienceType } from '../../../models/entities';
 import { Audience } from '../../../models/entities/Audience';
 import {
 	ICreate,
@@ -13,7 +14,6 @@ import {
 	ICreateArguments,
 	IUpdateArguments,
 } from './audience.service.interface';
-import { Department, AudienceType } from '../../../models/entities';
 
 export class AudienceService
 	implements
@@ -27,7 +27,11 @@ export class AudienceService
 		this.manager = getManager();
 	}
 
-	async create({ name, typeIds, departmentIds }: ICreateArguments): Promise<Audience> {
+	async create({
+		name,
+		typeIds,
+		departmentIds,
+	}: ICreateArguments): Promise<Audience> {
 		try {
 			const audience = new Audience();
 			audience.name = name;
@@ -42,7 +46,6 @@ export class AudienceService
 					throw error;
 				}
 				audience.types = types;
-
 			}
 			if (departmentIds?.length) {
 				const departments = await this.manager.find(Department, {
@@ -68,19 +71,19 @@ export class AudienceService
 	async getById(id: string) {
 		try {
 			return await this.manager
-			.createQueryBuilder(Audience, 'audience')
-			.where({ id: Number(id) })
-			.leftJoinAndSelect('audience.types', 'type')
-			.leftJoinAndSelect('audience.departments', 'department')
-			.select([
-				'audience.id',
-				'audience.name',
-				'type.id',
-				'type.name',
-				'department.id',
-				'department.name'
-			])
-			.getMany();
+				.createQueryBuilder(Audience, 'audience')
+				.where({ id: Number(id) })
+				.leftJoinAndSelect('audience.types', 'type')
+				.leftJoinAndSelect('audience.departments', 'department')
+				.select([
+					'audience.id',
+					'audience.name',
+					'type.id',
+					'type.name',
+					'department.id',
+					'department.name',
+				])
+				.getMany();
 		} catch (error) {
 			logger.error(error);
 			return error;
@@ -89,8 +92,10 @@ export class AudienceService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(Audience, 'audience');
+			const result = this.manager.createQueryBuilder(
+				Audience,
+				'audience',
+			);
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
 
@@ -103,7 +108,7 @@ export class AudienceService
 					'type.id',
 					'type.name',
 					'department.id',
-					'department.name'
+					'department.name',
 				])
 				.getMany();
 		} catch (error) {

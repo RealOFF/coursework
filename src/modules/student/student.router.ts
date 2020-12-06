@@ -17,12 +17,8 @@ export class StudentRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric()
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -33,7 +29,7 @@ export class StudentRouter implements IRouter {
 
 				try {
 					const quote = await this.studentService.getOffsetLimit(
-												req.query.offset as string,
+						req.query.offset as string,
 						req.query.limit as string,
 					);
 					return res.send(quote);
@@ -89,12 +85,8 @@ export class StudentRouter implements IRouter {
 			'/',
 			[
 				body(['firstName', 'lastName']).isString(),
-				body('patronymic')
-					.optional()
-					.isString(),
-				body('groupIds')
-					.optional()
-					.isArray()
+				body('patronymic').optional().isString(),
+				body('groupIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -109,7 +101,7 @@ export class StudentRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		router.put(
@@ -117,12 +109,8 @@ export class StudentRouter implements IRouter {
 			[
 				body('id').isNumeric(),
 				body(['firstName', 'lastName']).isString(),
-				body('patronymic')
-					.optional()
-					.isString(),
-				body('groupIds')
-					.optional()
-					.isArray()
+				body('patronymic').optional().isString(),
+				body('groupIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -137,7 +125,7 @@ export class StudentRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;

@@ -26,11 +26,7 @@ export class FacultyService
 		this.manager = getManager();
 	}
 
-	async create({
-		name,
-		departmentIds,
-	}:
-	ICreateArguments): Promise<Faculty> {
+	async create({ name, departmentIds }: ICreateArguments): Promise<Faculty> {
 		try {
 			const faculty = new Faculty();
 			faculty.name = name;
@@ -76,8 +72,7 @@ export class FacultyService
 
 	async getOffsetLimit(offset: string, limit: string) {
 		try {
-			const result = this.manager
-				.createQueryBuilder(Faculty, 'faculty');
+			const result = this.manager.createQueryBuilder(Faculty, 'faculty');
 			offset && result.offset(Number(offset));
 			limit && result.limit(Number(limit));
 

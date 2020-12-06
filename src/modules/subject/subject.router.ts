@@ -17,12 +17,8 @@ export class SubjectRouter implements IRouter {
 		router.get(
 			'/all',
 			[
-				query('offset')
-					.optional()
-					.isNumeric(),
-				query('limit')
-					.optional()
-					.isNumeric()
+				query('offset').optional().isNumeric(),
+				query('limit').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -33,7 +29,7 @@ export class SubjectRouter implements IRouter {
 
 				try {
 					const quote = await this.subjectService.getOffsetLimit(
-												req.query.offset as string,
+						req.query.offset as string,
 						req.query.limit as string,
 					);
 					return res.send(quote);
@@ -85,12 +81,11 @@ export class SubjectRouter implements IRouter {
 			},
 		);
 
-		router.post('/',
+		router.post(
+			'/',
 			[
 				body('name').isString(),
-				body('audienceTypeIds')
-					.optional()
-					.isArray()
+				body('audienceTypeIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -105,16 +100,15 @@ export class SubjectRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
-		router.put('/',
+		router.put(
+			'/',
 			[
 				body('id').isNumeric(),
 				body('name').isString(),
-				body('audienceTypeIds')
-					.optional()
-					.isArray()
+				body('audienceTypeIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -129,7 +123,7 @@ export class SubjectRouter implements IRouter {
 				} catch (err) {
 					throw err;
 				}
-			}
+			},
 		);
 
 		return router;
