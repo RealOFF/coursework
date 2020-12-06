@@ -4,10 +4,10 @@
 	"scripts": {
 		"build": "npm run tsc --build --clean && npm run tsc",
 		"lint": "eslint src/**/*.ts",
-		"start": "npm run build && npm run dev",
+		"dev": "npm run build && npm run start",
 		"test": "npm run build && ava",
 		"watch": "nodemon src/index.ts",
-		"dev": "node ./dist/src/index.js",
+		"start": "node ./dist/src/index.js",
 		"tsc": "tsc",
 		"typecheck": "tsc --noEmit",
 		"prettify": "npx prettier --write .",
