@@ -9,6 +9,7 @@ import { GroupTypeRouter } from './groupType/groupType.router';
 import { IRouter } from './router.interface';
 import { StudentRouter } from './student/student.router';
 import { SubjectRouter } from './subject/subject.router';
+import { SubjectSessionRouter } from './subjectSession/subjectSession.router';
 import { TeacherRouter } from './teacher/teacher.router';
 
 // Init router
@@ -23,6 +24,7 @@ export class BaseRouter implements IRouter {
 	private groupTypeRouter: GroupTypeRouter;
 	private studentRouter: StudentRouter;
 	private subjectRouter: SubjectRouter;
+	private subjectSessionRouter: SubjectSessionRouter;
 	private teacherRouter: TeacherRouter;
 
 	constructor() {
@@ -34,6 +36,7 @@ export class BaseRouter implements IRouter {
 		this.groupTypeRouter = new GroupTypeRouter();
 		this.studentRouter = new StudentRouter();
 		this.subjectRouter = new SubjectRouter();
+		this.subjectSessionRouter = new SubjectSessionRouter();
 		this.teacherRouter = new TeacherRouter();
 	}
 
@@ -46,6 +49,7 @@ export class BaseRouter implements IRouter {
 		router.use('/groupTypes', this.groupTypeRouter.routes);
 		router.use('/students', this.studentRouter.routes);
 		router.use('/subject', this.subjectRouter.routes);
+		router.use('/subjectSession', this.subjectSessionRouter.routes);
 		router.use('/teachers', this.teacherRouter.routes);
 		return router;
 	}
