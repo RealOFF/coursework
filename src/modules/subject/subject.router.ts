@@ -86,9 +86,7 @@ export class SubjectRouter implements IRouter {
 			[
 				body('name').isString(),
 				body('semester').isNumeric(),
-				body('audienceTypeIds')
-					.optional()
-					.isArray(),
+				body('audienceTypeIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -112,9 +110,7 @@ export class SubjectRouter implements IRouter {
 				body('id').isNumeric(),
 				body('name').isString(),
 				body('semester').isNumeric(),
-				body('audienceTypeIds')
-					.optional()
-					.isArray(),
+				body('audienceTypeIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);

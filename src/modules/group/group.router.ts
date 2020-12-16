@@ -86,9 +86,7 @@ export class GroupRouter implements IRouter {
 			[
 				body('name').isString(),
 				body('semester').isNumeric(),
-				body('typeId')
-					.optional()
-					.isNumeric()
+				body('typeId').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -112,9 +110,7 @@ export class GroupRouter implements IRouter {
 				body('id').isNumeric(),
 				body('name').isString(),
 				body('semester').isNumeric(),
-				body('typeId')
-					.optional()
-					.isNumeric(),
+				body('typeId').optional().isNumeric(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);

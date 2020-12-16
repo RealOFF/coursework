@@ -90,7 +90,12 @@ export class GroupService
 		}
 	}
 
-	async update({ id, name, typeId, semester }: IUpdateArguments): Promise<Group> {
+	async update({
+		id,
+		name,
+		typeId,
+		semester,
+	}: IUpdateArguments): Promise<Group> {
 		try {
 			const group = new Group();
 			group.id = Number(id);

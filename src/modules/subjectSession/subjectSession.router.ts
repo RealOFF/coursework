@@ -84,22 +84,12 @@ export class SubjectSessionRouter implements IRouter {
 		router.post(
 			'/',
 			[
-                body('startTime')
-                    .isISO8601()
-                    .toDate(),
-                body('endTime')
-                    .isISO8601()
-                    .toDate(),
-                body('audienceId')
-                    .optional()
-                    .isNumeric(),
-                body('subjectId').isNumeric(),
-				body('teacherIds')
-					.optional()
-                    .isArray(),
-                body('groupIds')
-					.optional()
-					.isArray(),
+				body('startTime').isISO8601().toDate(),
+				body('endTime').isISO8601().toDate(),
+				body('audienceId').optional().isNumeric(),
+				body('subjectId').isNumeric(),
+				body('teacherIds').optional().isArray(),
+				body('groupIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -109,7 +99,9 @@ export class SubjectSessionRouter implements IRouter {
 				}
 
 				try {
-					const quote = await this.subjectSessionService.create(req.body);
+					const quote = await this.subjectSessionService.create(
+						req.body,
+					);
 					return res.send(quote);
 				} catch (err) {
 					throw err;
@@ -121,24 +113,12 @@ export class SubjectSessionRouter implements IRouter {
 			'/',
 			[
 				body('id').isNumeric(),
-                body('startTime')
-                    .isISO8601()
-                    .toDate(),
-                body('endTime')
-                    .isISO8601()
-                    .toDate(),
-                body('audienceId')
-                    .optional()
-                    .isNumeric(),
-                body('subjectId')
-                    .optional()
-                    .isNumeric(),
-                body('teacherIds')
-                    .optional()
-                    .isArray(),
-                body('groupIds')
-                    .optional()
-                    .isArray(),
+				body('startTime').isISO8601().toDate(),
+				body('endTime').isISO8601().toDate(),
+				body('audienceId').optional().isNumeric(),
+				body('subjectId').optional().isNumeric(),
+				body('teacherIds').optional().isArray(),
+				body('groupIds').optional().isArray(),
 			],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -148,7 +128,9 @@ export class SubjectSessionRouter implements IRouter {
 				}
 
 				try {
-					const quote = await this.subjectSessionService.update(req.body);
+					const quote = await this.subjectSessionService.update(
+						req.body,
+					);
 					return res.send(quote);
 				} catch (err) {
 					throw err;
