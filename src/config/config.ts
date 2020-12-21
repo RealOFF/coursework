@@ -12,6 +12,8 @@ interface ConfigInterface {
 	DB_PORT: number;
 	TYPEORM_CONNECTION: any;
 	TYPEORM_DEBUG_MODE: any;
+	AUTH_TOKEN_SECRET: string;
+	ENABLE_AUTH: boolean,
 }
 
 export const config: ConfigInterface = {
@@ -26,4 +28,6 @@ export const config: ConfigInterface = {
 	TYPEORM_DEBUG_MODE: process.env.TYPEORM_DEBUG_MODE
 		? JSON.parse(process.env.TYPEORM_DEBUG_MODE)
 		: false,
+	AUTH_TOKEN_SECRET: process.env.AUTH_TOKEN_SECRET || '',
+	ENABLE_AUTH: !!process.env.ENABLE_AUTH || true,
 };

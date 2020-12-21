@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import { AudienceRouter } from './audience/audience.router';
 import { AudienceTypeRouter } from './audienceType/audienceType.router';
+import { AuthRouter } from './auth/auth.router';
 import { DepartmentRouter } from './department/department.router';
 import { FacultyRouter } from './faculty/faculty.router';
 import { GroupRouter } from './group/group.router';
@@ -11,6 +12,7 @@ import { StudentRouter } from './student/student.router';
 import { SubjectRouter } from './subject/subject.router';
 import { SubjectSessionRouter } from './subjectSession/subjectSession.router';
 import { TeacherRouter } from './teacher/teacher.router';
+import { authMiddleware } from '../helpers/auth';
 
 // Init router
 export const router = Router();
@@ -18,6 +20,7 @@ export const router = Router();
 export class BaseRouter implements IRouter {
 	private audienceRouter: AudienceRouter;
 	private audienceTypeRouter: AudienceTypeRouter;
+	private authRouter: AuthRouter;
 	private departmentRouter: DepartmentRouter;
 	private facultyRouter: FacultyRouter;
 	private groupRouter: GroupRouter;
@@ -30,6 +33,7 @@ export class BaseRouter implements IRouter {
 	constructor() {
 		this.audienceRouter = new AudienceRouter();
 		this.audienceTypeRouter = new AudienceTypeRouter();
+		this.authRouter = new AuthRouter();
 		this.departmentRouter = new DepartmentRouter();
 		this.facultyRouter = new FacultyRouter();
 		this.groupRouter = new GroupRouter();
@@ -41,16 +45,17 @@ export class BaseRouter implements IRouter {
 	}
 
 	get routes() {
-		router.use('/audiences', this.audienceRouter.routes);
-		router.use('/audienceTypes', this.audienceTypeRouter.routes);
-		router.use('/departments', this.departmentRouter.routes);
-		router.use('/faculties', this.facultyRouter.routes);
-		router.use('/groups', this.groupRouter.routes);
-		router.use('/groupTypes', this.groupTypeRouter.routes);
-		router.use('/students', this.studentRouter.routes);
-		router.use('/subject', this.subjectRouter.routes);
-		router.use('/subjectSession', this.subjectSessionRouter.routes);
-		router.use('/teachers', this.teacherRouter.routes);
+		router.use('/audiences', authMiddleware,this.audienceRouter.routes);
+		router.use('/audienceTypes', authMiddleware, this.audienceTypeRouter.routes);
+		router.use('/auth', this.authRouter.routes);
+		router.use('/departments', authMiddleware, this.departmentRouter.routes);
+		router.use('/faculties', authMiddleware, this.facultyRouter.routes);
+		router.use('/groups', authMiddleware, this.groupRouter.routes);
+		router.use('/groupTypes', authMiddleware, this.groupTypeRouter.routes);
+		router.use('/students', authMiddleware, this.studentRouter.routes);
+		router.use('/subjects', authMiddleware, this.subjectRouter.routes);
+		router.use('/subjectSessions', authMiddleware, this.subjectSessionRouter.routes);
+		router.use('/teachers', authMiddleware, this.teacherRouter.routes);
 		return router;
 	}
 }
