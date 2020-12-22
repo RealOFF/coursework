@@ -1,5 +1,6 @@
 import { EntityManager, getManager } from 'typeorm';
 
+import { USER_ROLES } from '../../../config/constants';
 import { logger } from '../../../helpers/logger';
 import { User } from '../../../models/entities';
 import { ICreateArguments } from './user.service.interface';
@@ -17,14 +18,14 @@ export class UserService {
 			logger.error(error);
 			return error;
 		}
-    }
-    
-    async create({ email, password }: ICreateArguments) {
+	}
+
+	async create({ email, password }: ICreateArguments) {
 		try {
-            const user = new User();
+			const user = new User();
 			user.email = email;
 			user.password = password;
-			user.role = 'student';
+			user.role = USER_ROLES.COMMON_USER;
 			const savedUser = await this.manager.save(user);
 			logger.info('success');
 			return savedUser;

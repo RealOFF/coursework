@@ -35,7 +35,7 @@ export class GroupService
 				});
 				if (!type) {
 					const error = new DatabaseError(
-						`Faculty id ${typeId} not found.`,
+						`Group id ${typeId} not found.`,
 					);
 					error.reason = DatabaseError.REASONS.NOT_FOUND;
 					throw error;

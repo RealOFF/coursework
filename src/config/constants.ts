@@ -5,6 +5,6 @@ export const SUBJECT_SESSIONS_STATUSES = {
 };
 
 export const USER_ROLES = {
-    ADMIN: 'admin',
-    COMMON_USER: 'common_user',
+	ADMIN: 'admin',
+	COMMON_USER: 'common_user',
 };

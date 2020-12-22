@@ -1,4 +1,4 @@
 export interface IGetTokenArguments {
-    email: string;
-    role: string;
+	email: string;
+	role: string;
 }

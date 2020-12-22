@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+import { authMiddleware } from '../helpers/auth';
 import { AudienceRouter } from './audience/audience.router';
 import { AudienceTypeRouter } from './audienceType/audienceType.router';
 import { AuthRouter } from './auth/auth.router';
@@ -12,7 +13,6 @@ import { StudentRouter } from './student/student.router';
 import { SubjectRouter } from './subject/subject.router';
 import { SubjectSessionRouter } from './subjectSession/subjectSession.router';
 import { TeacherRouter } from './teacher/teacher.router';
-import { authMiddleware } from '../helpers/auth';
 
 // Init router
 export const router = Router();
@@ -45,16 +45,28 @@ export class BaseRouter implements IRouter {
 	}
 
 	get routes() {
-		router.use('/audiences', authMiddleware,this.audienceRouter.routes);
-		router.use('/audienceTypes', authMiddleware, this.audienceTypeRouter.routes);
+		router.use('/audiences', authMiddleware, this.audienceRouter.routes);
+		router.use(
+			'/audienceTypes',
+			authMiddleware,
+			this.audienceTypeRouter.routes,
+		);
 		router.use('/auth', this.authRouter.routes);
-		router.use('/departments', authMiddleware, this.departmentRouter.routes);
+		router.use(
+			'/departments',
+			authMiddleware,
+			this.departmentRouter.routes,
+		);
 		router.use('/faculties', authMiddleware, this.facultyRouter.routes);
 		router.use('/groups', authMiddleware, this.groupRouter.routes);
 		router.use('/groupTypes', authMiddleware, this.groupTypeRouter.routes);
 		router.use('/students', authMiddleware, this.studentRouter.routes);
 		router.use('/subjects', authMiddleware, this.subjectRouter.routes);
-		router.use('/subjectSessions', authMiddleware, this.subjectSessionRouter.routes);
+		router.use(
+			'/subjectSessions',
+			authMiddleware,
+			this.subjectSessionRouter.routes,
+		);
 		router.use('/teachers', authMiddleware, this.teacherRouter.routes);
 		return router;
 	}

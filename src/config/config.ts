@@ -13,7 +13,7 @@ interface ConfigInterface {
 	TYPEORM_CONNECTION: any;
 	TYPEORM_DEBUG_MODE: any;
 	AUTH_TOKEN_SECRET: string;
-	ENABLE_AUTH: boolean,
+	ENABLE_AUTH: boolean;
 }
 
 export const config: ConfigInterface = {

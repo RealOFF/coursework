@@ -1,6 +1,8 @@
 import { Request, Response, Router } from 'express';
 import { param, query, body, validationResult } from 'express-validator';
 
+import { USER_ROLES } from '../../config/constants';
+import { rbacMiddleware } from '../../helpers/rbac';
 import { IRouter } from '../router.interface';
 import { GroupTypeService } from './services/groupType.service';
 
@@ -16,6 +18,7 @@ export class GroupTypeRouter implements IRouter {
 	get routes() {
 		router.get(
 			'/all',
+			rbacMiddleware([USER_ROLES.ADMIN, USER_ROLES.COMMON_USER]),
 			[
 				query('offset').optional().isNumeric(),
 				query('limit').optional().isNumeric(),
@@ -41,6 +44,7 @@ export class GroupTypeRouter implements IRouter {
 
 		router.get(
 			'/:id',
+			rbacMiddleware([USER_ROLES.ADMIN, USER_ROLES.COMMON_USER]),
 			[param('id').isNumeric()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -62,6 +66,7 @@ export class GroupTypeRouter implements IRouter {
 
 		router.delete(
 			'/:id',
+			rbacMiddleware([USER_ROLES.ADMIN]),
 			[param('id').isNumeric()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -83,6 +88,7 @@ export class GroupTypeRouter implements IRouter {
 
 		router.post(
 			'/',
+			rbacMiddleware([USER_ROLES.ADMIN]),
 			[body('name').isString()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
@@ -102,6 +108,7 @@ export class GroupTypeRouter implements IRouter {
 
 		router.put(
 			'/',
+			rbacMiddleware([USER_ROLES.ADMIN]),
 			[body('id').isNumeric(), body('name').isString()],
 			async (req: Request, res: Response) => {
 				const errors = validationResult(req);
