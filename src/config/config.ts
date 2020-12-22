@@ -29,5 +29,5 @@ export const config: ConfigInterface = {
 		? JSON.parse(process.env.TYPEORM_DEBUG_MODE)
 		: false,
 	AUTH_TOKEN_SECRET: process.env.AUTH_TOKEN_SECRET || '',
-	ENABLE_AUTH: process.env.ENABLE_AUTH === 'true' || true,
+	ENABLE_AUTH: process.env.ENABLE_AUTH === 'true' || false,
 };
