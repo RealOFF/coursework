@@ -13,6 +13,7 @@ import { StudentRouter } from './student/student.router';
 import { SubjectRouter } from './subject/subject.router';
 import { SubjectSessionRouter } from './subjectSession/subjectSession.router';
 import { TeacherRouter } from './teacher/teacher.router';
+import { ExportRouter } from './export/export.router';
 
 // Init router
 export const router = Router();
@@ -29,6 +30,7 @@ export class BaseRouter implements IRouter {
 	private subjectRouter: SubjectRouter;
 	private subjectSessionRouter: SubjectSessionRouter;
 	private teacherRouter: TeacherRouter;
+	private exportRouter: ExportRouter;
 
 	constructor() {
 		this.audienceRouter = new AudienceRouter();
@@ -42,6 +44,7 @@ export class BaseRouter implements IRouter {
 		this.subjectRouter = new SubjectRouter();
 		this.subjectSessionRouter = new SubjectSessionRouter();
 		this.teacherRouter = new TeacherRouter();
+		this.exportRouter = new ExportRouter();
 	}
 
 	get routes() {
@@ -68,6 +71,7 @@ export class BaseRouter implements IRouter {
 			this.subjectSessionRouter.routes,
 		);
 		router.use('/teachers', authMiddleware, this.teacherRouter.routes);
+		router.use('/export', this.exportRouter.routes);
 		return router;
 	}
 }
