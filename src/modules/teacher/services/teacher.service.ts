@@ -41,7 +41,6 @@ export class TeacherService
 			teacher.patronymic = patronymic;
 			if (departmentIds?.length) {
 				const departments = await this.manager.find(Department, {
-					select: ['id', 'name'],
 					where: { id: In(departmentIds.map(Number)) },
 				});
 				if (!departments) {
@@ -80,12 +79,6 @@ export class TeacherService
 			limit && result.limit(Number(limit));
 
 			return result
-				.select([
-					'teacher.id',
-					'teacher.name',
-					'department.id',
-					'department.name',
-				])
 				.leftJoinAndSelect('teacher.departments', 'department')
 				.getMany();
 		} catch (error) {
@@ -118,7 +111,6 @@ export class TeacherService
 			teacher.patronymic = patronymic;
 			if (departmentIds?.length) {
 				const departments = await this.manager.find(Department, {
-					select: ['id', 'name'],
 					where: { id: In(departmentIds.map(Number)) },
 				});
 				if (!departments) {
