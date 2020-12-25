@@ -62,9 +62,9 @@ export class TeacherService
 	async getById(id: string) {
 		try {
 			return this.manager
-				.createQueryBuilder(Teacher, 'techer')
+				.createQueryBuilder(Teacher, 'teacher')
 				.where({ id: Number(id) })
-				.leftJoinAndSelect('techer.departments', 'department')
+				.leftJoinAndSelect('teacher.departments', 'department')
 				.getMany();
 		} catch (error) {
 			logger.error(error);
